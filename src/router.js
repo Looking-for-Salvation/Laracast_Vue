@@ -4,7 +4,7 @@ import TheHome from "./pages/TheHome.vue";
 import NotFound from "./pages/NotFound.vue";
 
 const router = createRouter({
-	history: createWebHistory,
+	history: createWebHistory(),
 	routes: [
 		{ path: "/", component: TheHome },
 		{ path: "/:notFound(.*)", component: NotFound },

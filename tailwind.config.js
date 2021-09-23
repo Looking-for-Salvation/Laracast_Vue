@@ -5,11 +5,21 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {
+			padding: {},
 			colors: {
 				rose: colors.rose,
 				orange: colors.orange,
 				emerald: colors.emerald,
 				blueGray: colors.blueGray,
+			},
+			fontFamily: {
+				Ubuntu: ["Ubuntu", "sans-serif"],
+				OpenSans: ['"Open Sans"', "sans-serif"],
+				Roboto: ["Roboto", "sans-serif"],
+				IranSans: ["IRANSans", "sans-serif"],
+				IranSansFD: ["IRANSans(FaNum)", "sans-serif"],
+				IranYekan: ["IRANYekanWeb(FaNum)", "sans-serif"],
+				YekanBakh: ['"Yekan Bakh"', "sans-serif"],
 			},
 		},
 	},

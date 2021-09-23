@@ -8,4 +8,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+:root {
+	font-size: 15px;
+}
+</style>
