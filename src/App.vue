@@ -12,4 +12,8 @@ export default {
 :root {
 	font-size: 15px;
 }
+
+.rtl {
+	direction: rtl;
+}
 </style>

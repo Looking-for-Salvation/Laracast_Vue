@@ -72,7 +72,7 @@
 				<div class="flex items-center order-1">
 					<a
 						href="#"
-						class="px-6 py-1.5 mr-5 text-base text-white transition-all duration-200 border rounded-full cursor-pointer font-IranSans hover:bg-white hover:text-blue-400"
+						class="px-6 py-1.5 mr-5 text-base text-white transition-all duration-200 border rounded-full cursor-pointer font-IranSans hover:bg-white hover:text-blue-400 border-opacity-50"
 						>ورود</a
 					>
 					<button
