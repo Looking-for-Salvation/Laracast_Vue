@@ -5,10 +5,9 @@
 				<the-header transparent home></the-header>
 				<div class="flex items-center flex-1 py-10">
 					<div class="container flex items-center justify-center w-full mx-auto mt-20" style="max-width: 1400px">
-						<!-- <img src="../../assets/images/home/larysmart.svg" class="absolute pointer-events-none" alt="Lary the robot" /> -->
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="order-2 mx-14"
+							class="mx-14"
 							xmlns:xlink="http://www.w3.org/1999/xlink"
 							width="350"
 							height="500"
@@ -279,8 +278,8 @@
 								</g>
 							</g>
 						</svg>
-						<div class="flex flex-col items-end order-1 mr-20">
-							<h1 class="pb-12 text-4xl text-white rtl font-IranSans">مرجع آموزش برنامه نویسی</h1>
+						<div class="flex flex-col mr-20">
+							<h1 class="pb-12 text-4xl text-white font-IranSans">مرجع آموزش برنامه نویسی</h1>
 							<p class="text-base font-normal leading-relaxed text-white text-opacity-75 rtl font-IranSans">
 								ارتقای مهارت های برنامه نویسی، با رویکرد محتوای چندرسانه ای.
 								<br />
@@ -324,7 +323,7 @@ export default {
 }
 
 .inner-banner {
-	min-height: 795px;
+	min-height: 745px;
 }
 
 #home-banner_illustration {

@@ -1,7 +1,7 @@
 <template>
 	<nav class="h-16 px-12 pb-4 header-nav pt-7" :class="{ 'bg-transparent': transparent, 'header-background': !transparent }">
 		<div class="relative flex items-center justify-between h-full" :class="{ 'max-w-7xl mx-auto': home }">
-			<div id="header-logo" class="flex justify-end order-3 w-1/4 mr-0">
+			<div id="header-logo" class="flex w-1/4 mr-0">
 				<router-link to="/" class="inline-block leading-none cursor-pointer">
 					<svg id="logo-full-white" viewBox="11.499815940856934 200.39300537109375 617.3845825195312 74.19113159179688" width="145" height="21">
 						<defs>
@@ -67,14 +67,9 @@
 					</svg>
 				</router-link>
 			</div>
-			<div class="order-2 nav-links" v-if="!home">Hello</div>
+			<div class="nav-links" v-if="!home">Hello</div>
 			<div class="relative block w-1/4">
-				<div class="flex items-center order-1">
-					<a
-						href="#"
-						class="px-6 py-1.5 mr-5 text-base text-white transition-all duration-200 border rounded-full cursor-pointer font-IranSans hover:bg-white hover:text-blue-400 border-opacity-50"
-						>ورود</a
-					>
+				<div class="flex items-center justify-end ">
 					<button
 						title="Press / anywhere to activate me."
 						class="w-auto p-3 leading-none transition-all duration-300 bg-white bg-opacity-10 hover:bg-opacity-25 rounded-xl"
@@ -89,6 +84,11 @@
 							</g>
 						</svg>
 					</button>
+					<a
+						href="#"
+						class="px-6 py-1.5 mr-5 text-base text-white transition-all duration-200 border rounded-full cursor-pointer font-IranSans hover:bg-white hover:text-blue-400 border-opacity-50"
+						>ورود
+					</a>
 				</div>
 			</div>
 		</div>
@@ -108,11 +108,6 @@ export default {
 			required: false,
 			default: false,
 		},
-	},
-	data() {
-		return {
-			msg: "1234",
-		};
 	},
 };
 </script>

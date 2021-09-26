@@ -6,6 +6,9 @@ module.exports = {
 	theme: {
 		extend: {
 			padding: {},
+			fontSize: {
+				"2xs": ".6666rem",
+			},
 			colors: {
 				rose: colors.rose,
 				orange: colors.orange,

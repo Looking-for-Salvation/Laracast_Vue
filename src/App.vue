@@ -13,6 +13,12 @@ export default {
 	font-size: 15px;
 }
 
+.section,
+section {
+	padding: 40px 30px;
+	position: relative;
+}
+
 .rtl {
 	direction: rtl;
 }
