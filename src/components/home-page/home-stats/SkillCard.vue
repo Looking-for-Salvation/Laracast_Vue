@@ -30,7 +30,7 @@
 				class="absolute flex items-center justify-center w-full py-2 mx-auto mb-1 text-sm text-black normal-case bg-gray-200 border border-opacity-25 border-solid rounded-full card-play-button font-IranSans hover:text-blue-400 hover:border-blue-400"
 				style="bottom: 11px"
 			>
-				<span>مشاهده</span>
+				<span>نمایش</span>
 			</router-link>
 		</div>
 	</div>
@@ -117,8 +117,6 @@ export default {
 			}
 		});
 
-		console.log(props);
-
 		return {
 			cardName,
 			isFrameworks,
@@ -197,7 +195,11 @@ export default {
 
 .skill-card:hover .card-play-button {
 	opacity: 1;
-	transform: translatey(-4px);
+	transform: translatey(0px);
+}
+
+.skill-card:hover .skill-card_meta {
+	box-shadow: 0 0 20px rgb(0 0 0 / 20%);
 }
 
 .skill-card:hover .skill-card_meta-details {

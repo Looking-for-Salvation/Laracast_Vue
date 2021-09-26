@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<section class="home-skills pb-9">
 		<div class="flex flex-col items-center justify-center mb-9">
 			<div class="flex text-center rounded-lg mb-14">
 				<div class="px-10 home-skills-stat_item">
@@ -41,7 +41,7 @@
 			</div>
 			<skill-cards></skill-cards>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script>

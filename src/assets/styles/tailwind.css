@@ -12,3 +12,19 @@
 		display: initial;
 	}
 }
+
+@layer utilities {
+	.clamp {
+		-webkit-box-orient: vertical;
+		display: -webkit-box;
+		overflow: hidden;
+	}
+
+	.two-lines {
+		-webkit-line-clamp: 2;
+	}
+
+	.five-lines {
+		-webkit-line-clamp: 5;
+	}
+}
