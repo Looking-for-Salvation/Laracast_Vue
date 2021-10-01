@@ -77,8 +77,6 @@ export default {
 		const col3 = col3Data;
 		const col4 = col4Data;
 
-		console.log(col1);
-
 		return {
 			col1,
 			col2,
