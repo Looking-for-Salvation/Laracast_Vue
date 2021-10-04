@@ -1,5 +1,5 @@
 <template>
-	<swiper :slidesPerView="8" :spaceBetween="50" :loop="true" :loopFillGroupWithBlank="true" :navigation="true" class="mySwiper">
+	<swiper :slidesPerView="8" :spaceBetween="50" :loop="true" :loopFillGroupWithBlank="true" :navigation="true" class="mySwiper" :grabCursor="true">
 		<swiper-slide>
 			<carousel-item
 				v-for="item in firstSlide"
@@ -149,11 +149,14 @@
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/swiper-bundle.css";
-
 import SwiperCore, { Pagination, Navigation } from "swiper";
-import "swiper/components/pagination/pagination.min.css";
+
+// swiper core styles
+import "swiper/swiper.min.css";
+
+// modules styles
 import "swiper/components/navigation/navigation.min.css";
+import "swiper/components/pagination/pagination.min.css";
 
 SwiperCore.use([Pagination, Navigation]);
 
