@@ -17,7 +17,7 @@
 				<reviews-item v-for="item in fifthRow" :key="item.id" :imgSource="item.img" :id="item.id" @mouse-enter="setData"></reviews-item>
 			</div>
 		</div>
-		<div class="absolute inset-y-0 left-0 flex items-center justify-center w-2/5 max-w-[600px] p-10 text-center bg-white bg-opacity-95">
+		<div class="absolute inset-y-0 left-0 flex items-center justify-center w-2/5 max-w-[600px] p-10 text-center bg-white bg-opacity-97">
 			<div>
 				<img :src="hoveredReview[0].imgSource" :alt="hoveredReview[0].name" class="inline-block w-16 mb-2 rounded-full xl:w-24" width="90" height="90" />
 				<p class="mb-6 text-sm text-black font-IranSans">

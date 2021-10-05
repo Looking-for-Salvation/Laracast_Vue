@@ -8,7 +8,9 @@ module.exports = {
 			maxWidth: {
 				"[600px]": "600px",
 			},
-			padding: {},
+			backgroundOpacity: {
+				"97": "0.97",
+			},
 			fontSize: {
 				"2xs": ".6666rem",
 			},
