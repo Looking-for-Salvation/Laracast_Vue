@@ -1,5 +1,5 @@
 <template>
-	<section class="pt-6 mt-6 carousel pb-9">
+	<section class="p-0 pt-6 mt-6 carousel pb-9">
 		<div class="mx-auto">
 			<header class="pb-4 mx-auto mb-4 text-center text-black font-IranSans">
 				<h3 class="mb-4 text-3xl font-light">لاراکستو بگرد!</h3>

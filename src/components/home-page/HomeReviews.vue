@@ -1,0 +1,22 @@
+<template>
+	<section class="p-0 pt-6 pb-9 reviews">
+		<div>
+			<div class="flex justify-center mb-8 text-center lg:mx-auto lg:w-2/3 xl:w-1/2">
+				<div class="container">
+					<h3 class="mx-auto mb-3 text-3xl font-light text-black font-IranSans">لاراکست توسط هزاران هزار برنامه نویس استفاده می شه!</h3>
+				</div>
+			</div>
+			<reviews-container></reviews-container>
+		</div>
+	</section>
+</template>
+
+<script>
+import ReviewsContainer from "./home-reviews/ReviewsContainer.vue";
+
+export default {
+	components: {
+		ReviewsContainer,
+	},
+};
+</script>
