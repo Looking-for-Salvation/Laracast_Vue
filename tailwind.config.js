@@ -4,7 +4,9 @@ module.exports = {
 	theme: {
 		extend: {
 			maxWidth: {
+				"[500px]": "500px",
 				"[600px]": "600px",
+				"[650px]": "650px",
 			},
 			backgroundOpacity: {
 				"97": "0.97",
