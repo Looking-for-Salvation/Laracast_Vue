@@ -8,7 +8,7 @@
 			</header>
 			<div class="mb-8 text-base text-gray-700 font-IranSans" style="min-height: 120px;">{{ biography }}</div>
 			<footer class="flex items-center justify-between">
-				<p class="text-base text-black font-IranSans text-opacity-80">عرض ارادت</p>
+				<p class="text-base text-black font-IranSans text-opacity-80">عرض ارادت در</p>
 				<div class="flex">
 					<a :href="twitter" aria-label="Twitter">
 						<svg width="32" height="32" viewBox="0 0 36 36" class="text-blue-400 transition-all hover:text-blue-500" role="img">
