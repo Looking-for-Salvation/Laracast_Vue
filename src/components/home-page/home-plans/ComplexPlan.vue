@@ -26,7 +26,7 @@
 				</p>
 				<router-link
 					:to="planRoute"
-					class="w-5/6 max-w-full px-8 py-3 mx-auto tracking-widest transition-all duration-150 font-IranSans rounded-3xl complex-plan-button"
+					class="w-5/6 max-w-full px-8 py-3 mx-auto text-sm tracking-widest transition-all duration-150 font-IranSans rounded-3xl complex-plan-button"
 					>{{ "آموزش " + planDevCount + " برنامه نویس" }}
 				</router-link>
 			</div>
@@ -48,7 +48,7 @@
 						<div class="is-filled-20">
 							<router-link
 								to="/signup?plan=monthly-15"
-								class="relative z-10 inline-block w-32 px-0 py-2 text-sm bg-gray-100 border border-transparent border-solid font-IranSans rounded-3xl"
+								class="relative z-10 inline-block px-0 py-2 text-sm bg-gray-100 border border-transparent border-solid w-36 font-IranSans rounded-3xl"
 								:class="{ 'is-active': filled20 }"
 								@mouseenter="setTwoDev"
 								>2 برنامه نویس</router-link
@@ -57,7 +57,7 @@
 						<div class="is-filled-40">
 							<router-link
 								to="/signup?plan=monthly-15"
-								class="relative z-10 inline-block w-32 px-0 py-2 text-sm bg-gray-100 border border-transparent border-solid font-IranSans rounded-3xl"
+								class="relative z-10 inline-block px-0 py-2 text-sm bg-gray-100 border border-transparent border-solid w-36 font-IranSans rounded-3xl"
 								:class="{ 'is-active': filled40 }"
 								@mouseenter="setFiveDev"
 								>5 برنامه نویس</router-link
@@ -66,7 +66,7 @@
 						<div class="is-filled-60">
 							<router-link
 								to="/signup?plan=monthly-15"
-								class="relative z-10 inline-block w-32 px-0 py-2 text-sm bg-gray-100 border border-transparent border-solid font-IranSans rounded-3xl"
+								class="relative z-10 inline-block px-0 py-2 text-sm bg-gray-100 border border-transparent border-solid w-36 font-IranSans rounded-3xl"
 								:class="{ 'is-active': filled60 }"
 								@mouseenter="setTenDev"
 								>10 برنامه نویس</router-link
@@ -75,7 +75,7 @@
 						<div class="is-filled-80">
 							<router-link
 								to="/signup?plan=monthly-15"
-								class="relative z-10 inline-block w-32 px-0 py-2 text-sm bg-gray-100 border border-transparent border-solid font-IranSans rounded-3xl"
+								class="relative z-10 inline-block px-0 py-2 text-sm bg-gray-100 border border-transparent border-solid w-36 font-IranSans rounded-3xl"
 								:class="{ 'is-active': filled80 }"
 								@mouseenter="setTwentyDev"
 								>25 برنامه نویس</router-link
@@ -84,7 +84,7 @@
 						<div class="is-filled-100">
 							<router-link
 								to="/signup?plan=monthly-15"
-								class="relative z-10 inline-block w-32 px-0 py-2 text-sm bg-gray-100 border border-transparent border-solid font-IranSans rounded-3xl"
+								class="relative z-10 inline-block px-0 py-2 text-sm bg-gray-100 border border-transparent border-solid w-36 font-IranSans rounded-3xl"
 								:class="{ 'is-active': filled100 }"
 								@mouseenter="setFiftyDev"
 								>50 برنامه نویس</router-link
@@ -108,14 +108,14 @@ import fiftyDevImg from "../../../assets/images/home/home-plans/team-50-develope
 
 export default {
 	setup() {
-		const planName = ref("سیستم جفتی");
-		const planPrice = ref("750,000");
-		const planDevCount = ref(2);
-		const planRoute = ref("/signup?plan=business-2");
-		const planImg = ref(twoDevImg);
+		const planName = ref("مدار پیچیده");
+		const planPrice = ref("950,000");
+		const planDevCount = ref(5);
+		const planRoute = ref("/signup?plan=business-5");
+		const planImg = ref(fiveDevImg);
 
-		const filled20 = ref(true);
-		const filled40 = ref(false);
+		const filled20 = ref(false);
+		const filled40 = ref(true);
 		const filled60 = ref(false);
 		const filled80 = ref(false);
 		const filled100 = ref(false);
