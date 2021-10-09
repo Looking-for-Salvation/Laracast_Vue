@@ -60,8 +60,6 @@ export default {
 		const forthRow = row4;
 		const fifthRow = row5;
 
-		console.log(hoveredReview.value);
-
 		function setData(id) {
 			hoveredId.value = id;
 		}

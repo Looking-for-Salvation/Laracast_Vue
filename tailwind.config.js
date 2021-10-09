@@ -1,5 +1,3 @@
-const colors = require("tailwindcss/colors");
-
 module.exports = {
 	purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
 	darkMode: false, // or 'media' or 'class'
@@ -13,12 +11,6 @@ module.exports = {
 			},
 			fontSize: {
 				"2xs": ".6666rem",
-			},
-			colors: {
-				rose: colors.rose,
-				orange: colors.orange,
-				emerald: colors.emerald,
-				blueGray: colors.blueGray,
 			},
 			fontFamily: {
 				Ubuntu: ["Ubuntu", "sans-serif"],

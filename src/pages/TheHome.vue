@@ -5,6 +5,7 @@
 		<home-featured></home-featured>
 		<home-carousel></home-carousel>
 		<home-reviews></home-reviews>
+		<home-plans></home-plans>
 	</div>
 </template>
 
@@ -14,6 +15,7 @@ import HomeStats from "../components/home-page/HomeStats.vue";
 import HomeFeatured from "../components/home-page/HomeFeatured.vue";
 import HomeCarousel from "../components/home-page/HomeCarousel.vue";
 import HomeReviews from "../components/home-page/HomeReviews.vue";
+import HomePlans from "../components/home-page/HomePlans.vue";
 
 export default {
 	components: {
@@ -22,6 +24,7 @@ export default {
 		HomeFeatured,
 		HomeCarousel,
 		HomeReviews,
+		HomePlans,
 	},
 };
 </script>
