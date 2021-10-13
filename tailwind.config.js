@@ -8,6 +8,9 @@ module.exports = {
 				"[600px]": "600px",
 				"[650px]": "650px",
 			},
+			maxHeight: {
+				"90vh": "90vh",
+			},
 			backgroundOpacity: {
 				"97": "0.97",
 			},

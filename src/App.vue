@@ -38,4 +38,41 @@ section {
 	position: relative;
 	width: 345px;
 }
+
+.input,
+.textarea {
+	align-items: center;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background-color: #fff;
+	border: 1px solid #d7d7d7;
+	border-radius: 3px;
+	border-radius: 0;
+	box-shadow: none;
+	color: #22292f;
+	display: inline-flex;
+	font-size: 16px;
+	height: 32px;
+	justify-content: flex-start;
+	line-height: 24px;
+	outline: 0;
+	padding: 0 15px;
+	position: relative;
+	vertical-align: top;
+}
+
+.input.is-minimal,
+.textarea.is-minimal {
+	--tw-border-opacity: 1;
+	background: 0 0;
+	border: none;
+	border-bottom: 1px solid;
+	border-color: rgba(246, 246, 246, var(--tw-border-opacity));
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.control:not(:last-child) {
+	margin-bottom: 1.3em;
+}
 </style>

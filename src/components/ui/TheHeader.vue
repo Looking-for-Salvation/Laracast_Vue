@@ -86,16 +86,32 @@
 					</button>
 					<a
 						href="#"
-						class="px-6 py-1.5 mr-5 text-base text-white transition-all duration-200 border rounded-full cursor-pointer font-IranSans hover:bg-white hover:text-blue-400 border-opacity-50"
+						@click="openLogin"
+						class="px-8 py-1.5 mr-5 text-base text-white transition-all duration-300 border rounded-full cursor-pointer font-IranSans hover:bg-white hover:text-blue-400 border-opacity-50"
 						>ورود
 					</a>
 				</div>
 			</div>
 		</div>
 	</nav>
+	<join-plans
+		:isVisible="isJoinModalVisible"
+		:isJoinVisible="isJoinVisible"
+		:isFAQVisible="isFAQVisible"
+		@plans="plansViaFAQ"
+		@faq="faqViaJoin"
+		@login="loginViaJoin"
+		@close="closeJoin"
+	></join-plans>
+	<login-modal :isVisible="isLoginVisible" @close="closeLogin" @join="joinViaLogin"></login-modal>
 </template>
 
 <script>
+import LoginModal from "./modals/LoginModal.vue";
+import JoinPlans from "./modals/JoinPlans.vue";
+
+import { ref } from "vue";
+
 export default {
 	props: {
 		transparent: {
@@ -108,6 +124,69 @@ export default {
 			required: false,
 			default: false,
 		},
+	},
+	components: {
+		LoginModal,
+		JoinPlans,
+	},
+	setup() {
+		const isLoginVisible = ref(false);
+		const isJoinModalVisible = ref(false);
+		const isJoinVisible = ref(true);
+		const isFAQVisible = ref(false);
+
+		const openLogin = () => {
+			isLoginVisible.value = true;
+		};
+
+		const closeLogin = () => {
+			isLoginVisible.value = false;
+		};
+
+		const openJoin = () => {
+			isJoinModalVisible.value = true;
+		};
+
+		const closeJoin = () => {
+			isJoinModalVisible.value = false;
+		};
+
+		const joinViaLogin = () => {
+			isLoginVisible.value = false;
+			isJoinModalVisible.value = true;
+			isJoinVisible.value = true;
+			isFAQVisible.value = false;
+		};
+
+		const faqViaJoin = () => {
+			isJoinVisible.value = false;
+			isFAQVisible.value = true;
+		};
+
+		const plansViaFAQ = () => {
+			isJoinVisible.value = true;
+			isFAQVisible.value = false;
+		};
+
+		const loginViaJoin = () => {
+			isLoginVisible.value = true;
+			isJoinModalVisible.value = false;
+		};
+
+		return {
+			isLoginVisible,
+			openLogin,
+			closeLogin,
+			isJoinVisible,
+			isJoinModalVisible,
+			openJoin,
+			closeJoin,
+			joinViaLogin,
+			isFAQVisible,
+			faqViaJoin,
+			plansViaFAQ,
+			loginViaJoin,
+		};
 	},
 };
 </script>
