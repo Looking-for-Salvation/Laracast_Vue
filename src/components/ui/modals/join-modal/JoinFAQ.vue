@@ -68,7 +68,7 @@
 					</button>
 				</div>
 				<div class="mx-auto">
-					<a href="#" class="mx-auto ml-4 bg-gray-100 border-gray-100 font-IranSans button">اکانت رایگان انجمن</a>
+					<a href="#" class="mx-auto ml-4 bg-gray-100 border-gray-100 font-IranSans button" @click="signup">اکانت رایگان انجمن</a>
 					<router-link to="/gift-certificates" class="mx-auto bg-gray-100 border-gray-100 font-IranSans button">اکانت هدیه</router-link>
 				</div>
 				<div class="flex mr-auto w-38">
@@ -95,7 +95,7 @@
 
 <script>
 export default {
-	emits: ["plans", "login"],
+	emits: ["plans", "login", "signup"],
 	setup(_, { emit }) {
 		const plansViaFAQ = () => {
 			emit("plans");
@@ -105,9 +105,13 @@ export default {
 			emit("login");
 		};
 
+		const signup = () => {
+			emit("signup");
+		};
 		return {
 			plansViaFAQ,
 			loginViaJoin,
+			signup,
 		};
 	},
 };

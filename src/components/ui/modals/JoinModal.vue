@@ -1,8 +1,8 @@
 <template>
 	<base-modal inlineStyles="width: 1200px; max-width: 90vw;" :isVisible="isVisible" @close="closeModal">
 		<transition name="join-plans" mode="out-in">
-			<join-plans v-if="isPlansVisible" @faq="faqViaPlans" @login="login"></join-plans>
-			<join-f-a-q v-else @plans="plansViaFAQ" @login="login"></join-f-a-q>
+			<join-plans v-if="isPlansVisible" @faq="faqViaPlans" @login="login" @signup="signup"></join-plans>
+			<join-f-a-q v-else @plans="plansViaFAQ" @login="login" @signup="signup"></join-f-a-q>
 		</transition>
 	</base-modal>
 </template>
@@ -53,6 +53,10 @@ export default {
 			emit("login");
 		};
 
+		const signup = () => {
+			emit("signup");
+		};
+
 		const isPersonal = ref(true);
 
 		function setPlanPersonal() {
@@ -71,6 +75,7 @@ export default {
 			faqViaPlans,
 			plansViaFAQ,
 			login,
+			signup,
 		};
 	},
 };

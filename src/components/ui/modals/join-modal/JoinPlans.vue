@@ -47,7 +47,7 @@
 					</button>
 				</div>
 				<div class="mx-auto">
-					<a href="#" class="mx-auto ml-4 bg-gray-100 border-gray-100 font-IranSans button">اکانت رایگان انجمن</a>
+					<a href="#" class="mx-auto ml-4 bg-gray-100 border-gray-100 font-IranSans button" @click="signup">اکانت رایگان انجمن</a>
 					<router-link to="/gift-certificates" class="mx-auto bg-gray-100 border-gray-100 font-IranSans button">اکانت هدیه</router-link>
 				</div>
 				<div class="flex mr-auto w-38">
@@ -83,7 +83,7 @@ export default {
 		PersonalPlans,
 		TeamsPlans,
 	},
-	emits: ["faq", "login"],
+	emits: ["faq", "login", "signup"],
 	setup(_, { emit }) {
 		const faq = () => {
 			emit("faq");
@@ -91,6 +91,10 @@ export default {
 
 		const login = () => {
 			emit("login");
+		};
+
+		const signup = () => {
+			emit("signup");
 		};
 
 		const isPersonal = ref(true);
@@ -109,6 +113,7 @@ export default {
 			setPlanTeams,
 			faq,
 			login,
+			signup,
 		};
 	},
 };

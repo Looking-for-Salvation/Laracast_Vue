@@ -58,7 +58,7 @@
 							</svg>
 						</div>
 						<p class="max-w-full mx-0 mb-8 leading-loose text-white font-IranSans">
-							9 تا از 10 برنامه نویس لاراکست را به سایت های مشابه ترجیه میدهد. خودت بیا و ببین و مهارت های برنامه نویسی خودتو ارتقا بده.
+							9 تا از 10 برنامه نویس لاراکست را به سایت های مشابه ترجیه میدهند. خودت بیا و ببین و مهارت های برنامه نویسی خودتو ارتقا بده.
 						</p>
 						<div class="flex items-center justify-between mx-0 mb-8 w-28">
 							<a href="http://youtube.com" target="_blank">

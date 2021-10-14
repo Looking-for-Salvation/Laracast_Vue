@@ -101,9 +101,11 @@
 		@plans="plansViaFAQ"
 		@faq="faqViaJoin"
 		@login="loginViaJoin"
+		@signup="signUpViaJoin"
 		@close="closeJoin"
 	></join-modal>
 	<login-modal :isVisible="isLoginVisible" @close="closeLogin" @join="joinViaLogin" @forgot="forgotViaLogin"></login-modal>
+	<sign-up-modal :isVisible="isSignUpVisible" @close="closeSignUp" @login="loginViaSignUp"></sign-up-modal>
 	<forgot-password-modal :isVisible="isForgotVisible" @close="closeForgot" @login="loginViaForgot"></forgot-password-modal>
 </template>
 
@@ -113,6 +115,7 @@ import { ref } from "vue";
 import LoginModal from "./modals/LoginModal.vue";
 import JoinModal from "./modals/JoinModal.vue";
 import ForgotPasswordModal from "./modals/ForgotPasswordModal.vue";
+import SignUpModal from "./modals/SignUpModal.vue";
 
 export default {
 	props: {
@@ -130,6 +133,7 @@ export default {
 	components: {
 		LoginModal,
 		JoinModal,
+		SignUpModal,
 		ForgotPasswordModal,
 	},
 	setup() {
@@ -137,6 +141,7 @@ export default {
 		const isJoinVisible = ref(false);
 		const isPlansVisible = ref(true);
 		const isFAQVisible = ref(false);
+		const isSignUpVisible = ref(false);
 		const isForgotVisible = ref(false);
 
 		const openLogin = () => {
@@ -168,13 +173,27 @@ export default {
 		};
 
 		const plansViaFAQ = () => {
-			isPlansVisible.value = true;
 			isFAQVisible.value = false;
+			isPlansVisible.value = true;
 		};
 
 		const loginViaJoin = () => {
-			isLoginVisible.value = true;
 			isJoinVisible.value = false;
+			isLoginVisible.value = true;
+		};
+
+		const closeSignUp = () => {
+			isSignUpVisible.value = false;
+		};
+
+		const signUpViaJoin = () => {
+			isJoinVisible.value = false;
+			isSignUpVisible.value = true;
+		};
+
+		const loginViaSignUp = () => {
+			isSignUpVisible.value = false;
+			isLoginVisible.value = true;
 		};
 
 		const forgotViaLogin = () => {
@@ -204,6 +223,10 @@ export default {
 			faqViaJoin,
 			plansViaFAQ,
 			loginViaJoin,
+			isSignUpVisible,
+			signUpViaJoin,
+			loginViaSignUp,
+			closeSignUp,
 			isForgotVisible,
 			closeForgot,
 			loginViaForgot,
