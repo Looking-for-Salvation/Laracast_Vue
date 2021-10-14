@@ -11,6 +11,9 @@ module.exports = {
 			maxHeight: {
 				"90vh": "90vh",
 			},
+			minHeight: {
+				"[100px]": "100px",
+			},
 			backgroundOpacity: {
 				"97": "0.97",
 			},

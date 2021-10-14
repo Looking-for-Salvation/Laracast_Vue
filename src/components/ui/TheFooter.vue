@@ -139,7 +139,9 @@
 								<router-link to="/blog" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">بلاگ</router-link>
 							</li>
 							<li>
-								<router-link to="/support" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">پشتیبانی</router-link>
+								<a @click="openSupport" class="text-white text-opacity-50 transition-all cursor-pointer font-IranSans hover:text-opacity-100"
+									>پشتیبانی</a
+								>
 							</li>
 						</ul>
 					</div>
@@ -187,7 +189,37 @@
 			</footer>
 		</section>
 	</div>
+	<support-modal :isVisible="isSupportVisible" @close="closeSupport"></support-modal>
 </template>
+
+<script>
+import { ref, defineAsyncComponent } from "vue";
+
+const SupportModal = defineAsyncComponent(() => import("./modals/SupportModal.vue"));
+
+export default {
+	components: {
+		SupportModal,
+	},
+	setup() {
+		const isSupportVisible = ref(false);
+
+		const openSupport = () => {
+			isSupportVisible.value = true;
+		};
+
+		const closeSupport = () => {
+			isSupportVisible.value = false;
+		};
+
+		return {
+			isSupportVisible,
+			openSupport,
+			closeSupport,
+		};
+	},
+};
+</script>
 
 <style scoped>
 .footer-wrap {

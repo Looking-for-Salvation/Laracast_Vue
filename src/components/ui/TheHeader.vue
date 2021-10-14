@@ -107,10 +107,10 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 import LoginModal from "./modals/LoginModal.vue";
 import JoinModal from "./modals/JoinModal.vue";
-
-import { ref } from "vue";
 
 export default {
 	props: {

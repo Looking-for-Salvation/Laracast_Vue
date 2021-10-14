@@ -39,6 +39,22 @@ section {
 	width: 345px;
 }
 
+.input {
+	height: 42px;
+	max-width: 100%;
+	width: 100%;
+}
+
+.textarea {
+	display: block;
+	line-height: 1.2;
+	max-height: 600px;
+	max-width: 100%;
+	min-width: 100%;
+	padding: 10px;
+	resize: vertical;
+}
+
 .input,
 .textarea {
 	align-items: center;

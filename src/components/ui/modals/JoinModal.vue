@@ -2,10 +2,8 @@
 	<base-modal inlineStyles="width: 1200px; max-width: 90vw;" :isVisible="isVisible" @close="closeModal">
 		<transition name="join-plans" mode="out-in">
 			<join-plans v-if="isPlansVisible" @faq="faqViaPlans" @login="login"></join-plans>
-			<!-- <transition name="join-faq" mode="out-in"> -->
 			<join-f-a-q v-else @plans="plansViaFAQ" @login="login"></join-f-a-q>
 		</transition>
-		<!-- </transition> -->
 	</base-modal>
 </template>
 
