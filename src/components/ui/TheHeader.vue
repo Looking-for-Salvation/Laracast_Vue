@@ -103,7 +103,8 @@
 		@login="loginViaJoin"
 		@close="closeJoin"
 	></join-modal>
-	<login-modal :isVisible="isLoginVisible" @close="closeLogin" @join="joinViaLogin"></login-modal>
+	<login-modal :isVisible="isLoginVisible" @close="closeLogin" @join="joinViaLogin" @forgot="forgotViaLogin"></login-modal>
+	<forgot-password-modal :isVisible="isForgotVisible" @close="closeForgot" @login="loginViaForgot"></forgot-password-modal>
 </template>
 
 <script>
@@ -111,6 +112,7 @@ import { ref } from "vue";
 
 import LoginModal from "./modals/LoginModal.vue";
 import JoinModal from "./modals/JoinModal.vue";
+import ForgotPasswordModal from "./modals/ForgotPasswordModal.vue";
 
 export default {
 	props: {
@@ -128,12 +130,14 @@ export default {
 	components: {
 		LoginModal,
 		JoinModal,
+		ForgotPasswordModal,
 	},
 	setup() {
 		const isLoginVisible = ref(false);
 		const isJoinVisible = ref(false);
 		const isPlansVisible = ref(true);
 		const isFAQVisible = ref(false);
+		const isForgotVisible = ref(false);
 
 		const openLogin = () => {
 			isLoginVisible.value = true;
@@ -173,6 +177,20 @@ export default {
 			isJoinVisible.value = false;
 		};
 
+		const forgotViaLogin = () => {
+			isLoginVisible.value = false;
+			isForgotVisible.value = true;
+		};
+
+		const loginViaForgot = () => {
+			isForgotVisible.value = false;
+			isLoginVisible.value = true;
+		};
+
+		const closeForgot = () => {
+			isForgotVisible.value = false;
+		};
+
 		return {
 			isLoginVisible,
 			openLogin,
@@ -186,6 +204,10 @@ export default {
 			faqViaJoin,
 			plansViaFAQ,
 			loginViaJoin,
+			isForgotVisible,
+			closeForgot,
+			loginViaForgot,
+			forgotViaLogin,
 		};
 	},
 };

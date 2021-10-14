@@ -96,12 +96,12 @@
 					<div class="w-1/6">
 						<h5 class="mb-6 text-white font-IranSans">آموزش</h5>
 						<ul class="w-3/4 mx-0 mb-0 leading-relaxed">
-							<li>
+							<!-- <li>
 								<router-link to="/signup" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">ثبت نام</router-link>
 							</li>
 							<li>
 								<router-link to="/signin" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">ورود</router-link>
-							</li>
+							</li> -->
 							<li>
 								<router-link to="/series" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">دوره ها</router-link>
 							</li>
