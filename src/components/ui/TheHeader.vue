@@ -94,21 +94,21 @@
 			</div>
 		</div>
 	</nav>
-	<join-plans
-		:isVisible="isJoinModalVisible"
-		:isJoinVisible="isJoinVisible"
+	<join-modal
+		:isVisible="isJoinVisible"
+		:isPlansVisible="isPlansVisible"
 		:isFAQVisible="isFAQVisible"
 		@plans="plansViaFAQ"
 		@faq="faqViaJoin"
 		@login="loginViaJoin"
 		@close="closeJoin"
-	></join-plans>
+	></join-modal>
 	<login-modal :isVisible="isLoginVisible" @close="closeLogin" @join="joinViaLogin"></login-modal>
 </template>
 
 <script>
 import LoginModal from "./modals/LoginModal.vue";
-import JoinPlans from "./modals/JoinPlans.vue";
+import JoinModal from "./modals/JoinModal.vue";
 
 import { ref } from "vue";
 
@@ -127,12 +127,12 @@ export default {
 	},
 	components: {
 		LoginModal,
-		JoinPlans,
+		JoinModal,
 	},
 	setup() {
 		const isLoginVisible = ref(false);
-		const isJoinModalVisible = ref(false);
-		const isJoinVisible = ref(true);
+		const isJoinVisible = ref(false);
+		const isPlansVisible = ref(true);
 		const isFAQVisible = ref(false);
 
 		const openLogin = () => {
@@ -144,41 +144,41 @@ export default {
 		};
 
 		const openJoin = () => {
-			isJoinModalVisible.value = true;
+			isJoinVisible.value = true;
 		};
 
 		const closeJoin = () => {
-			isJoinModalVisible.value = false;
+			isJoinVisible.value = false;
 		};
 
 		const joinViaLogin = () => {
 			isLoginVisible.value = false;
-			isJoinModalVisible.value = true;
 			isJoinVisible.value = true;
+			isPlansVisible.value = true;
 			isFAQVisible.value = false;
 		};
 
 		const faqViaJoin = () => {
-			isJoinVisible.value = false;
+			isPlansVisible.value = false;
 			isFAQVisible.value = true;
 		};
 
 		const plansViaFAQ = () => {
-			isJoinVisible.value = true;
+			isPlansVisible.value = true;
 			isFAQVisible.value = false;
 		};
 
 		const loginViaJoin = () => {
 			isLoginVisible.value = true;
-			isJoinModalVisible.value = false;
+			isJoinVisible.value = false;
 		};
 
 		return {
 			isLoginVisible,
 			openLogin,
 			closeLogin,
+			isPlansVisible,
 			isJoinVisible,
-			isJoinModalVisible,
 			openJoin,
 			closeJoin,
 			joinViaLogin,

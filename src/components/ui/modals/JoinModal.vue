@@ -1,18 +1,23 @@
 <template>
-	<keep-alive>
-		<component v-bind="dynamicProps" :is="currentTab"></component>
-	</keep-alive>
+	<base-modal inlineStyles="width: 1200px; max-width: 90vw;" :isVisible="isVisible" @close="closeModal">
+		<transition name="join-plans" mode="out-in">
+			<join-plans v-if="isPlansVisible" @faq="faqViaPlans" @login="login"></join-plans>
+			<!-- <transition name="join-faq" mode="out-in"> -->
+			<join-f-a-q v-else @plans="plansViaFAQ" @login="login"></join-f-a-q>
+		</transition>
+		<!-- </transition> -->
+	</base-modal>
 </template>
 
 <script>
-import { computed } from "vue";
+import { ref } from "vue";
 
-import JoinPlans from "./JoinPlans.vue";
-import JoinFAQ from "./JoinFAQ.vue";
+import JoinPlans from "./join-modal/JoinPlans.vue";
+import JoinFAQ from "./join-modal/JoinFAQ.vue";
 
 export default {
 	props: {
-		isJoinVisible: {
+		isVisible: {
 			type: Boolean,
 			required: true,
 			default: false,
@@ -22,26 +27,65 @@ export default {
 			required: true,
 			default: false,
 		},
+		isPlansVisible: {
+			type: Boolean,
+			required: true,
+			default: true,
+		},
 	},
 	components: {
 		JoinPlans,
 		JoinFAQ,
 	},
-	setup(props) {
-		const currentTab = computed(() => {
-			if (props.isJoinVisible) return "join-plans";
-			else return "join-f-a-q";
-		});
+	emits: ["close", "faq", "plans", "login"],
+	setup(_, { emit }) {
+		const closeModal = () => {
+			emit("close");
+		};
 
-		const dynamicProps = computed(() => {
-			if (currentTab.value === "join-plans") return { isVisible: props.isJoinVisible };
-			else return { isVisible: props.isFAQVisible };
-		});
+		const faqViaPlans = () => {
+			emit("faq");
+		};
+
+		const plansViaFAQ = () => {
+			emit("plans");
+		};
+
+		const login = () => {
+			emit("login");
+		};
+
+		const isPersonal = ref(true);
+
+		function setPlanPersonal() {
+			isPersonal.value = true;
+		}
+
+		function setPlanTeams() {
+			isPersonal.value = false;
+		}
 
 		return {
-			currentTab,
-			dynamicProps,
+			closeModal,
+			isPersonal,
+			setPlanPersonal,
+			setPlanTeams,
+			faqViaPlans,
+			plansViaFAQ,
+			login,
 		};
 	},
 };
 </script>
+
+<style scoped>
+.join-plans-enter-active,
+.join-plans-leave-active {
+	transition: all 0.2s ease-in-out;
+}
+
+.join-plans-enter-from,
+.join-plans-leave-to {
+	opacity: 0;
+}
+</style>
