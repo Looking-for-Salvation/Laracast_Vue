@@ -32,9 +32,3 @@ export default {
 	},
 };
 </script>
-
-<style scoped>
-.home {
-	background-color: #f7f8fc;
-}
-</style>

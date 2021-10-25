@@ -1,5 +1,9 @@
 <template>
-	<router-view></router-view>
+	<div id="root" class="page xl:flex">
+		<div class="w-full xl:flex-1">
+			<router-view></router-view>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -11,6 +15,10 @@ export default {
 <style>
 :root {
 	font-size: 15px;
+}
+
+.page {
+	background-color: #f7f8fc;
 }
 
 .section,
