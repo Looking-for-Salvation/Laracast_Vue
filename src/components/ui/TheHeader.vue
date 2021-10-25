@@ -78,7 +78,7 @@
 					>لارابیت</router-link
 				>
 				<router-link to="/discuss" class="block text-white opacity-50 hover:opacity-100 nav-link xl:text-center md:px-3 xl:px-7">انجمن</router-link>
-				<router-link to="podcast" class="block text-white opacity-50 hover:opacity-100 nav-link xl:text-center md:px-3 xl:px-7">پادکست</router-link>
+				<router-link to="/podcast" class="block text-white opacity-50 hover:opacity-100 nav-link xl:text-center md:px-3 xl:px-7">پادکست</router-link>
 			</div>
 			<div class="relative block w-1/4">
 				<div class="flex items-center justify-end ">
