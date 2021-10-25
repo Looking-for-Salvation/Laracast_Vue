@@ -287,7 +287,7 @@
 							</p>
 							<div class="mt-14">
 								<router-link
-									to="/"
+									to="/browse"
 									class="object-right px-8 py-2 ml-6 text-black transition-all duration-300 bg-white border rounded-full rtl font-IranSans hover:text-blue-400"
 									>مشاهده دوره ها
 								</router-link>
@@ -304,16 +304,6 @@
 		</div>
 	</div>
 </template>
-
-<script>
-import TheHeader from "../ui/TheHeader.vue";
-
-export default {
-	components: {
-		TheHeader,
-	},
-};
-</script>
 
 <style scoped>
 .home-banner {

@@ -1,5 +1,5 @@
 <template>
-	<nav class="h-16 px-12 pb-4 header-nav pt-7" :class="{ 'bg-transparent': transparent, 'header-background': !transparent }">
+	<nav class="h-16 px-12 header-nav" :class="{ 'bg-transparent': transparent, 'header-background': !transparent, 'pt-7 pb-4': home, 'py-4 lg:py-3': !home }">
 		<div class="relative flex items-center justify-between h-full" :class="{ 'max-w-7xl mx-auto': home }">
 			<div id="header-logo" class="flex w-1/4 mr-0">
 				<router-link to="/" class="inline-block leading-none cursor-pointer">
@@ -67,7 +67,30 @@
 					</svg>
 				</router-link>
 			</div>
-			<div class="nav-links" v-if="!home">Hello</div>
+			<div
+				class="relative hidden ml-auto nav-links xl:flex-grow md:flex md:justify-end lg:justify-around xl:w-1/2 font-IranSans xl:ml-0"
+				style="max-width: 500px;"
+				v-if="!home"
+			>
+				<router-link to="/browse" class="block text-white text-opacity-50 nav-link xl:text-center md:px-3 xl:px-7 hover:text-white hover:text-opacity-100"
+					>موضوعات</router-link
+				>
+				<router-link to="/series" class="block text-white text-opacity-50 nav-link xl:text-center md:px-3 xl:px-7 hover:text-white hover:text-opacity-100"
+					>دوره ها</router-link
+				>
+				<router-link
+					to="/bits"
+					class="block text-white text-opacity-50 nav-link xl:text-center md:px-3 xl:px-7 hover:text-white hover:text-opacity-100"
+					id="larabits-link"
+					>لارابیت</router-link
+				>
+				<router-link to="/discuss" class="block text-white text-opacity-50 nav-link xl:text-center md:px-3 xl:px-7 hover:text-white hover:text-opacity-100"
+					>انجمن</router-link
+				>
+				<router-link to="podcast" class="block text-white text-opacity-50 nav-link xl:text-center md:px-3 xl:px-7 hover:text-white hover:text-opacity-100"
+					>پادکست</router-link
+				>
+			</div>
 			<div class="relative block w-1/4">
 				<div class="flex items-center justify-end ">
 					<button
@@ -239,5 +262,59 @@ export default {
 <style scoped>
 .header-background {
 	background-image: linear-gradient(to right, rgb(91, 121, 162) 0%, rgb(46, 68, 105) 100%);
+}
+
+.router-active {
+	--tw-text-opacity: 1;
+}
+
+.nav-link {
+	position: relative;
+}
+
+@media (min-width: 1200px) {
+	.nav-link::after {
+		border-radius: 0.9rem;
+		bottom: -19px;
+		content: "";
+		height: 4px;
+		left: 20%;
+		opacity: 0;
+		pointer-events: none;
+		position: absolute;
+		transition: opacity 0.3s;
+		width: 60%;
+	}
+
+	.nav-link:not(#larabits-link)::after {
+		background: #fff;
+	}
+
+	#larabits-link.nav-link.router-active:after,
+	#larabits-link.nav-link:hover:after {
+		background: linear-gradient(
+			270deg,
+			#21c8f6 64%,
+			transparent 0,
+			transparent 68%,
+			#21c8f6 0,
+			#21c8f6 76%,
+			transparent 0,
+			transparent 80%,
+			#21c8f6 0,
+			#21c8f6 88%,
+			transparent 0,
+			transparent 92%,
+			#21c8f6 0,
+			#21c8f6
+		);
+		border-radius: 0;
+		box-shadow: 0 0 6px 0 rgba(35, 201, 247, 0.43);
+	}
+
+	.nav-link.router-active::after,
+	.nav-link:hover::after {
+		opacity: 1;
+	}
 }
 </style>
