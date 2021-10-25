@@ -8,7 +8,7 @@
 		<home-plans></home-plans>
 		<home-team></home-team>
 	</div>
-	<the-footer></the-footer>
+	<!-- <the-footer></the-footer> -->
 </template>
 
 <script>

@@ -97,32 +97,28 @@
 						<h5 class="mb-6 text-white font-IranSans">آموزش</h5>
 						<ul class="w-3/4 mx-0 mb-0 leading-relaxed">
 							<!-- <li>
-								<router-link to="/signup" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">ثبت نام</router-link>
+								<router-link to="/signup" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">ثبت نام</router-link>
 							</li>
 							<li>
-								<router-link to="/signin" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">ورود</router-link>
+								<router-link to="/signin" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">ورود</router-link>
 							</li> -->
 							<li>
-								<router-link to="/series" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">دوره ها</router-link>
+								<router-link to="/series" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">دوره ها</router-link>
 							</li>
 							<li>
-								<router-link to="/bits" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">لارابیت ها</router-link>
+								<router-link to="/bits" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">لارابیت ها</router-link>
 							</li>
 							<li>
-								<router-link to="/browse" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">تاپیک ها</router-link>
+								<router-link to="/browse" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">تاپیک ها</router-link>
 							</li>
 							<li>
-								<router-link to="/week-in-review" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100"
-									>اخبار جدید</router-link
-								>
+								<router-link to="/week-in-review" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">اخبار جدید</router-link>
 							</li>
 							<li>
-								<router-link to="/search" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">جستجو</router-link>
+								<router-link to="/search" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">جستجو</router-link>
 							</li>
 							<li>
-								<router-link to="/commercial" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100"
-									>تبلیغات</router-link
-								>
+								<router-link to="/commercial" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">تبلیغات</router-link>
 							</li>
 						</ul>
 					</div>
@@ -130,18 +126,16 @@
 						<h5 class="mb-6 text-white font-IranSans">گفتگو</h5>
 						<ul>
 							<li>
-								<router-link to="/discuss" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">انجمن</router-link>
+								<router-link to="/discuss" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">انجمن</router-link>
 							</li>
 							<li>
-								<router-link to="/podcast" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">پادکست</router-link>
+								<router-link to="/podcast" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">پادکست</router-link>
 							</li>
 							<li>
-								<router-link to="/blog" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">بلاگ</router-link>
+								<router-link to="/blog" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">بلاگ</router-link>
 							</li>
 							<li>
-								<a @click="openSupport" class="text-white text-opacity-50 transition-all cursor-pointer font-IranSans hover:text-opacity-100"
-									>پشتیبانی</a
-								>
+								<a @click="openSupport" class="text-white transition-all opacity-50 cursor-pointer font-IranSans hover:opacity-100">پشتیبانی</a>
 							</li>
 						</ul>
 					</div>
@@ -149,40 +143,32 @@
 						<h5 class="mb-6 text-white font-IranSans">دیگر</h5>
 						<ul>
 							<li>
-								<router-link to="/gift-certificate" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100"
-									>کارت هدیه</router-link
-								>
+								<router-link to="/gift-certificate" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">کارت هدیه</router-link>
 							</li>
 							<li>
-								<router-link to="/teams" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">تیم ها</router-link>
+								<router-link to="/teams" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">تیم ها</router-link>
 							</li>
 							<li>
-								<router-link to="/faq" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100"
-									>سوال های پرتکرار</router-link
-								>
+								<router-link to="/faq" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">سوال های پرتکرار</router-link>
 							</li>
 							<li>
-								<router-link to="/assets" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">فایل ها</router-link>
+								<router-link to="/assets" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">فایل ها</router-link>
 							</li>
 							<li>
-								<router-link to="/larajob" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100"
-									>موقعیت شغلی</router-link
-								>
+								<router-link to="/larajob" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">موقعیت شغلی</router-link>
 							</li>
 							<li>
-								<router-link to="/privacy" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100"
-									>حریم خصوصی</router-link
-								>
+								<router-link to="/privacy" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">حریم خصوصی</router-link>
 							</li>
 							<li>
-								<router-link to="/terms" class="text-white text-opacity-50 transition-all font-IranSans hover:text-opacity-100">شرایط</router-link>
+								<router-link to="/terms" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">شرایط</router-link>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div class="py-4 mt-8 border-t border-solid border-opacity-10">
 					<div class="text-sm text-center font-IranSans">
-						<p class="mb-2 tracking-normal text-white text-opacity-50">© تمامی شرایط محفوظ و متعلق به لاراکست می باشد.</p>
+						<p class="mb-2 tracking-normal text-white opacity-50">© تمامی شرایط محفوظ و متعلق به لاراکست می باشد.</p>
 						<p class="tracking-normal"></p>
 					</div>
 				</div>

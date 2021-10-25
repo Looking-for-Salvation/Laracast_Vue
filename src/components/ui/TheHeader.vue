@@ -72,24 +72,13 @@
 				style="max-width: 500px;"
 				v-if="!home"
 			>
-				<router-link to="/browse" class="block text-white text-opacity-50 nav-link xl:text-center md:px-3 xl:px-7 hover:text-white hover:text-opacity-100"
-					>موضوعات</router-link
-				>
-				<router-link to="/series" class="block text-white text-opacity-50 nav-link xl:text-center md:px-3 xl:px-7 hover:text-white hover:text-opacity-100"
-					>دوره ها</router-link
-				>
-				<router-link
-					to="/bits"
-					class="block text-white text-opacity-50 nav-link xl:text-center md:px-3 xl:px-7 hover:text-white hover:text-opacity-100"
-					id="larabits-link"
+				<router-link to="/browse" class="block text-white opacity-50 hover:opacity-100 nav-link xl:text-center md:px-3 xl:px-7">موضوعات</router-link>
+				<router-link to="/series" class="block text-white opacity-50 hover:opacity-100 nav-link xl:text-center md:px-3 xl:px-7">دوره ها</router-link>
+				<router-link to="/bits" class="block text-white opacity-50 hover:opacity-100 nav-link xl:text-center md:px-3 xl:px-7" id="larabits-link"
 					>لارابیت</router-link
 				>
-				<router-link to="/discuss" class="block text-white text-opacity-50 nav-link xl:text-center md:px-3 xl:px-7 hover:text-white hover:text-opacity-100"
-					>انجمن</router-link
-				>
-				<router-link to="podcast" class="block text-white text-opacity-50 nav-link xl:text-center md:px-3 xl:px-7 hover:text-white hover:text-opacity-100"
-					>پادکست</router-link
-				>
+				<router-link to="/discuss" class="block text-white opacity-50 hover:opacity-100 nav-link xl:text-center md:px-3 xl:px-7">انجمن</router-link>
+				<router-link to="podcast" class="block text-white opacity-50 hover:opacity-100 nav-link xl:text-center md:px-3 xl:px-7">پادکست</router-link>
 			</div>
 			<div class="relative block w-1/4">
 				<div class="flex items-center justify-end ">
@@ -265,7 +254,7 @@ export default {
 }
 
 .router-active {
-	--tw-text-opacity: 1;
+	opacity: 1;
 }
 
 .nav-link {
