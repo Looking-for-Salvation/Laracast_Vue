@@ -4,7 +4,7 @@
 			<header class="flex flex-col items-center mb-4" style="margin-top: -40px;">
 				<img :src="img" :alt="name" height="130" width="130" class="mb-4 transform rounded-full" />
 				<h4 class="mb-px text-xl text-black font-IranSans">{{ name }}</h4>
-				<h5 class="text-black text-opacity-40 font-IranSans">{{ role }}</h5>
+				<h5 class="text-black text-opacity-30 font-IranSans">{{ role }}</h5>
 			</header>
 			<div class="mb-8 text-base text-gray-700 font-IranSans" style="min-height: 120px;">{{ biography }}</div>
 			<footer class="flex items-center justify-between">

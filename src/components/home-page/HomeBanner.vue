@@ -4,7 +4,7 @@
 			<div class="inner-banner">
 				<the-header transparent home></the-header>
 				<div class="flex items-center flex-1 py-10">
-					<div class="container flex items-center justify-center w-full mx-auto mt-20" style="max-width: 1400px">
+					<div class="container flex items-center justify-center w-full mt-20" style="max-width: 1400px">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							class="mx-14"

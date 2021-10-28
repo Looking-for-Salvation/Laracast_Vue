@@ -17,6 +17,13 @@ module.exports = {
 			screens: {
 				ccs: "1300px",
 			},
+			width: {
+				"42": "11rem",
+				"[150px]": "150px",
+			},
+			height: {
+				"[122px]": "122px",
+			},
 			maxWidth: {
 				"[500px]": "500px",
 				"[600px]": "600px",
@@ -32,6 +39,16 @@ module.exports = {
 			},
 			minHeight: {
 				"[100px]": "100px",
+			},
+			padding: {
+				"[20px]": "20px",
+				"[25px]": "25px",
+				"[35px]": "35px",
+			},
+			margin: {
+				"[-20px]": "-20px",
+				"[20px]": "20px",
+				"[35px]": "35px",
 			},
 			backgroundOpacity: {
 				"97": "0.97",

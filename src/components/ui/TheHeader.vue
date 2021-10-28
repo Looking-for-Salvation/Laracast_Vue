@@ -1,7 +1,10 @@
 <template>
-	<nav class="h-16 px-12 header-nav" :class="{ 'bg-transparent': transparent, 'header-background': !transparent, 'pt-7 pb-4': home, 'py-4 lg:py-3': !home }">
+	<nav
+		class="h-16 px-12 py-4 header-nav"
+		:class="{ 'bg-transparent': transparent, 'header-background': !transparent, 'md:pt-7 md:pb-4': home, 'lg:py-3': !home }"
+	>
 		<div class="relative flex items-center justify-between h-full" :class="{ 'max-w-7xl mx-auto': home }">
-			<div id="header-logo" class="flex w-1/4 mr-0">
+			<div id="header-logo" class="flex ml-4 xl:w-1/4 xl:ml-0">
 				<router-link to="/" class="inline-block leading-none cursor-pointer">
 					<svg id="logo-full-white" viewBox="11.499815940856934 200.39300537109375 617.3845825195312 74.19113159179688" width="145" height="21">
 						<defs>
@@ -80,7 +83,30 @@
 				<router-link to="/discuss" class="block text-white opacity-50 hover:opacity-100 nav-link xl:text-center md:px-3 xl:px-7">انجمن</router-link>
 				<router-link to="/podcast" class="block text-white opacity-50 hover:opacity-100 nav-link xl:text-center md:px-3 xl:px-7">پادکست</router-link>
 			</div>
-			<div class="relative block w-1/4">
+			<div class="flex items-center md:hidden">
+				<button class="ml-4 leading-none" title="Press / or s anywhere to instantly activate me.">
+					<svg width="20" viewBox="0 0 15 15" class="text-white">
+						<g fill="none" fill-rule="evenodd">
+							<path d="M-2-2h20v20H-2z"></path>
+							<path
+								class="fill-current"
+								d="M10.443 9.232h-.638l-.226-.218A5.223 5.223 0 0 0 10.846 5.6 5.247 5.247 0 1 0 5.6 10.846c1.3 0 2.494-.476 3.414-1.267l.218.226v.638l4.036 4.028 1.203-1.203-4.028-4.036zm-4.843 0A3.627 3.627 0 0 1 1.967 5.6 3.627 3.627 0 0 1 5.6 1.967 3.627 3.627 0 0 1 9.232 5.6 3.627 3.627 0 0 1 5.6 9.232z"
+							></path>
+						</g>
+					</svg>
+				</button>
+				<div>
+					<a class="block leading-none">
+						<div class="hamburger-nav">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="relative hidden md:block xl:w-1/4">
 				<div class="flex items-center justify-end ">
 					<button
 						title="Press / anywhere to activate me."
@@ -305,5 +331,59 @@ export default {
 	.nav-link:hover::after {
 		opacity: 1;
 	}
+}
+
+.hamburger-nav {
+	cursor: pointer;
+	height: 19px;
+	position: relative;
+	transform: rotate(180deg);
+	transition: 0.5s ease-in-out;
+	width: 22px;
+}
+
+.hamburger-nav span {
+	background: #fff;
+	border-radius: 9px;
+	display: block;
+	height: 3px;
+	margin-left: auto;
+	opacity: 1;
+	position: absolute;
+	right: 0;
+	transform: rotate(0deg);
+	transition: 0.25s ease-in-out;
+	width: 100%;
+}
+
+.hamburger-nav span:first-child {
+	top: 0;
+}
+
+.hamburger-nav span:nth-child(2),
+.hamburger-nav span:nth-child(3) {
+	top: 7px;
+	width: 80%;
+}
+
+.hamburger-nav span:nth-child(4) {
+	top: 14px;
+	width: 60%;
+}
+
+.hamburger-nav.open span {
+	width: 100%;
+}
+.hamburger-nav.open span:first-child,
+.hamburger-nav.open span:nth-child(4) {
+	right: 50%;
+	top: 7px;
+	width: 0;
+}
+.hamburger-nav.open span:nth-child(2) {
+	transform: rotate(45deg);
+}
+.hamburger-nav.open span:nth-child(3) {
+	transform: rotate(-45deg);
 }
 </style>

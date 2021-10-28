@@ -1,5 +1,5 @@
 <template>
-	<section class="p-0 pt-6 pb-9 reviews">
+	<section class="hidden md:block p-0 md:pt-[20px] pb-[35px] reviews">
 		<div>
 			<div class="flex justify-center mb-8 text-center lg:mx-auto lg:w-2/3 xl:w-1/2">
 				<div class="container">

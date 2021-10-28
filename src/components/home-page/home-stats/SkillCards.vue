@@ -1,5 +1,5 @@
 <template>
-	<div class="flex justify-center mx-8">
+	<div class="lg:flex xl:justify-around xl:mx-8">
 		<skill-card
 			v-for="skill in skills"
 			:key="skill.type"

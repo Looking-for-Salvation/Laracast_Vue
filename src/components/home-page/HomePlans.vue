@@ -1,26 +1,26 @@
 <template>
-	<section class="home-plans md:pt-8 md:pb-10">
-		<div class="mx-auto">
-			<div class="mx-auto" style="max-width: 1200px">
-				<div class="mb-8 text-center lg:mx-auto lg:w-3/4">
-					<h3 class="mb-4 text-3xl font-light text-black font-IranSans">طرحی که به کارت میاد رو انتخاب کن</h3>
-					<p class="text-lg font-light text-black font-IranSans opacity-70 md:mx-auto md:w-4/5">
+	<section class="home-plans md:pt-[25px] md:pb-[35px]">
+		<div class="container">
+			<div>
+				<div class="mb-8 text-center mobile:flex-1 lg:mx-auto lg:w-3/4">
+					<h3 class="mb-2 text-3xl font-light text-black font-IranSans">طرحی که به کارت میاد رو انتخاب کن</h3>
+					<p class="font-light text-black text-2lg font-IranSans opacity-70 md:mx-auto md:w-4/5">
 						لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و
 						سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه
 						درصد گذشته حال
 					</p>
 				</div>
 				<div>
-					<div class="mx-auto max-w-screen-2xl">
+					<div class="mx-auto" style="max-width: 1500px;">
 						<div class="flex">
-							<div class="mb-8 text-center md:w-3/4 md:mx-auto">
+							<div class="mb-8 text-center md:w-3/4 md:mx-auto mobile:flex-1">
 								<div class="mx-auto plans-toggle-wrap">
 									<div class="flex h-full plans-toggle">
 										<div class="plans-toggle-personal" :class="{ 'plans-toggle-is-active': isPersonal }">
-											<button @click="setPlanPersonal" class="block w-full h-full text-base font-IranSans">شخصی</button>
+											<button @click="setPlanPersonal" class="block w-full h-full text-xs font-bold font-IranSans">شخصی</button>
 										</div>
 										<div class="plans-toggle-teams" :class="{ 'plans-toggle-is-active': !isPersonal }">
-											<button @click="setPlanTeams" class="block w-full h-full text-base font-IranSans">تیمی</button>
+											<button @click="setPlanTeams" class="block w-full h-full text-xs font-bold font-IranSans">تیمی</button>
 										</div>
 									</div>
 								</div>

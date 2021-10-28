@@ -1,6 +1,6 @@
 <template>
-	<div class="flex mx-auto max-w-screen-2xl">
-		<div class="flex-1 space-y-4">
+	<div class="mx-auto md:space-x-5 md:flex" style="max-width: 1500px;">
+		<div class="flex-1 mb-4 space-y-4 md:mb-0" id="first">
 			<featured-item
 				v-for="col in col1"
 				:key="col.name"
@@ -30,7 +30,7 @@
 				:mode="col.mode"
 			></featured-item>
 		</div>
-		<div class="flex-1 space-y-4">
+		<div class="flex-1 hidden space-y-4 xl:block">
 			<featured-item
 				v-for="col in col3"
 				:key="col.name"
@@ -45,7 +45,7 @@
 				:mode="col.mode"
 			></featured-item>
 		</div>
-		<div class="flex-1 space-y-4">
+		<div class="flex-1 hidden space-y-4 widescreen:block" id="last">
 			<featured-item
 				v-for="col in col4"
 				:key="col.name"
@@ -86,3 +86,17 @@ export default {
 	},
 };
 </script>
+
+<style scoped>
+@media (min-width: 768px) {
+	#first {
+		/* --tw-space-x-reverse: 0; */
+		margin-left: 1.25rem;
+		/* margin-right: calc(1.25 rem * var(--tw-space-x-reverse)); */
+	}
+	#last {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+</style>

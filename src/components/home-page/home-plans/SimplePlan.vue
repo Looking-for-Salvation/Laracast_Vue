@@ -2,6 +2,7 @@
 	<div class="flex-1 mx-auto plan-wrap md:mx-1 lg:mx-0">
 		<div
 			class="relative z-10 flex w-auto h-full px-6 pt-5 pb-6 mx-auto mb-5 text-center plan card lg:mb-0 lg:mx-3 md:px-4"
+			style="max-width: 437px;"
 			:class="{ 'plan-primary': primary }"
 		>
 			<div class="flex flex-col justify-around w-full h-full">
@@ -19,12 +20,12 @@
 				<router-link :to="route" class="flex justify-center">
 					<img :src="img" alt="Monthly" class="relative -top-7" width="165" height="120" loading="lazy" />
 				</router-link>
-				<p class="mb-8 -mt-2 text-lg text-gray-700 font-IranSans md:text-base">
+				<p class="mb-8 -mt-2 text-lg text-gray-700 font-IranSans md:text-sm lg:text-base">
 					{{ description }}
 				</p>
 				<router-link
 					:to="route"
-					class="w-full px-8 py-3 leading-none text-center text-black transition-all duration-150 bg-gray-100 border border-transparent hover:border-blue-400 hover:text-blue-400 font-IranSans rounded-3xl plan-start-learning-button"
+					class="w-full px-8 py-3 leading-none text-center text-black transition-all duration-150 bg-gray-100 border border-transparent mobile:mx-auto hover:border-blue-400 hover:text-blue-400 font-IranSans rounded-3xl plan-start-learning-button"
 					:class="{ 'plan-primary-button': primary }"
 					>شروع یادگیری
 				</router-link>
@@ -79,15 +80,19 @@ export default {
 </script>
 
 <style scoped>
-.plan-start-learning-button {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 85%;
+@media (min-width: 768px) {
+	.plan-start-learning-button {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 85%;
+	}
 }
 
-.plan-wrap {
-	height: 358px;
-	max-width: 290px;
+@media (min-width: 992px) {
+	.plan-wrap {
+		height: 358px;
+		max-width: 290px;
+	}
 }
 
 .plan-primary {

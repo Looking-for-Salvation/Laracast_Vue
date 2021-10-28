@@ -1,24 +1,32 @@
 <template>
-	<div class="footer-wrap">
-		<img src="../../assets/images/footer-gang.svg" alt="Laracasts robot mascots" class="absolute top-0 inline-block footer-img" style="left: -200px" />
-		<section class="pt-0 pb-0 footer-section top">
-			<div class="container mx-auto" style="max-width: 1200px;">
-				<div class="w-1/2 mx-auto text-center">
+	<div class="footer-wrap mobile:text-lg">
+		<img
+			src="../../assets/images/footer-gang.svg"
+			alt="Laracasts robot mascots"
+			class="absolute top-0 hidden lg:inline-block footer-img"
+			style="left: -200px"
+		/>
+		<section class="pt-0 lg:pb-0 footer-section top">
+			<div class="container">
+				<div class="mx-auto text-center lg:w-1/2 md:w-4/5">
 					<div>
-						<h2 class="mb-8 text-3xl font-light tracking-tight text-white font-IranSans">می خوای عضو خبرنامه لاراکست بشی؟</h2>
+						<h2 class="mb-8 text-2xl font-light tracking-tight text-white md:text-3xl font-IranSans">می خوای عضو خبرنامه لاراکست بشی؟</h2>
 					</div>
 					<div>
 						<form @submit.prevent id="newsletter-form">
-							<div class="flex flex-row justify-center max-w-full mx-0 mb-0 ">
+							<div class="flex flex-col justify-center max-w-sm mx-auto mb-6 md:flex-row lg:max-w-full lg:mx-0 lg:mb-0 ">
 								<input
 									type="email"
-									class="w-1/2 px-4 py-3 mb-0 -ml-8 text-sm text-right text-black outline-none text-opacity-60 rounded-2xl font-IranSans"
+									class="px-4 py-4 mb-4 text-base text-center text-black outline-none md:w-1/2 md:py-3 md:mb-0 md:-ml-8 md:text-sm md:text-right text-opacity-60 rounded-3xl font-IranSans"
 									name="email"
 									placeholder="ایمیل خود را وارد کنید"
 									autocomplete="off"
 									required
 								/>
-								<button type="submit" class="z-10 w-32 max-w-full px-8 py-3 text-sm transition-all duration-200 form-button rounded-2xl font-IranSans">
+								<button
+									type="submit"
+									class="z-10 max-w-full px-8 py-5 text-base transition-all duration-200 md:text-sm md:w-32 md:py-3 form-button rounded-3xl font-IranSans"
+								>
 									عضویت
 								</button>
 							</div>
@@ -27,11 +35,11 @@
 				</div>
 			</div>
 		</section>
-		<section class="py-0 text-right footer-section bottom">
-			<footer class="container mx-auto" style="max-width: 1200px;">
-				<div class="flex mb-3">
-					<div class="w-2/5 mb-0 ml-auto">
-						<div class="block mb-3">
+		<section class="py-0 text-center lg:text-right footer-section bottom">
+			<footer class="container">
+				<div class="lg:flex lg:mb-3">
+					<div class="mb-10 lg:w-2/5 lg:mb-0 lg:ml-auto">
+						<div class="flex justify-center mb-3 lg:block">
 							<svg class="text-white fill-current" width="232" height="44" viewBox="0 0 323 36">
 								<g fill="none" fill-rule="evenodd">
 									<path
@@ -57,10 +65,10 @@
 								</g>
 							</svg>
 						</div>
-						<p class="max-w-full mx-0 mb-8 leading-loose text-white font-IranSans">
+						<p class="max-w-sm mx-auto mb-8 leading-loose text-white lg:mx-0 lg:max-w-full font-IranSans">
 							9 تا از 10 برنامه نویس لاراکست را به سایت های مشابه ترجیه میدهند. خودت بیا و ببین و مهارت های برنامه نویسی خودتو ارتقا بده.
 						</p>
-						<div class="flex items-center justify-between mx-0 mb-8 w-28">
+						<div class="flex items-center justify-between mx-auto mb-8 lg:mx-0 w-42 lg:w-28">
 							<a href="http://youtube.com" target="_blank">
 								<svg viewBox="0 0 16 19" class="w-6 text-white transition-all duration-300 hover:text-black">
 									<g class="fill-current" fill-rule="nonzero">
@@ -93,9 +101,9 @@
 							</a>
 						</div>
 					</div>
-					<div class="w-1/6">
-						<h5 class="mb-6 text-white font-IranSans">آموزش</h5>
-						<ul class="w-3/4 mx-0 mb-0 leading-relaxed">
+					<div class="mobile:mb-6 lg:w-1/6">
+						<h5 class="mb-2 font-bold text-white lg:mb-6 lg:font-normal font-IranSans">آموزش</h5>
+						<ul class="w-3/4 mx-auto mb-8 leading-relaxed lg:mx-0 lg:mb-0 inline-bulleted-list">
 							<!-- <li>
 								<router-link to="/signup" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">ثبت نام</router-link>
 							</li>
@@ -122,9 +130,9 @@
 							</li>
 						</ul>
 					</div>
-					<div class="w-1/6">
-						<h5 class="mb-6 text-white font-IranSans">گفتگو</h5>
-						<ul>
+					<div class="mobile:mb-6 lg:w-1/6">
+						<h5 class="mb-2 font-bold text-white lg:font-normal lg:mb-6 font-IranSans">گفتگو</h5>
+						<ul class="w-3/4 mx-auto mb-8 leading-relaxed lg:mx-0 lg:mb-0 inline-bulleted-list">
 							<li>
 								<router-link to="/discuss" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">انجمن</router-link>
 							</li>
@@ -139,9 +147,9 @@
 							</li>
 						</ul>
 					</div>
-					<div class="w-1/6">
-						<h5 class="mb-6 text-white font-IranSans">دیگر</h5>
-						<ul>
+					<div class="mobile:mb-8 lg:w-1/6">
+						<h5 class="mb-2 font-bold text-white lg:font-normal lg:mb-6 font-IranSans">دیگر</h5>
+						<ul class="w-3/4 mx-auto mb-8 leading-relaxed lg:mx-0 lg:mb-0 inline-bulleted-list">
 							<li>
 								<router-link to="/gift-certificate" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">کارت هدیه</router-link>
 							</li>
@@ -166,10 +174,10 @@
 						</ul>
 					</div>
 				</div>
-				<div class="py-4 mt-8 border-t border-solid border-opacity-10">
+				<div class="py-4 border-t border-solid mobile:text-lg lg:mt-8 border-opacity-10">
 					<div class="text-sm text-center font-IranSans">
-						<p class="mb-2 tracking-normal text-white opacity-50">© تمامی شرایط محفوظ و متعلق به لاراکست می باشد.</p>
-						<p class="tracking-normal"></p>
+						<p class="tracking-normal text-white opacity-50 lg:mb-2">© تمامی شرایط محفوظ و متعلق به لاراکست می باشد.</p>
+						<p class="hidden tracking-normal md:block"></p>
 					</div>
 				</div>
 			</footer>
@@ -218,10 +226,9 @@ export default {
 }
 
 .footer-wrap .footer-section.top .container {
-	background: url("../../assets/images/mic-drop.svg") no-repeat 19% 0;
-	background-size: 176px;
-	padding-bottom: 80px;
-	padding-top: 80px;
+	background: url("../../assets/images/mic-drop.svg") no-repeat 0 0;
+	background-size: 80px;
+	padding-top: 4em;
 }
 
 .footer-img {
@@ -246,5 +253,32 @@ export default {
 	border-color: rgba(50, 138, 241, var(--tw-border-opacity));
 	box-shadow: 0 0 10px rgb(0 0 0 / 25%);
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.footer-wrap .inline-bulleted-list > li {
+	display: inline;
+}
+
+.footer-wrap .inline-bulleted-list > li:not(:first-child):before {
+	color: hsla(0, 0%, 100%, 0.4);
+	content: " \B7";
+	font-size: 1.7rem;
+	line-height: 1;
+	margin-left: 2px;
+	margin-right: 4px;
+	vertical-align: sub;
+}
+
+@media (min-width: 992px) {
+	.footer-wrap .footer-section.top .container {
+		background: url("../../assets/images/mic-drop.svg") no-repeat 19% 0;
+		background-size: 176px;
+		padding-bottom: 80px;
+		padding-top: 80px;
+	}
+
+	.footer-wrap .inline-bulleted-list > li {
+		display: list-item;
+	}
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<div class="flex justify-center pb-6 plans">
+	<div class="justify-center lg:flex lg:pb-6 plans">
 		<simple-plan
 			:periodicity="monthlyData.periodicity"
 			:price="monthlyData.price"
@@ -37,23 +37,6 @@ export default {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 85%;
-}
-
-.plan-wrap {
-	height: 358px;
-	max-width: 290px;
-}
-
-.plan-primary {
-	background: linear-gradient(180deg, #21c8f6, #637bff);
-	border: none !important;
-	padding: 1px !important;
-}
-
-.plan-primary > div:first-child {
-	background: #fff;
-	border-radius: inherit;
-	padding: 1.25rem 1rem 1.5rem;
 }
 
 .plan-primary-button {

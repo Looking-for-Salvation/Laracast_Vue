@@ -7,7 +7,7 @@
 			'is-techniques': isTechniques,
 			'is-testing': isTesting,
 			'is-tooling': isTooling,
-			'h-32': isLarge,
+			'h-[122px]': isLarge,
 			'h-64': isExpanded,
 		}"
 	>
@@ -21,7 +21,7 @@
 				v-if="!isLarge"
 				>{{ categoryPersian }}
 			</router-link>
-			<router-link :to="route" class="relative flex items-center card-thunbnail">
+			<router-link :to="route" class="relative flex items-center my-4 md:my-0 card-thunbnail">
 				<img :src="imgSource" :alt="name" height="96" width="96" />
 			</router-link>
 			<div class="w-full text-center expanded-card_difficulty" v-if="!isLarge">
@@ -38,13 +38,13 @@
 			</div>
 		</div>
 		<div class="relative flex flex-col w-full py-5 expanded-card_left" :class="{ 'justify-around': isExpanded, 'justify-between': isLarge }">
-			<h3 class="inline-flex items-center h-12 text-xl tracking-tight">
+			<h3 class="inline-flex items-start mt-1 tracking-tight lg:items-center lg:h-12 text-3lg">
 				<router-link :to="route" :title="name" class="text-gray-700 clamp two-lines font-IranSans hover:underline">{{ name }}</router-link>
 			</h3>
-			<div class="mt-5 mb-auto text-sm text-black text-opacity-50 expanded-card_description generic-content font-IranSans" v-if="!isLarge">
+			<div class="mt-5 text-sm text-black text-opacity-50 lg:mb-auto expanded-card_description generic-content font-IranSans" v-if="!isLarge">
 				<p class="clamp five-lines">{{ description }}</p>
 			</div>
-			<div class="flex text-xs text-gray-700 expanded-card_meta">
+			<div class="flex text-gray-700 text-2xs expanded-card_meta">
 				<div class="flex items-center ml-4 expanded-card_meta-lessons">
 					<svg width="13" height="14" viewBox="0 0 13 14" class="ml-2 opacity-60">
 						<path
@@ -70,7 +70,7 @@
 			</div>
 			<router-link
 				:to="route"
-				class="absolute flex items-center justify-center w-full py-2 mb-1 text-sm text-black bg-gray-100 border border-opacity-25 rounded-full card-play-button hover:border-blue-400 hover:text-blue-400 font-IranSans"
+				class="absolute hidden w-full py-2 mb-1 text-sm text-black bg-gray-100 border border-opacity-25 rounded-full lg:flex lg:items-center lg:justify-center card-play-button hover:border-blue-400 hover:text-blue-400 font-IranSans"
 				style="bottom: 11px"
 				>نمایش</router-link
 			>
@@ -280,24 +280,10 @@ export default {
 </script>
 
 <style scoped>
-.card {
-	--tw-bg-opacity: 1;
-	--tw-text-opacity: 1;
-	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-	border: 1px solid rgba(36, 37, 38, 0.08);
-	border-radius: 0.9rem;
-	box-shadow: 0 0 20px rgb(0 0 0 / 8%);
-	color: rgba(34, 41, 47, var(--tw-text-opacity));
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 100%;
-	overflow: hidden;
-	position: relative;
-	width: 345px;
-}
-
-.card:hover {
-	box-shadow: 0 0 20px rgb(0 0 0 / 16%);
+@media (min-width: 768px) {
+	.expanded-card {
+		min-width: auto;
+	}
 }
 
 .expanded-card .expanded-card_right {
@@ -324,35 +310,41 @@ export default {
 	background: linear-gradient(0deg, #8b60ed, #b372bd);
 }
 
-.card .card-play-button {
-	left: 0;
-	margin-left: auto;
-	margin-right: auto;
-	right: 0;
-	width: 90%;
-}
+@media (min-width: 992px) {
+	.card:hover {
+		box-shadow: 0 0 20px rgb(0 0 0 / 16%);
+	}
 
-.card-play-button {
-	opacity: 0;
-	transform: translateY(15px);
-	transition: opacity 0.2s, transform 0.4s, border-color 0.2s;
-	transition-timing-function: ease-in-out;
-	will-change: transform;
-}
+	.card .card-play-button {
+		left: 0;
+		margin-left: auto;
+		margin-right: auto;
+		right: 0;
+		width: 90%;
+	}
 
-.card:hover .card-play-button {
-	opacity: 1;
-	transform: translatey(0px);
-}
+	.card-play-button {
+		opacity: 0;
+		transform: translateY(15px);
+		transition: opacity 0.2s, transform 0.4s, border-color 0.2s;
+		transition-timing-function: ease-in-out;
+		will-change: transform;
+	}
 
-.card:hover .expanded-card_meta {
-	display: none;
-}
+	.card:hover .card-play-button {
+		opacity: 1;
+		transform: translatey(0px);
+	}
 
-.expanded-card .difficulty-meter > *,
-.series-banner .difficulty-meter > *,
-.series-card:hover .difficulty-meter > * {
-	background-color: rgba(0, 0, 0, 0.25);
+	.card:hover .expanded-card_meta {
+		display: none;
+	}
+
+	.expanded-card .difficulty-meter > *,
+	.series-banner .difficulty-meter > *,
+	.series-card:hover .difficulty-meter > * {
+		background-color: rgba(0, 0, 0, 0.25);
+	}
 }
 
 .expanded-card .difficulty-meter.is-advanced > *,

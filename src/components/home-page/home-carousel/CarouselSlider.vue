@@ -1,5 +1,43 @@
 <template>
-	<swiper :slidesPerView="8" :spaceBetween="50" :loop="true" :loopFillGroupWithBlank="true" :navigation="true" class="mySwiper" :grabCursor="true">
+	<swiper
+		:slidesPerView="2"
+		:breakpoints="{
+			650: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+			700: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+			950: {
+				slidesPerView: 4,
+				spaceBetween: 30,
+			},
+			1150: {
+				slidesPerView: 5,
+				spaceBetween: 40,
+			},
+			1350: {
+				slidesPerView: 6,
+				spaceBetween: 40,
+			},
+			1550: {
+				slidesPerView: 7,
+				spaceBetween: 40,
+			},
+			1700: {
+				slidesPerView: 8,
+				spaceBetween: 40,
+			},
+		}"
+		:centeredSlides="true"
+		:spaceBetween="50"
+		:loop="true"
+		:navigation="true"
+		class="mt-8 mySwiper"
+		:grabCursor="true"
+	>
 		<swiper-slide>
 			<carousel-item
 				v-for="item in firstSlide"

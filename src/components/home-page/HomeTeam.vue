@@ -1,10 +1,10 @@
 <template>
 	<section>
-		<div class="mx-auto" style="max-width: 1166px;">
-			<header class="text-center text-black mb-4 mx-auto pb-4 max-w-[650px]">
-				<h3 class="text-3xl font-light font-IranSans">با تیم لاراکست آشنا شید</h3>
+		<div class="container" style="max-width: 1166px;">
+			<header class="container text-center text-black mb-4 mx-auto pb-4 max-w-[650px]">
+				<h3 class="text-3xl md:font-light font-IranSans">با تیم لاراکست آشنا شید</h3>
 			</header>
-			<div class="grid grid-cols-3 gap-6 mb-10 pt-7">
+			<div class="grid gap-6 lg:grid-cols-3 md:mb-10 pt-7">
 				<team-member
 					v-for="member in members"
 					:key="member.name"

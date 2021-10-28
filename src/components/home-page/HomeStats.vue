@@ -1,43 +1,48 @@
 <template>
-	<section class="home-skills pb-9">
-		<div class="flex flex-col items-center justify-center mb-9">
-			<div class="flex text-center rounded-lg mb-14">
-				<div class="px-10 home-skills-stat_item">
-					<div class="h-8 mb-2.5">
+	<section class="home-skills pt-6 md:pb-[35px]">
+		<div class="container">
+			<div class="flex items-center mb-6 md:justify-center lg:mb-9">
+				<div class="home-skills-stat_item text-center card mx-3 flex-1 lg:flex-none w-auto lg:w-[150px] h-auto rounded-2xl p-4">
+					<div class="mb-1" style="height: 30px;">
 						<img src="../../assets/images/home/series-available-icon.svg" alt="Hours of Learning" />
 					</div>
-					<div class="mb-0.5 text-xl text-black font-IranSans">
+					<div class="mb-1 text-xl text-black font-IranSans">
 						<span>&#1777;&#1780;&#1785;</span>
 					</div>
-					<div class="text-xs tracking-wider opacity-70 font-IranSans">
+					<div class="text-xs tracking-wider text-gray-500 font-IranSans">
 						دوره آموزشی
 					</div>
 				</div>
-				<div class="relative px-10 home-skills-stat_item">
-					<div class="h-8 mb-2.5">
+				<div class="home-skills-stat_item text-center card mx-3 flex-1 lg:flex-none w-auto lg:w-[150px] h-auto rounded-2xl p-4">
+					<div class="mb-1" style="height: 30px;">
 						<img src="../../assets/images/home/lessons-available-icon.svg" alt="Hours of Learning" />
 					</div>
-					<div class="mb-0.5 text-xl text-black font-IranSans">
+					<div class="mb-1 text-xl text-black font-IranSans">
 						<span>&#1777;&#1785;&#1778;&#1782;</span>
 					</div>
-					<div class="text-xs tracking-wider opacity-70 font-IranSans">
+					<div class="text-xs tracking-wider text-gray-500 font-IranSans">
 						جلسه ویدویی
 					</div>
 				</div>
-				<div class="px-10 home-skills-stat_item">
-					<div class="h-8 mb-2.5">
+				<div class="home-skills-stat_item text-center card mx-3 flex-1 lg:flex-none w-auto lg:w-[150px] h-auto rounded-2xl p-4">
+					<div class="mb-1" style="height: 30px;">
 						<img src="../../assets/images/home/hours-of-learning-icon.svg" alt="Hours of Learning" />
 					</div>
-					<div class="mb-0.5 text-xl text-black font-IranSans">
+					<div class="mb-1 text-xl text-black font-IranSans">
 						<span>&#1779;&#1778;&#1782;</span>
 					</div>
-					<div class="text-xs tracking-wider opacity-70 font-IranSans">
+					<div class="text-xs tracking-wider text-gray-500 font-IranSans">
 						ساعت آموزش
 					</div>
 				</div>
 			</div>
 			<div class="py-5 mb-4 font-IranSans">
-				<h3 class="block mx-auto mb-4 text-3xl font-light text-center text-black">مختصرترین ویدیو های آموزشی برای برنامه نویسان وب</h3>
+				<header class="container pb-4 mx-auto mb-4 text-center text-black md:hidden">
+					<h3 class="mb-2 text-3xl font-light text-black font-IranSans">ویدیو های مختصر برای برنامه نویسان</h3>
+				</header>
+				<header class="container hidden pb-4 mx-auto mb-4 text-center text-black md:block">
+					<h3 class="mb-2 text-3xl font-light text-black font-IranSans">مختصرترین ویدیو های آموزشی برای برنامه نویسان وب</h3>
+				</header>
 			</div>
 			<skill-cards></skill-cards>
 		</div>
@@ -53,30 +58,3 @@ export default {
 	},
 };
 </script>
-
-<style scoped>
-.home-skills-stat_item:nth-child(2)::after,
-.home-skills-stat_item:nth-child(2)::before {
-	background-color: transparent;
-	border-image-slice: 1;
-	border-image-source: linear-gradient(0deg, transparent, #000 48%, transparent);
-	border-style: solid;
-	border-width: 2px;
-	content: "";
-	height: 67px;
-	-o-object-fit: contain;
-	object-fit: contain;
-	opacity: 0.07;
-	position: absolute;
-	top: 15px;
-	width: 1px;
-}
-
-.home-skills-stat_item:nth-child(2)::after {
-	right: 0;
-}
-
-.home-skills-stat_item:nth-child(2)::before {
-	left: 0;
-}
-</style>

@@ -100,4 +100,9 @@ section {
 .control:not(:last-child) {
 	margin-bottom: 1.3em;
 }
+
+.plan {
+	border: 1px solid rgba(36, 37, 38, 0.08);
+	max-width: 437px;
+}
 </style>
