@@ -1,6 +1,6 @@
 <template>
 	<teleport to="body">
-		<transition name="modal">
+		<transition v-if="transition" name="modal">
 			<div class="fixed inset-0 modal" v-show="isVisible">
 				<transition name="modal-overlay">
 					<div class="absolute inset-0 w-full h-screen bg-black modal-overlay bg-opacity-70" v-if="isVisible" @click="close"></div>
@@ -42,6 +42,11 @@ export default {
 			type: String,
 			required: true,
 		},
+		transition: {
+			type: Boolean,
+			required: false,
+			default: true,
+		},
 	},
 	emits: ["close"],
 	setup(_, { emit }) {
@@ -62,10 +67,10 @@ export default {
 }
 
 .modal-enter-active {
-	transition: all 0.2s ease-in;
+	transition: all 0.25s ease-out;
 }
 .modal-leave-active {
-	transition: all 0.1s ease-in;
+	transition: all 0.15s ease-out;
 }
 
 .modal-enter-from,
@@ -74,10 +79,12 @@ export default {
 }
 
 .modal-inner-enter-active {
-	transition: all 0.2s ease-in;
+	transition: all 0.25s;
+	transition-timing-function: ease-out;
 }
 .modal-inner-leave-active {
-	transition: all 0.1s ease-in;
+	transition: all 0.15s;
+	transition-timing-function: ease-out;
 }
 
 .modal-inner-enter-from,
@@ -87,10 +94,10 @@ export default {
 }
 
 .modal-overlay-enter-active {
-	transition: all 0.2s ease-in;
+	transition: all 0.25s ease-in-out;
 }
 .modal-overlay-leave-active {
-	transition: all 0.1s ease-in;
+	transition: all 0.15s ease-in-out;
 }
 
 .modal-overlay-enter-from,
