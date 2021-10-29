@@ -1,11 +1,11 @@
 <template>
 	<div class="flex flex-col justify-between h-full px-4">
-		<div class="flex-1 w-full px-10">
+		<div class="flex-1 w-full md:px-10">
 			<div class="mb-auto">
 				<div>
 					<div class="mx-auto">
 						<div class="flex">
-							<div class="w-3/4 mx-auto mt-2 mb-8 text-center">
+							<div class="mt-2 mb-8 text-center mobile:flex-1 md:w-3/4 md:mx-auto">
 								<div class="mb-8">
 									<h1 class="mb-10 text-4xl font-light tracking-tight text-black font-IranSans">بزارید شروع کنیم</h1>
 								</div>
@@ -28,10 +28,10 @@
 			</div>
 		</div>
 		<div class="relative text-center border-t border-solid border-opacity-10">
-			<div class="grid grid-cols-3 gap-6 mt-10">
-				<div class="flex justify-end ml-auto w-38">
+			<div class="mt-10 lg:grid lg:grid-cols-4 lg:gap-6">
+				<div class="mt-6 ml-auto lg:flex lg:justify-end lg:w-38 lg:mt-0">
 					<button class="inline-flex items-center text-black font-IranSans hover:text-blue-400" @click="faq">
-						<span class="inline-block p-2 bg-gray-100 rounded-xl">
+						<span class="hidden p-2 bg-gray-100 md:inline-block rounded-xl">
 							<svg viewBox="0 0 20 20" class="w-6" data-v-2836fdb5-s="">
 								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-2836fdb5-s="">
 									<g class="fill-current" data-v-2836fdb5-s="">
@@ -43,17 +43,17 @@
 								</g>
 							</svg>
 						</span>
-						<span class="mr-3">سوال های پرتکرار</span>
+						<span class="md:mr-3">سوال های پرتکرار</span>
 					</button>
 				</div>
-				<div class="mx-auto">
-					<a href="#" class="mx-auto ml-4 bg-gray-100 border-gray-100 font-IranSans button" @click="signup">اکانت رایگان انجمن</a>
+				<div class="py-4 mx-auto lg:py-0 lg:col-start-2 lg:col-end-4">
+					<a href="#" class="mx-auto mb-4 bg-gray-100 border-gray-100 md:ml-4 md:mb-0 font-IranSans button" @click="signup">اکانت رایگان انجمن</a>
 					<router-link to="/gift-certificates" class="mx-auto bg-gray-100 border-gray-100 font-IranSans button">اکانت هدیه</router-link>
 				</div>
-				<div class="flex mr-auto w-38">
+				<div class="mr-auto lg:flex lg:w-38">
 					<button class="inline-flex items-center text-black font-IranSans hover:text-blue-400" @click="login">
-						<span class="ml-3">ورود</span>
-						<span class="inline-block p-2 bg-gray-100 rounded-xl">
+						<span class="md:ml-3">ورود</span>
+						<span class="hidden p-2 bg-gray-100 md:inline-block rounded-xl">
 							<svg viewBox="0 0 20 20" class="w-6 transform rotate-180" data-v-2836fdb5-s="">
 								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-2836fdb5-s="">
 									<g class="fill-current" data-v-2836fdb5-s="">
@@ -154,23 +154,43 @@ export default {
 
 .button {
 	--tw-text-opacity: 1;
-	max-width: 100%;
-	padding-bottom: 0.83rem;
-	padding-left: 2rem;
-	padding-right: 2rem;
-	padding-top: 0.83rem;
-	transition: background 0.3s, border-color 0.2s;
-	display: inline-block;
 	border-radius: 20px;
 	border-style: solid;
 	border-width: 1px;
 	color: rgba(34, 41, 47, var(--tw-text-opacity));
+	display: block;
 	font-size: 0.834rem;
 	font-weight: 600;
 	line-height: 1;
+	max-width: 30rem;
+	padding: 1.25rem 1rem;
 	position: relative;
 	text-align: center;
 	text-transform: uppercase;
+	transition-duration: 0.15s;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+	.button {
+		display: inline-block;
+		padding-bottom: 0.75rem;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		padding-top: 0.75rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.button {
+		max-width: 100%;
+		padding-bottom: 0.83rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		padding-top: 0.83rem;
+		transition: background 0.3s, border-color 0.2s;
+	}
 }
 
 .button:hover {

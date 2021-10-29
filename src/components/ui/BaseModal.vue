@@ -8,10 +8,10 @@
 				<transition name="modal-inner">
 					<div tabindex="-1" class="absolute inset-0 flex items-center justify-center m-auto modal-inner" :style="inlineStyles" v-show="isVisible">
 						<div
-							class="relative flex flex-col w-full px-6 m-0 mx-auto overflow-auto bg-white modal-content rounded-2xl max-h-90vh py-9"
+							class="relative flex flex-col w-full px-6 m-4 overflow-auto bg-white md:m-0 md:mx-auto modal-content rounded-2xl max-h-90vh py-9"
 							:style="inlineStyles"
 						>
-							<section class="h-full p-0">
+							<section class="h-full p-0 lg:px-4" style="padding: 0px;">
 								<button
 									class="absolute flex items-center justify-center w-10 h-10 text-gray-700 transition-all duration-200 bg-gray-100 -top-2 right-4 rounded-xl hover:text-blue-400 hover:shadow-sm"
 									@click="close"
