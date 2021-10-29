@@ -145,7 +145,7 @@
 	<login-modal :isVisible="isLoginVisible" @close="closeLogin" @join="joinViaLogin" @forgot="forgotViaLogin"></login-modal>
 	<sign-up-modal :isVisible="isSignUpVisible" @close="closeSignUp" @login="loginViaSignUp"></sign-up-modal>
 	<forgot-password-modal :isVisible="isForgotVisible" @close="closeForgot" @login="loginViaForgot"></forgot-password-modal>
-	<mobile-nav-modal :isVisible="isMobileNavVisible" @close="closeMobileNav"></mobile-nav-modal>
+	<mobile-nav-modal :isVisible="isMobileNavVisible" @close="closeMobileNav" @login="loginViaMobileNav" @signup="signupViaMobileNav"></mobile-nav-modal>
 </template>
 
 <script>
@@ -259,6 +259,16 @@ export default {
 			isMobileNavVisible.value = false;
 		};
 
+		const loginViaMobileNav = () => {
+			isMobileNavVisible.value = false;
+			isLoginVisible.value = true;
+		};
+
+		const signupViaMobileNav = () => {
+			isMobileNavVisible.value = false;
+			isSignUpVisible.value = true;
+		};
+
 		return {
 			isLoginVisible,
 			openLogin,
@@ -283,6 +293,8 @@ export default {
 			isMobileNavVisible,
 			openMobileNav,
 			closeMobileNav,
+			loginViaMobileNav,
+			signupViaMobileNav,
 		};
 	},
 };

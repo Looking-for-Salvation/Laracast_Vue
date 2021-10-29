@@ -1,6 +1,6 @@
 <template>
 	<teleport to="body">
-		<transition>
+		<transition name="mobile-nav">
 			<div class="fixed inset-0" style="z-index: 1000;" v-show="isVisible">
 				<div class="absolute inset-0 py-8 text-center text-white bg-blue-500 rounded-none shadow" tabindex="-1" role="dialog">
 					<section class="h-full px-0 lg:px-4">
@@ -17,28 +17,28 @@
 								<div class="flex flex-col h-full nav-modal-wrap">
 									<ul class="flex flex-col justify-around my-auto overflow-auto font-IranSans">
 										<li class="mb-4">
-											<router-link to="/" class="text-white text-2lg">ورود</router-link>
+											<router-link to="/" class="text-white text-2lg" @click="login">ورود</router-link>
 										</li>
 										<li class="my-4">
-											<router-link to="/" class="text-white text-2lg">ثبت نام</router-link>
+											<router-link to="/" class="text-white text-2lg" @click="signup">ثبت نام</router-link>
 										</li>
 										<li class="my-4">
 											<router-link to="/" class="text-white text-2lg">صفحه اصلی</router-link>
 										</li>
 										<li class="my-4">
-											<router-link to="/" class="text-white text-2lg">موضوعات</router-link>
+											<router-link to="/browse" class="text-white text-2lg">موضوعات</router-link>
 										</li>
 										<li class="my-4">
-											<router-link to="/" class="text-white text-2lg">دوره ها</router-link>
+											<router-link to="/series" class="text-white text-2lg">دوره ها</router-link>
 										</li>
 										<li class="my-4">
-											<router-link to="/" class="text-white text-2lg">لارابیت</router-link>
+											<router-link to="/larabit" class="text-white text-2lg">لارابیت</router-link>
 										</li>
 										<li class="my-4">
-											<router-link to="/" class="text-white text-2lg">پادکست</router-link>
+											<router-link to="/podcast" class="text-white text-2lg">پادکست</router-link>
 										</li>
 										<li class="my-4">
-											<router-link to="/" class="text-white text-2lg">انجمن</router-link>
+											<router-link to="/discuss" class="text-white text-2lg">انجمن</router-link>
 										</li>
 										<li class="my-4">
 											<router-link to="/" class="text-white text-2lg">دوره های اخیر</router-link>
@@ -67,9 +67,35 @@ export default {
 			emit("close");
 		};
 
+		const login = () => {
+			emit("login");
+		};
+
+		const signup = () => {
+			emit("signup");
+		};
+
 		return {
 			close,
+			login,
+			signup,
 		};
 	},
 };
 </script>
+
+<style scoped>
+.mobile-nav-enter-active {
+	transition: all 0.15s;
+	transition-timing-function: ease-out;
+}
+.mobile-nav-leave-active {
+	transition: all 0.05s;
+	transition-timing-function: ease-out;
+}
+
+.mobile-nav-enter-from,
+.mobile-nav-leave-to {
+	transform: translateX(50vw);
+}
+</style>
