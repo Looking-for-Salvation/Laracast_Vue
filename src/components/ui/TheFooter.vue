@@ -280,5 +280,9 @@ export default {
 	.footer-wrap .inline-bulleted-list > li {
 		display: list-item;
 	}
+
+	.footer-wrap .inline-bulleted-list > li:not(:first-child):before {
+		content: none;
+	}
 }
 </style>

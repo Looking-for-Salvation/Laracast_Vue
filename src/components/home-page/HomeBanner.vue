@@ -279,7 +279,7 @@
 							</g>
 						</svg>
 						<div class="flex flex-col md:mr-20">
-							<h1 class="hidden text-4xl text-white md:blockpb-12 font-IranSans">مرجع آموزش برنامه نویسی</h1>
+							<h1 class="hidden pb-12 text-4xl text-white md:block font-IranSans">مرجع آموزش برنامه نویسی</h1>
 							<div class="pb-4 text-3xl text-center text-white font-IranSans md:hidden">
 								<h1>مرجع آموزش</h1>
 								<h1>برنامه نویسی</h1>
