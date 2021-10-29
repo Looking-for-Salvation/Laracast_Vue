@@ -96,7 +96,7 @@
 					</svg>
 				</button>
 				<div>
-					<a class="block leading-none">
+					<a class="block leading-none" @click="openMobileNav">
 						<div class="hamburger-nav">
 							<span></span>
 							<span></span>
@@ -145,6 +145,7 @@
 	<login-modal :isVisible="isLoginVisible" @close="closeLogin" @join="joinViaLogin" @forgot="forgotViaLogin"></login-modal>
 	<sign-up-modal :isVisible="isSignUpVisible" @close="closeSignUp" @login="loginViaSignUp"></sign-up-modal>
 	<forgot-password-modal :isVisible="isForgotVisible" @close="closeForgot" @login="loginViaForgot"></forgot-password-modal>
+	<mobile-nav-modal :isVisible="isMobileNavVisible" @close="closeMobileNav"></mobile-nav-modal>
 </template>
 
 <script>
@@ -154,6 +155,7 @@ import LoginModal from "./modals/LoginModal.vue";
 import JoinModal from "./modals/JoinModal.vue";
 import ForgotPasswordModal from "./modals/ForgotPasswordModal.vue";
 import SignUpModal from "./modals/SignUpModal.vue";
+import MobileNavModal from "./modals/MobileNavModal.vue";
 
 export default {
 	props: {
@@ -173,6 +175,7 @@ export default {
 		JoinModal,
 		SignUpModal,
 		ForgotPasswordModal,
+		MobileNavModal,
 	},
 	setup() {
 		const isLoginVisible = ref(false);
@@ -181,6 +184,7 @@ export default {
 		const isFAQVisible = ref(false);
 		const isSignUpVisible = ref(false);
 		const isForgotVisible = ref(false);
+		const isMobileNavVisible = ref(false);
 
 		const openLogin = () => {
 			isLoginVisible.value = true;
@@ -248,6 +252,13 @@ export default {
 			isForgotVisible.value = false;
 		};
 
+		const openMobileNav = () => {
+			isMobileNavVisible.value = true;
+		};
+		const closeMobileNav = () => {
+			isMobileNavVisible.value = false;
+		};
+
 		return {
 			isLoginVisible,
 			openLogin,
@@ -269,6 +280,9 @@ export default {
 			closeForgot,
 			loginViaForgot,
 			forgotViaLogin,
+			isMobileNavVisible,
+			openMobileNav,
+			closeMobileNav,
 		};
 	},
 };
