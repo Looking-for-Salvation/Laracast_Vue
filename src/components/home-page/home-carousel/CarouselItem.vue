@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="flex justify-center mb-6 text-center lg:relative w-60"
+		class="flex justify-center mx-auto mb-6 text-center lg:relative w-60"
 		:class="{ 'left-n100': order === 'top', 'left-0': order === 'middle', 'left-p100': order === 'bottom' }"
 	>
 		<router-link :to="route" class="flex flex-col justify-between w-full h-20 px-4 py-1 mx-2 bg-white cursor-pointer card">

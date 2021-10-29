@@ -41,7 +41,7 @@
 			<h3 class="inline-flex items-start mt-1 tracking-tight lg:items-center lg:h-12 text-3lg">
 				<router-link :to="route" :title="name" class="text-gray-700 clamp two-lines font-IranSans hover:underline">{{ name }}</router-link>
 			</h3>
-			<div class="mt-5 text-sm text-black text-opacity-50 lg:mb-auto expanded-card_description generic-content font-IranSans" v-if="!isLarge">
+			<div class="mt-4 text-sm text-black text-opacity-50 md:text-xs lg:mb-auto expanded-card_description generic-content font-IranSans" v-if="!isLarge">
 				<p class="clamp five-lines">{{ description }}</p>
 			</div>
 			<div class="flex text-gray-700 text-2xs expanded-card_meta">
@@ -339,12 +339,11 @@ export default {
 	.card:hover .expanded-card_meta {
 		display: none;
 	}
-
-	.expanded-card .difficulty-meter > *,
-	.series-banner .difficulty-meter > *,
-	.series-card:hover .difficulty-meter > * {
-		background-color: rgba(0, 0, 0, 0.25);
-	}
+}
+.expanded-card .difficulty-meter > *,
+.series-banner .difficulty-meter > *,
+.series-card:hover .difficulty-meter > * {
+	background-color: rgba(0, 0, 0, 0.25);
 }
 
 .expanded-card .difficulty-meter.is-advanced > *,

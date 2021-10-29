@@ -1,7 +1,14 @@
 <template>
 	<swiper
-		:slidesPerView="2"
+		:slidesPerView="'auto'"
+		:slidesPerGroup="1"
+		:centeredSlides="true"
+		:spaceBetween="30"
 		:breakpoints="{
+			450: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
 			650: {
 				slidesPerView: 3,
 				spaceBetween: 30,
@@ -31,8 +38,6 @@
 				spaceBetween: 40,
 			},
 		}"
-		:centeredSlides="true"
-		:spaceBetween="50"
 		:loop="true"
 		:navigation="true"
 		class="mt-8 mySwiper"

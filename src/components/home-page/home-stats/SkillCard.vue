@@ -7,7 +7,7 @@
 			<router-link :to="skillRoute" class="block">
 				<img :src="skillImgSource" :alt="skillType" height="100" width="100" />
 			</router-link>
-			<h4 class="leading-tight tracking-tight text-center text-3lg">
+			<h4 class="leading-tight tracking-tight text-center text-2lg md:text-3lg">
 				<router-link :to="skillRoute" class="text-white hover:text-white font-IranSans hover:underline">{{ cardName }}</router-link>
 			</h4>
 		</div>
@@ -16,13 +16,13 @@
 				<div class="text-center">
 					<router-link :to="skillRoute" class="block">
 						<span class="block -mb-1 text-xl text-white lg:text-lg lg:text-gray-700 font-IranSans">{{ skillSeriesCount }}</span>
-						<span class="text-lg text-white opacity-50 lg:text-sm lg:opacity-100 lg:text-gray-500 font-IranSans"> دوره </span>
+						<span class="text-base text-white opacity-50 lg:text-sm lg:opacity-100 lg:text-gray-500 font-IranSans"> دوره </span>
 					</router-link>
 				</div>
-				<div class="w-px h-6 opacity-25 lg:bg-gray-400 lg:opacity-100"></div>
+				<div class="w-px h-6 bg-gray-300 opacity-25 lg:bg-gray-400 lg:opacity-100"></div>
 				<div class="text-center">
 					<span class="block -mb-1 text-xl text-white lg:text-lg lg:text-gray-700 font-IranSans">{{ skillLessonsCount }}</span>
-					<span class="text-lg text-white opacity-50 lg:text-sm lg:opacity-100 lg:text-gray-500 font-IranSans"> ویدیو </span>
+					<span class="text-base text-white opacity-50 lg:text-sm lg:opacity-100 lg:text-gray-500 font-IranSans"> ویدیو </span>
 				</div>
 			</div>
 			<router-link

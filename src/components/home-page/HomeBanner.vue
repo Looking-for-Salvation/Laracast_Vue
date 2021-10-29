@@ -1,13 +1,13 @@
 <template>
 	<div>
 		<div class="home-banner">
-			<div class="inner-banner">
+			<div class="home-banner-inner">
 				<the-header transparent home></the-header>
 				<div class="flex items-center flex-1 py-10">
-					<div class="container flex items-center justify-center w-full mt-20" style="max-width: 1400px">
+					<div class="container flex flex-col items-center justify-center w-full mt-0 md:flex-row md:mt-20" style="max-width: 1400px">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="mx-14"
+							class="max-w-2xs mx-14 md:max-w-none max-h-64 md:max-h-none"
 							xmlns:xlink="http://www.w3.org/1999/xlink"
 							width="350"
 							height="500"
@@ -278,22 +278,26 @@
 								</g>
 							</g>
 						</svg>
-						<div class="flex flex-col mr-20">
-							<h1 class="pb-12 text-4xl text-white font-IranSans">مرجع آموزش برنامه نویسی</h1>
-							<p class="text-base font-normal leading-relaxed text-white text-opacity-75 rtl font-IranSans">
+						<div class="flex flex-col md:mr-20">
+							<h1 class="hidden text-4xl text-white md:blockpb-12 font-IranSans">مرجع آموزش برنامه نویسی</h1>
+							<div class="pb-4 text-3xl text-center text-white font-IranSans md:hidden">
+								<h1>مرجع آموزش</h1>
+								<h1>برنامه نویسی</h1>
+							</div>
+							<p class="hidden text-base font-normal leading-relaxed text-white text-opacity-75 md:block font-IranSans">
 								ارتقای مهارت های برنامه نویسی، با رویکرد محتوای چندرسانه ای.
 								<br />
 								شروع یادگیری بهترین استک های برنامه نویسی شامل laravel، Vue و بسیاری موارد دیگر
 							</p>
-							<div class="mt-14">
+							<div class="flex items-center justify-center mt-4 mb-8 md:mb-0 md:mt-14 md:block">
 								<router-link
 									to="/series"
-									class="object-right px-8 py-2 ml-6 text-black transition-all duration-300 bg-white border rounded-full rtl font-IranSans hover:text-blue-400"
+									class="object-right px-8 py-2 ml-6 text-black transition-all duration-300 bg-white border rounded-full font-IranSans hover:text-blue-400"
 									>مشاهده دوره ها
 								</router-link>
 								<router-link
 									to="/discuss"
-									class="object-right px-8 py-2 text-white transition-all duration-300 bg-white border border-opacity-25 rounded-full bg-opacity-10 mt-14 rtl font-IranSans hover:text-blue-400 hover:bg-opacity-100"
+									class="object-right px-8 py-2 text-white transition-all duration-300 bg-white border border-opacity-25 rounded-full bg-opacity-10 font-IranSans hover:text-blue-400 hover:bg-opacity-100"
 									>انجمن گفتگو
 								</router-link>
 							</div>
@@ -312,8 +316,19 @@
 	-webkit-mask: url("../../assets/images/home/home-bg-mask.svg");
 }
 
-.inner-banner {
-	min-height: 745px;
+.home-banner-inner {
+	overflow: hidden;
+}
+
+@media (min-width: 768px) {
+	.home-banner-inner {
+		min-height: 672px;
+	}
+}
+@media (min-width: 1500px) {
+	.home-banner-inner {
+		min-height: 795px;
+	}
 }
 
 #home-banner_illustration {

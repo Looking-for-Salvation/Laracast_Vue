@@ -1,9 +1,9 @@
 <template>
 	<nav
-		class="h-16 px-12 py-4 header-nav"
+		class="h-16 py-4 section header-nav"
 		:class="{ 'bg-transparent': transparent, 'header-background': !transparent, 'md:pt-7 md:pb-4': home, 'lg:py-3': !home }"
 	>
-		<div class="relative flex items-center justify-between h-full" :class="{ 'max-w-7xl mx-auto': home }">
+		<div class="relative flex items-center justify-between h-full" :class="{ 'md:max-w-7xl md:mx-auto': home }">
 			<div id="header-logo" class="flex ml-4 xl:w-1/4 xl:ml-0">
 				<router-link to="/" class="inline-block leading-none cursor-pointer">
 					<svg id="logo-full-white" viewBox="11.499815940856934 200.39300537109375 617.3845825195312 74.19113159179688" width="145" height="21">

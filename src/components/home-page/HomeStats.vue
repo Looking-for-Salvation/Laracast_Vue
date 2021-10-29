@@ -9,9 +9,7 @@
 					<div class="mb-1 text-xl text-black font-IranSans">
 						<span>&#1777;&#1780;&#1785;</span>
 					</div>
-					<div class="text-xs tracking-wider text-gray-500 font-IranSans">
-						دوره آموزشی
-					</div>
+					<div class="text-xs tracking-wider text-gray-500 font-IranSans">دوره <span class="hidden md:inline">آموزشی</span></div>
 				</div>
 				<div class="home-skills-stat_item text-center card mx-3 flex-1 lg:flex-none w-auto lg:w-[150px] h-auto rounded-2xl p-4">
 					<div class="mb-1" style="height: 30px;">
@@ -20,9 +18,7 @@
 					<div class="mb-1 text-xl text-black font-IranSans">
 						<span>&#1777;&#1785;&#1778;&#1782;</span>
 					</div>
-					<div class="text-xs tracking-wider text-gray-500 font-IranSans">
-						جلسه ویدویی
-					</div>
+					<div class="text-xs tracking-wider text-gray-500 font-IranSans">جلسه <span class="hidden md:inline">ویدویی</span></div>
 				</div>
 				<div class="home-skills-stat_item text-center card mx-3 flex-1 lg:flex-none w-auto lg:w-[150px] h-auto rounded-2xl p-4">
 					<div class="mb-1" style="height: 30px;">
@@ -31,9 +27,7 @@
 					<div class="mb-1 text-xl text-black font-IranSans">
 						<span>&#1779;&#1778;&#1782;</span>
 					</div>
-					<div class="text-xs tracking-wider text-gray-500 font-IranSans">
-						ساعت آموزش
-					</div>
+					<div class="text-xs tracking-wider text-gray-500 font-IranSans">ساعت <span class="hidden md:inline">آموزش</span></div>
 				</div>
 			</div>
 			<div class="py-5 mb-4 font-IranSans">

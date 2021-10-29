@@ -25,7 +25,7 @@
 								/>
 								<button
 									type="submit"
-									class="z-10 max-w-full px-8 py-5 text-base transition-all duration-200 md:text-sm md:w-32 md:py-3 form-button md:rounded-2xl rounded-3xl font-IranSans"
+									class="z-10 max-w-full px-8 py-4 text-base transition-all duration-200 md:text-sm md:w-32 md:py-3 form-button md:rounded-2xl rounded-3xl font-IranSans"
 								>
 									عضویت
 								</button>
