@@ -7,7 +7,8 @@
 						<div class="flex">
 							<div class="mt-2 mb-8 text-center mobile:flex-1 md:w-3/4 md:mx-auto">
 								<div class="mb-8">
-									<h1 class="mb-10 text-4xl font-light tracking-tight text-black font-IranSans">بزارید شروع کنیم</h1>
+									<h1 class="mb-10 text-4xl font-light tracking-tight text-black font-IranSans md:hidden">شروع</h1>
+									<h1 class="hidden mb-10 text-4xl font-light tracking-tight text-black font-IranSans md:block">بزارید شروع کنیم</h1>
 								</div>
 								<div class="mx-auto plans-toggle-wrap">
 									<div class="flex h-full plans-toggle">

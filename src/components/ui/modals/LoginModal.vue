@@ -1,8 +1,8 @@
 <template>
 	<base-modal inlineStyles="height: 600px; max-width: 600px;" :isVisible="isVisible" @close="closeModal">
 		<div class="flex flex-col justify-between h-full px-4">
-			<div class="flex-1 w-full px-10">
-				<div class="flex items-center h-full py-8">
+			<div class="flex-1 w-full md:px-10">
+				<div class="flex items-center h-full md:py-8">
 					<div class="container w-full mx-auto">
 						<div class="max-w-xs mx-auto">
 							<h1 class="mb-12 text-3xl font-light tracking-tight text-center text-black font-IranSans">ورود</h1>

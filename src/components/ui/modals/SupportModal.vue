@@ -1,13 +1,13 @@
 <template>
 	<base-modal inlineStyles="max-width: 1200px; max-height: 95vh;" :isVisible="isVisible" @close="closeModal">
 		<div class="flex flex-col justify-between h-full px-4">
-			<div class="flex-1 w-full px-10">
-				<div class="flex items-center h-full py-8">
+			<div class="flex-1 w-full md:px-10">
+				<div class="flex items-center h-full md:py-8">
 					<div class="container w-full mx-auto">
 						<div class="max-w-xl mx-auto">
 							<h1 class="mt-2 mb-10 text-3xl font-light tracking-tight text-center text-black font-IranSans">ارسال تیکت</h1>
 							<div class="mt-10">
-								<form @submit.prevent autocomplete="off" class="p-8 mx-auto">
+								<form @submit.prevent autocomplete="off" class="p-8 md:mx-auto">
 									<div class="control">
 										<input type="text" name="name" class="input is-minimal font-IranSans" placeholder="نام و نام خانوادگی" />
 									</div>
@@ -64,23 +64,42 @@ export default {
 <style scoped>
 .button {
 	--tw-text-opacity: 1;
-	max-width: 100%;
-	padding-bottom: 0.83rem;
-	padding-left: 2rem;
-	padding-right: 2rem;
-	padding-top: 0.83rem;
-	transition: background 0.3s, border-color 0.2s;
-	display: inline-block;
 	border-radius: 20px;
 	border-style: solid;
 	border-width: 1px;
 	color: rgba(34, 41, 47, var(--tw-text-opacity));
+	display: block;
 	font-size: 0.834rem;
 	font-weight: 600;
 	line-height: 1;
+	max-width: 30rem;
+	padding: 1.25rem 1rem;
 	position: relative;
 	text-align: center;
-	text-transform: uppercase;
+	transition-duration: 0.15s;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+	.button {
+		display: inline-block;
+		padding-bottom: 0.75rem;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		padding-top: 0.75rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.button {
+		max-width: 100%;
+		padding-bottom: 0.83rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		padding-top: 0.83rem;
+		transition: background 0.3s, border-color 0.2s;
+	}
 }
 
 .button:hover {

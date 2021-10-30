@@ -1,8 +1,8 @@
 <template>
 	<base-modal inlineStyles="max-width: 600px;" :isVisible="isVisible" @close="closeModal">
 		<div class="flex flex-col justify-between h-full px-4">
-			<div class="flex-1 w-full px-10">
-				<div class="flex items-center h-full py-8">
+			<div class="flex-1 w-full md:px-10">
+				<div class="flex items-center h-full md:py-8">
 					<div class="container w-full mx-auto">
 						<div class="max-w-xs mx-auto">
 							<header class="flex items-center justify-center text-center">
@@ -83,7 +83,7 @@
 										</div>
 									</div>
 									<div class="mt-10 text-center">
-										<button class="w-full text-base login-form-button font-IranSans" type="submit">ثبت نام</button>
+										<button class="w-full text-base login-form-button md:max-w-2/3 font-IranSans" type="submit">ثبت نام</button>
 										<button class="block mx-auto mt-8 text-base text-gray-700 font-IranSans hover:underline" @click="login">اکانت دارید؟</button>
 									</div>
 								</form>

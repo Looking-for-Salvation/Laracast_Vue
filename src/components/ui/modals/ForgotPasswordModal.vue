@@ -1,8 +1,8 @@
 <template>
 	<base-modal inlineStyles="height: 600px; max-width: 600px;" :isVisible="isVisible" @close="closeModal">
 		<div class="flex flex-col justify-between h-full px-4">
-			<div class="flex-1 w-full px-10">
-				<div class="flex items-center h-full py-8">
+			<div class="flex-1 w-full md:px-10">
+				<div class="flex items-center h-full md:py-8">
 					<div class="container w-full mx-auto">
 						<div class="max-w-xs mx-auto">
 							<div class="mt-8">
@@ -33,7 +33,7 @@
 										</div>
 									</div>
 									<div class="mt-10 text-center control">
-										<button class="w-full text-base login-form-button font-IranSans" type="submit">ریست</button>
+										<button class="w-full text-base form-button font-IranSans" type="submit">ریست</button>
 										<button class="block mx-auto mt-4 text-base text-gray-700 font-IranSans hover:underline" @click="login">ورود</button>
 									</div>
 								</form>
@@ -74,31 +74,52 @@ export default {
 </script>
 
 <style scoped>
-.login-form-button {
+.form-button {
 	--tw-border-opacity: 1;
 	--tw-bg-opacity: 1;
 	--tw-text-opacity: 1;
-	background-color: rgba(50, 138, 241, var(--tw-bg-opacity));
-	border-color: rgba(50, 138, 241, var(--tw-border-opacity));
-	color: rgba(255, 255, 255, var(--tw-text-opacity));
-	max-width: 100%;
-	padding-bottom: 0.83rem;
-	padding-left: 2rem;
-	padding-right: 2rem;
-	padding-top: 0.83rem;
-	transition: background 0.3s, border-color 0.2s;
-	display: inline-block;
 	border-radius: 20px;
 	border-style: solid;
 	border-width: 1px;
-	position: relative;
-	text-align: center;
-	text-transform: uppercase;
+	color: rgba(34, 41, 47, var(--tw-text-opacity));
+	display: block;
+	font-size: 0.834rem;
 	font-weight: 600;
 	line-height: 1;
+	max-width: 30rem;
+	padding: 1.25rem 1rem;
+	position: relative;
+	text-align: center;
+	transition-duration: 0.15s;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgba(50, 138, 241, var(--tw-bg-opacity));
+	border-color: rgba(50, 138, 241, var(--tw-border-opacity));
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
-.login-form-button:hover {
+@media (min-width: 768px) {
+	.form-button {
+		display: inline-block;
+		padding-bottom: 0.75rem;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		padding-top: 0.75rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.form-button {
+		max-width: 100%;
+		padding-bottom: 0.83rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		padding-top: 0.83rem;
+		transition: background 0.3s, border-color 0.2s;
+	}
+}
+
+.form-button:hover {
 	--tw-border-opacity: 1;
 	--tw-bg-opacity: 1;
 	--tw-text-opacity: 1;

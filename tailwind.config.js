@@ -33,6 +33,7 @@ module.exports = {
 				md: "40rem",
 				lg: "50rem",
 				xl: "60rem",
+				"2/3": "75%",
 			},
 			maxHeight: {
 				none: "none",
