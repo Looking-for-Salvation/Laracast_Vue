@@ -283,7 +283,7 @@ export default [
 		seriesCount: 1,
 		videosCount: 4,
 		url: "/topics/sumfony",
-		category: "frameworks",
+		category: "framework",
 	},
 	{
 		name: "Tailwind",
@@ -323,7 +323,7 @@ export default [
 		seriesCount: 7,
 		videosCount: 111,
 		url: "/topics/vue",
-		category: "frameworks",
+		category: "framework",
 	},
 	{
 		name: "Webpack",
