@@ -25,7 +25,7 @@
 				</p>
 				<router-link
 					:to="route"
-					class="w-full px-8 py-3 leading-none text-center text-black transition-all duration-150 bg-gray-100 border border-transparent mobile:mx-auto hover:border-blue-400 hover:text-blue-400 font-IranSans rounded-3xl plan-start-learning-button"
+					class="w-full px-8 py-3 leading-none text-center text-black transition-all duration-150 bg-gray-100 border border-transparent mobile:mx-auto hover:border-blue-400 hover:text-blue-400 font-IranSans rounded-2xl plan-start-learning-button"
 					:class="{ 'plan-primary-button': primary }"
 					>شروع یادگیری
 				</router-link>

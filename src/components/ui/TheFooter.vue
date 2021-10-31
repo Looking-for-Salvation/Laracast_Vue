@@ -17,7 +17,7 @@
 							<div class="flex flex-col justify-center max-w-sm mx-auto mb-6 md:flex-row lg:max-w-full lg:mx-0 lg:mb-0 ">
 								<input
 									type="email"
-									class="px-4 py-4 mb-4 text-base text-center text-black outline-none md:w-1/2 md:py-3 md:mb-0 md:-ml-8 md:text-sm md:text-right text-opacity-60 md:rounded-2xl rounded-3xl font-IranSans"
+									class="px-4 py-4 mb-4 text-base text-center text-black outline-none md:w-1/2 md:py-3 md:mb-0 md:-ml-8 md:text-sm md:text-right text-opacity-60 md:rounded-2xl rounded-2xl font-IranSans"
 									name="email"
 									placeholder="ایمیل خود را وارد کنید"
 									autocomplete="off"
@@ -25,7 +25,7 @@
 								/>
 								<button
 									type="submit"
-									class="z-10 max-w-full px-8 py-4 text-base transition-all duration-200 md:text-sm md:w-32 md:py-3 form-button md:rounded-2xl rounded-3xl font-IranSans"
+									class="z-10 max-w-full px-8 py-4 text-base transition-all duration-200 md:text-sm md:w-32 md:py-3 form-button md:rounded-2xl rounded-2xl font-IranSans"
 								>
 									عضویت
 								</button>

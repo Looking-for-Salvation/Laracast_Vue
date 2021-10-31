@@ -52,7 +52,12 @@ module.exports = {
 				"[20px]": "20px",
 				"[35px]": "35px",
 			},
+			borderRadius: {
+				xl: "0.9rem",
+				"2xl": "1.25rem",
+			},
 			backgroundOpacity: {
+				"3": "0.03",
 				"97": "0.97",
 			},
 			fontSize: {

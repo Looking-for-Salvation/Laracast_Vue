@@ -26,7 +26,7 @@
 				</p>
 				<router-link
 					:to="planRoute"
-					class="hidden max-w-full px-8 py-3 text-sm transition-all duration-150 md:w-5/6 md:mx-auto md:block font-IranSans rounded-3xl complex-plan-button"
+					class="hidden max-w-full px-8 py-3 text-sm transition-all duration-150 md:w-5/6 md:mx-auto md:block font-IranSans rounded-2xl complex-plan-button"
 					style="letter-spacing: 0.23px;"
 					>{{ "آموزش " + planDevCount + " برنامه نویس" }}
 				</router-link>
@@ -49,7 +49,7 @@
 						<div class="is-filled-20">
 							<router-link
 								to="/signup?plan=monthly-15"
-								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-3xl"
+								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': filled20 }"
 								@mouseenter="setTwoDev"
 								>2 نفر</router-link
@@ -58,7 +58,7 @@
 						<div class="is-filled-40">
 							<router-link
 								to="/signup?plan=monthly-15"
-								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-3xl"
+								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': filled40 }"
 								@mouseenter="setFiveDev"
 								>5 نفر</router-link
@@ -67,7 +67,7 @@
 						<div class="is-filled-60">
 							<router-link
 								to="/signup?plan=monthly-15"
-								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-3xl"
+								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': filled60 }"
 								@mouseenter="setTenDev"
 								>10 نفر</router-link
@@ -76,7 +76,7 @@
 						<div class="is-filled-80">
 							<router-link
 								to="/signup?plan=monthly-15"
-								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-3xl"
+								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': filled80 }"
 								@mouseenter="setTwentyDev"
 								>25 نفر</router-link
@@ -85,7 +85,7 @@
 						<div class="is-filled-100">
 							<router-link
 								to="/signup?plan=monthly-15"
-								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-3xl"
+								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': filled100 }"
 								@mouseenter="setFiftyDev"
 								>50 نفر</router-link
@@ -95,7 +95,7 @@
 				</div>
 				<router-link
 					:to="planRoute"
-					class="block max-w-full px-8 py-3 mx-auto text-sm transition-all md:hidden font-IranSans rounded-3xl complex-plan-button"
+					class="block max-w-full px-8 py-3 mx-auto text-sm transition-all md:hidden font-IranSans rounded-2xl complex-plan-button"
 					style="letter-spacing: 0.23px;"
 					>{{ "آموزش " + planDevCount + " برنامه نویس" }}
 				</router-link>

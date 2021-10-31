@@ -110,4 +110,8 @@ section {
 	opacity: 1;
 	transition: opacity 1s ease;
 }
+
+.inherits-color {
+	color: inherit;
+}
 </style>
