@@ -83,7 +83,7 @@ export default [
 		seriesCount: 7,
 		videosCount: 52,
 		url: "/topics/css",
-		category: "languages",
+		category: "language",
 	},
 	{
 		name: "Cypress",
