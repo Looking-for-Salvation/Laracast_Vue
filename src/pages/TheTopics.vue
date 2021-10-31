@@ -66,7 +66,9 @@
 							</div>
 						</section>
 					</div>
-					<router-view></router-view>
+					<transition name="topics">
+						<router-view></router-view>
+					</transition>
 				</div>
 			</section>
 		</main>
@@ -113,4 +115,18 @@ export default {};
 		opacity: 1;
 	}
 }
+
+/* .topics-enter-active {
+	transition: all 0.2s;
+	transition-timing-function: ease;
+}
+.topics-leave-active {
+	transition: all 0.1s;
+	transition-timing-function: ease;
+}
+
+.topics-enter-from,
+.topics-leave-to {
+	opacity: 0;
+} */
 </style>

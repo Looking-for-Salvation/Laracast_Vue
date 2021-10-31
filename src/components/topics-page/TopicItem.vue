@@ -3,7 +3,7 @@
 		<router-link :to="url" class="flex flex-col justify-between w-full h-full px-4 py-1 mx-2 bg-white card" style="height: 84px; min-width: 205px;">
 			<div class="flex items-center flex-1">
 				<div class="flex justify-center ml-4">
-					<img :src="imgSource" :alt="name" width="50" height="50" />
+					<img :src="imgSource" :alt="name" width="50" height="50" class="lazyloaded" />
 				</div>
 				<div>
 					<h2 class="text-sm text-right text-black font-IranSans">{{ name }}</h2>

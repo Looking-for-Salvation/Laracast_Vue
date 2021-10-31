@@ -105,4 +105,9 @@ section {
 	border: 1px solid rgba(36, 37, 38, 0.08);
 	max-width: 437px;
 }
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 1s ease;
+}
 </style>

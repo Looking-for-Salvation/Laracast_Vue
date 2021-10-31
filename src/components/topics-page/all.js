@@ -51,7 +51,7 @@ export default [
 		seriesCount: 3,
 		videosCount: 30,
 		url: "/topics/authenticating",
-		category: "techniques",
+		category: "technique",
 	},
 	{
 		name: "Billing",
@@ -67,7 +67,7 @@ export default [
 		seriesCount: 2,
 		videosCount: 20,
 		url: "/topics/blade",
-		category: "techniques",
+		category: "technique",
 	},
 	{
 		name: "Clean Code",
@@ -75,7 +75,7 @@ export default [
 		seriesCount: 11,
 		videosCount: 75,
 		url: "/topics/clean-code",
-		category: "techniques",
+		category: "technique",
 	},
 	{
 		name: "CSS",
@@ -99,7 +99,7 @@ export default [
 		seriesCount: 3,
 		videosCount: 39,
 		url: "/topics/deployment",
-		category: "techniques",
+		category: "technique",
 	},
 	{
 		name: "Docker",
@@ -211,7 +211,7 @@ export default [
 		seriesCount: 4,
 		videosCount: 27,
 		url: "/topics/object-oriented-programming",
-		category: "techniques",
+		category: "technique",
 	},
 	{
 		name: "PHP",
@@ -243,7 +243,7 @@ export default [
 		seriesCount: 2,
 		videosCount: 23,
 		url: "/topics/queues",
-		category: "techniques",
+		category: "technique",
 	},
 	{
 		name: "React",
@@ -339,6 +339,6 @@ export default [
 		seriesCount: 17,
 		videosCount: 243,
 		url: "/topics/workshops",
-		category: "techniques",
+		category: "technique",
 	},
 ];
