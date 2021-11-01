@@ -56,7 +56,7 @@ module.exports = {
 				xl: "0.9rem",
 				"2xl": "1.25rem",
 			},
-			backgroundOpacity: {
+			opacity: {
 				"3": "0.03",
 				"97": "0.97",
 			},

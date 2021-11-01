@@ -1,0 +1,38 @@
+<template>
+	<div class="container mt-8" style="max-width: 1166px;">
+		<div class="grid gap-y-6 gap-x-10" style="grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));">
+			<featured-item
+				v-for="item in featuredItems"
+				:key="item.name"
+				:category="item.category"
+				:name="item.name"
+				:description="item.description"
+				:level="item.level"
+				:lessonsCount="item.lessonsCount"
+				:totalTime="item.totalTime"
+				:route="item.route"
+				:imgSource="item.imgSource"
+				:mode="item.mode"
+			></featured-item>
+		</div>
+	</div>
+</template>
+
+<script>
+import data from "./series-beginner/featured-items.js";
+
+import FeaturedItem from "@/components/home-page/home-featured/FeaturedItem.vue";
+
+export default {
+	components: {
+		FeaturedItem,
+	},
+	setup() {
+		const featuredItems = data;
+
+		return {
+			featuredItems,
+		};
+	},
+};
+</script>

@@ -38,7 +38,7 @@
 import firstItem from "./series-recent/featured-recent1.js";
 import secondItem from "./series-recent/featured-recent2.js";
 
-import SeriesFeatured from "./series-recent/SeriesFeatured.vue";
+import SeriesFeatured from "./SeriesFeaturedItem.vue";
 import SeriesMoreRecent from "./series-recent/SeriesMoreRecent.vue";
 
 export default {

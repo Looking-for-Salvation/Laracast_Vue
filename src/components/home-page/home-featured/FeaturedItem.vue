@@ -17,7 +17,7 @@
 		>
 			<router-link
 				:to="categoryRoute"
-				class="w-full px-4 py-2 text-xs leading-none text-center text-white bg-black rounded-full expanded-card_skill-button bg-opacity-10 hover:bg-white hover:text-gray-700 font-IranSans"
+				class="w-full px-4 py-2 text-xs leading-none text-center text-white transition-all duration-200 bg-black rounded-full expanded-card_skill-button bg-opacity-10 hover:bg-white hover:text-gray-700 font-IranSans"
 				v-if="!isLarge"
 				>{{ categoryPersian }}
 			</router-link>
