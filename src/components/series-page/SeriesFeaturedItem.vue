@@ -23,7 +23,7 @@
 					>
 				</div>
 				<div class="mb-4">
-					<h3 class="text-xl text-black lg:text-2xl font-IranSans">
+					<h3 class="text-xl font-light text-black lg:text-2xl font-IranSans">
 						<router-link :to="url" class="hover:underline">{{ name }}</router-link>
 					</h3>
 				</div>
@@ -69,7 +69,7 @@
 				<div class="md:w-52">
 					<router-link
 						:to="url"
-						class="flex items-center justify-center py-2 text-sm text-black bg-gray-100 border border-gray-100 rounded-full font-IranSans hover:border-blue-400 hover:text-blue-400"
+						class="flex items-center justify-center py-2 text-sm text-black transition-all duration-200 bg-gray-100 border border-gray-100 rounded-full font-IranSans hover:border-blue-400 hover:text-blue-400"
 					>
 						<svg width="15" height="15" viewBox="0 0 15 15" class="ml-2">
 							<g fill="none" fill-rule="evenodd">

@@ -2,7 +2,7 @@
 	<div class="container mt-8" style="max-width: 1166px;">
 		<div class="grid gap-y-6 gap-x-10" style="grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));">
 			<featured-item
-				v-for="item in featuredItems"
+				v-for="item in items"
 				:key="item.name"
 				:category="item.category"
 				:name="item.name"
@@ -19,20 +19,17 @@
 </template>
 
 <script>
-import data from "./series-beginner/featured-items.js";
-
 import FeaturedItem from "@/components/home-page/home-featured/FeaturedItem.vue";
 
 export default {
 	components: {
 		FeaturedItem,
 	},
-	setup() {
-		const featuredItems = data;
-
-		return {
-			featuredItems,
-		};
+	props: {
+		items: {
+			type: Array,
+			required: true,
+		},
 	},
 };
 </script>
