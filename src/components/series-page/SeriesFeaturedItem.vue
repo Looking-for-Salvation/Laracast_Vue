@@ -1,12 +1,12 @@
 <template>
 	<div
-		class="container relative w-full h-auto px-6 py-6 overflow-hidden featured-collection card md:flex md:justify-end rounded-xl one-column md:py-8 md:px-10"
+		class="container relative w-full h-auto px-6 py-6 overflow-hidden featured-collection card md:flex rounded-xl one-column md:py-8 md:px-10"
 		style="max-width: 1166px;"
 	>
 		<div class="text-center">
 			<img :src="imgSource" :alt="name" class="relative mb-8 rounded-lg thumbnail md:mb-0 md:absolute lazyloaded" width="500" />
 		</div>
-		<div class="flex flex-col items-center justify-between h-full body md:items-stretch md:w-3/4 lg:w-full">
+		<div class="flex flex-col items-center justify-between h-full body md:items-stretch md:w-3/4 xl:w-full">
 			<div class="mb-4 text-center md:text-right" style="max-width: 650px;">
 				<div class="mb-3">
 					<router-link
