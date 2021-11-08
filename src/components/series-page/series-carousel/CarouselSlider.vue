@@ -1,0 +1,138 @@
+<template>
+	<swiper
+		:slidesPerView="1"
+		:loop="true"
+		:navigation="true"
+		:grabCursor="true"
+		:breakpoints="{
+			768: {
+				slidesPerView: 3,
+			},
+			// when window width is >= 480px
+			992: {
+				slidesPerView: 4,
+			},
+			// when window width is >= 640px
+			1200: {
+				slidesPerView: 5,
+			},
+		}"
+		class="container mt-8 mySwiper"
+		style="max-width: 1166px;"
+	>
+		<swiper-slide>
+			<div class="grid w-full gap-y-4">
+				<carousel-item v-for="item in firstSlide" :key="item.name" :item="item"></carousel-item>
+			</div>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="grid w-full gap-y-4">
+				<carousel-item v-for="item in secondSlide" :key="item.name" :item="item"></carousel-item>
+			</div>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="grid w-full gap-y-4">
+				<carousel-item v-for="item in thirdSlide" :key="item.name" :item="item"></carousel-item>
+			</div>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="grid w-full gap-y-4">
+				<carousel-item v-for="item in forthSlide" :key="item.name" :item="item"></carousel-item>
+			</div>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="grid w-full gap-y-4">
+				<carousel-item v-for="item in fifthSlide" :key="item.name" :item="item"></carousel-item>
+			</div>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="grid w-full gap-y-4">
+				<carousel-item v-for="item in sixthSlide" :key="item.name" :item="item"></carousel-item>
+			</div>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="grid w-full gap-y-4">
+				<carousel-item v-for="item in seventhSlide" :key="item.name" :item="item"></carousel-item>
+			</div>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="grid w-full gap-y-4">
+				<carousel-item v-for="item in eighthSlide" :key="item.name" :item="item"></carousel-item>
+			</div>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="grid w-full gap-y-4">
+				<carousel-item v-for="item in ninthSlide" :key="item.name" :item="item"></carousel-item>
+			</div>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="grid w-full gap-y-4">
+				<carousel-item v-for="item in tenthSlide" :key="item.name" :item="item"></carousel-item>
+			</div>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="grid w-full gap-y-4">
+				<carousel-item v-for="item in eleventhSlide" :key="item.name" :item="item"></carousel-item>
+			</div>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="grid w-full gap-y-4">
+				<carousel-item v-for="item in twelfthSlide" :key="item.name" :item="item"></carousel-item>
+			</div>
+		</swiper-slide>
+	</swiper>
+</template>
+
+<script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import SwiperCore, { Pagination, Navigation } from "swiper";
+
+// swiper core styles
+import "swiper/swiper.min.css";
+
+// modules styles
+import "swiper/components/navigation/navigation.min.css";
+import "swiper/components/pagination/pagination.min.css";
+
+SwiperCore.use([Pagination, Navigation]);
+
+import { slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, slide9, slide10, slide11, slide12 } from "./data.js";
+import CarouselItem from "./CarouselItem.vue";
+
+export default {
+	components: {
+		Swiper,
+		SwiperSlide,
+		CarouselItem,
+	},
+	setup() {
+		const firstSlide = slide1;
+		const secondSlide = slide2;
+		const thirdSlide = slide3;
+		const forthSlide = slide4;
+		const fifthSlide = slide5;
+		const sixthSlide = slide6;
+		const seventhSlide = slide7;
+		const eighthSlide = slide8;
+		const ninthSlide = slide9;
+		const tenthSlide = slide10;
+		const eleventhSlide = slide11;
+		const twelfthSlide = slide12;
+
+		return {
+			firstSlide,
+			secondSlide,
+			thirdSlide,
+			forthSlide,
+			fifthSlide,
+			sixthSlide,
+			seventhSlide,
+			eighthSlide,
+			ninthSlide,
+			tenthSlide,
+			eleventhSlide,
+			twelfthSlide,
+		};
+	},
+};
+</script>

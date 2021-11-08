@@ -63,7 +63,7 @@
 								opacity=".5"
 							></path>
 						</svg>
-						<span>{{ calcLength }}</span>
+						<span class="mt-px">{{ calcLength }}</span>
 					</div>
 				</div>
 				<div class="md:w-52">
