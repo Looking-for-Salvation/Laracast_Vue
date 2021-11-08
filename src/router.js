@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import TheHome from "./pages/TheHome.vue";
+import TheFooter from "@/components/ui/TheFooter.vue";
 //* Topics components
 import TheTopics from "@/pages/TheTopics.vue";
 import AllTopics from "@/components/topics-page/AllTopics.vue";
@@ -20,10 +21,10 @@ import NotFound from "./pages/NotFound.vue";
 const router = createRouter({
 	history: createWebHistory(),
 	routes: [
-		{ path: "/", component: TheHome },
+		{ path: "/", components: { default: TheHome, footer: TheFooter } },
 		{
 			path: "/browse",
-			component: TheTopics,
+			components: { default: TheTopics, footer: TheFooter },
 			redirect: "/browse/all",
 			children: [
 				{ path: "all", component: AllTopics },
@@ -34,13 +35,19 @@ const router = createRouter({
 				{ path: "techniques", component: TechniquesTopic },
 			],
 		},
-		{ path: "/series", component: TheSeries },
-		{ path: "/podcast", component: ThePodcast },
-		{ path: "/discuss", component: TheDiscuss },
-		{ path: "/:notFound(.*)", component: NotFound },
+		{ path: "/series", components: { default: TheSeries, footer: TheFooter } },
+		{ path: "/podcast", components: { default: ThePodcast, footer: TheFooter } },
+		{ path: "/discuss", components: { default: TheDiscuss, footer: TheFooter } },
+		{ path: "/:notFound(.*)", components: { rootroute: NotFound } },
 	],
 	linkActiveClass: "router-active",
 	linkExactActiveClass: "router-exact-active",
+	scrollBehavior(_, _2, savedPosition) {
+		if (savedPosition) {
+			return savedPosition;
+		}
+		return { left: 0, top: 0 };
+	},
 });
 
 export default router;
