@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import { inject } from "vue";
 export default {
 	props: {
 		isVisible: {
@@ -53,6 +54,9 @@ export default {
 		const close = () => {
 			emit("close");
 		};
+
+		const joinViaFooter = inject("joinfooter");
+		console.log(joinViaFooter);
 
 		return {
 			close,

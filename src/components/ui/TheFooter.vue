@@ -104,12 +104,12 @@
 					<div class="mobile:mb-6 lg:w-1/6">
 						<h5 class="mb-2 font-bold text-white lg:mb-6 lg:font-normal font-IranSans">آموزش</h5>
 						<ul class="w-3/4 mx-auto mb-8 leading-relaxed lg:mx-0 lg:mb-0 inline-bulleted-list">
-							<!-- <li>
-								<router-link to="/signup" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">ثبت نام</router-link>
+							<li>
+								<router-link to="/join" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100" @click="join">ثبت نام</router-link>
 							</li>
 							<li>
-								<router-link to="/signin" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">ورود</router-link>
-							</li> -->
+								<router-link to="/login" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">ورود</router-link>
+							</li>
 							<li>
 								<router-link to="/series" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">دوره ها</router-link>
 							</li>
@@ -187,7 +187,7 @@
 </template>
 
 <script>
-import { ref, defineAsyncComponent } from "vue";
+import { ref, provide, defineAsyncComponent } from "vue";
 
 const SupportModal = defineAsyncComponent(() => import("./modals/SupportModal.vue"));
 
@@ -206,10 +206,16 @@ export default {
 			isSupportVisible.value = false;
 		};
 
+		const joinFooter = ref(true);
+		const join = () => (joinFooter.value = true);
+
+		provide("joinfooter", joinFooter.value);
+
 		return {
 			isSupportVisible,
 			openSupport,
 			closeSupport,
+			join,
 		};
 	},
 };

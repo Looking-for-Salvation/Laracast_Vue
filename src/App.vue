@@ -119,4 +119,14 @@ section {
 .inherits-color {
 	color: inherit;
 }
+
+.generic-content a {
+	font-weight: 700;
+}
+.series-banner .generic-content a {
+	color: inherit;
+}
+.generic-content p {
+	margin-bottom: 20px;
+}
 </style>

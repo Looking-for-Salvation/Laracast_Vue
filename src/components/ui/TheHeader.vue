@@ -149,7 +149,8 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import { useRoute } from "vue-router";
 
 import LoginModal from "./modals/LoginModal.vue";
 import JoinModal from "./modals/JoinModal.vue";
@@ -178,6 +179,15 @@ export default {
 		MobileNavModal,
 	},
 	setup() {
+		const route = useRoute();
+
+		const modalQuery = () => {
+			if (route.query.modal === "join") isJoinVisible.value = true;
+			else if (route.query.modal === "signin") isLoginVisible.value = true;
+		};
+
+		onMounted(modalQuery);
+
 		const isLoginVisible = ref(false);
 		const isJoinVisible = ref(false);
 		const isPlansVisible = ref(true);

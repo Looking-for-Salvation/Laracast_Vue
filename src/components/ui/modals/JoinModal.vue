@@ -67,6 +67,9 @@ export default {
 			isPersonal.value = false;
 		}
 
+		// const joinViaFooter = inject("joinfooter");
+		// console.log(joinViaFooter);
+
 		return {
 			closeModal,
 			isPersonal,

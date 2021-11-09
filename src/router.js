@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { defineAsyncComponent } from "vue";
 
 import TheHome from "./pages/TheHome.vue";
 import TheFooter from "@/components/ui/TheFooter.vue";
@@ -18,10 +19,14 @@ import ThePodcast from "@/pages/ThePodcast.vue";
 import TheDiscuss from "@/pages/TheDiscuss.vue";
 import NotFound from "./pages/NotFound.vue";
 
+const TheFaq = defineAsyncComponent(() => import("@/pages/TheFaq.vue"));
+
 const router = createRouter({
 	history: createWebHistory(),
 	routes: [
 		{ path: "/", components: { default: TheHome, footer: TheFooter } },
+		{ path: "/join", redirect: "/?modal=join" },
+		{ path: "/signin", redirect: "/?modal=signin" },
 		{
 			path: "/browse",
 			components: { default: TheTopics, footer: TheFooter },
@@ -38,6 +43,7 @@ const router = createRouter({
 		{ path: "/series", components: { default: TheSeries, footer: TheFooter } },
 		{ path: "/podcast", components: { default: ThePodcast, footer: TheFooter } },
 		{ path: "/discuss", components: { default: TheDiscuss, footer: TheFooter } },
+		{ path: "/faq", components: { default: TheFaq, footer: TheFooter } },
 		{ path: "/:notFound(.*)", components: { rootroute: NotFound } },
 	],
 	linkActiveClass: "router-active",
