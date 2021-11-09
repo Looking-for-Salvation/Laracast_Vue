@@ -20,6 +20,7 @@ import TheDiscuss from "@/pages/TheDiscuss.vue";
 import NotFound from "./pages/NotFound.vue";
 
 const TheFaq = defineAsyncComponent(() => import("@/pages/TheFaq.vue"));
+const TheTerms = defineAsyncComponent(() => import("@/pages/TheTerms.vue"));
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -44,6 +45,7 @@ const router = createRouter({
 		{ path: "/podcast", components: { default: ThePodcast, footer: TheFooter } },
 		{ path: "/discuss", components: { default: TheDiscuss, footer: TheFooter } },
 		{ path: "/faq", components: { default: TheFaq, footer: TheFooter } },
+		{ path: "/terms", components: { default: TheTerms, footer: TheFooter } },
 		{ path: "/:notFound(.*)", components: { rootroute: NotFound } },
 	],
 	linkActiveClass: "router-active",

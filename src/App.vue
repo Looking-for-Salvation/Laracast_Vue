@@ -129,4 +129,44 @@ section {
 .generic-content p {
 	margin-bottom: 20px;
 }
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+	color: #22292f;
+	line-height: 1.125;
+	margin-bottom: 20px;
+}
+
+.content blockquote:not(:last-child),
+.content ol:not(:last-child),
+.content p:not(:last-child),
+.content ul:not(:last-child) {
+	margin-bottom: 1em;
+}
+.content ol,
+.content ul {
+	margin-left: 2em;
+	margin-right: 2em;
+	margin-top: 1em;
+}
+.content ol {
+	list-style: decimal outside;
+}
+
+.content li + li {
+	margin-top: 0.25em;
+}
+
+pre,
+pre code {
+	background-color: #f5f7fa;
+	color: #4d545d;
+}
+pre {
+	word-wrap: normal;
+	white-space: pre;
+}
 </style>
