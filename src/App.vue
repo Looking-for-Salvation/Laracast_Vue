@@ -156,6 +156,10 @@ section {
 	list-style: decimal outside;
 }
 
+.content ul {
+	list-style: disc outside;
+}
+
 .content li + li {
 	margin-top: 0.25em;
 }

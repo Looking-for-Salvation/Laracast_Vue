@@ -76,7 +76,9 @@
 							<address class="md:pr-10">
 								<pre class="font-IranSans">
                         شرکت لاراکست.
-                        تهران همین بغلا, پلاک 1234 
+                        تهران همین بغلا,
+                        پلاک 1234 
+                        
                         pashmak@laracast.com</pre
 								>
 							</address>
