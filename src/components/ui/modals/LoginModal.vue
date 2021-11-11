@@ -1,5 +1,5 @@
 <template>
-	<base-modal inlineStyles="height: 600px; max-width: 600px;" :isVisible="loginModalVisibility" @close="closeLogin">
+	<base-modal inlineStyles="height: 600px; max-width: 600px;" :isVisible="loginModalVisibility" @close="closeLoginModal">
 		<div class="flex flex-col justify-between h-full px-4">
 			<div class="flex-1 w-full md:px-10">
 				<div class="flex items-center h-full md:py-8">
@@ -82,13 +82,13 @@ export default {
 		const store = useStore();
 
 		const loginModalVisibility = computed(() => store.getters["modals/loginModalVisibility"]);
-		const closeLogin = () => store.dispatch("modals/closeLogin");
+		const closeLoginModal = () => store.dispatch("modals/closeLogin");
 		const joinViaLogin = () => store.dispatch("modals/joinViaLogin");
 		const forgotPassword = () => store.dispatch("modals/forgotPassword");
 
 		return {
 			loginModalVisibility,
-			closeLogin,
+			closeLoginModal,
 			joinViaLogin,
 			forgotPassword,
 		};

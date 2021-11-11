@@ -14,6 +14,7 @@ export default {
 		commit("closeLogin");
 		commit("openForgotPassword");
 	},
+
 	//* JoinModal related actions
 	openJoin({ commit }) {
 		commit("openJoin");
@@ -32,6 +33,7 @@ export default {
 		commit("closeJoin");
 		commit("openSignup");
 	},
+
 	//* SignupModal related actions
 	openSignup({ commit }) {
 		commit("openSignup");
@@ -39,6 +41,11 @@ export default {
 	closeSignup({ commit }) {
 		commit("closeSignup");
 	},
+	loginViaSignup({ commit }) {
+		commit("closeSignup");
+		commit("openLogin");
+	},
+
 	//* ForgotPasswordModal related actions
 	closeForgotPassword({ commit }) {
 		commit("closeForgotPassword");
@@ -47,11 +54,28 @@ export default {
 		commit("closeForgotPassword");
 		commit("openLogin");
 	},
+
 	//* MobileNav related actions
 	openMobileNav({ commit }) {
 		commit("openMobileNav");
 	},
 	closeMobileNav({ commit }) {
 		commit("closeMobileNav");
+	},
+	loginViaMobileNav({ commit }) {
+		commit("closeMobileNav");
+		commit("openLogin");
+	},
+	joinViaMobileNav({ commit }) {
+		commit("closeMobileNav");
+		commit("openJoin");
+	},
+
+	//* SupportModal related actions
+	openSupport({ commit }) {
+		commit("openSupport");
+	},
+	closeSupport({ commit }) {
+		commit("closeSupport");
 	},
 };

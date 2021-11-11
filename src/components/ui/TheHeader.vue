@@ -123,7 +123,6 @@
 						</svg>
 					</button>
 					<a
-						href="#"
 						@click="openLoginStore"
 						class="px-8 py-1.5 mr-5 text-base text-white transition-all duration-300 border rounded-full cursor-pointer font-IranSans hover:bg-white hover:text-blue-400 border-opacity-50"
 						>ورود
@@ -134,9 +133,9 @@
 	</nav>
 	<join-modal></join-modal>
 	<login-modal></login-modal>
-	<sign-up-modal :isVisible="isSignUpVisible" @close="closeSignUp" @login="loginViaSignUp"></sign-up-modal>
-	<forgot-password-modal :isVisible="isForgotVisible" @close="closeForgot" @login="loginViaForgot"></forgot-password-modal>
-	<mobile-nav-modal :isVisible="isMobileNavVisible" @close="closeMobileNav" @login="loginViaMobileNav" @signup="joinViaMobileNav"></mobile-nav-modal>
+	<sign-up-modal></sign-up-modal>
+	<forgot-password-modal></forgot-password-modal>
+	<mobile-nav-modal></mobile-nav-modal>
 </template>
 
 <script>
@@ -180,6 +179,7 @@ export default {
 		};
 
 		const openLoginStore = () => store.dispatch("modals/openLogin");
+		const openMobileNav = () => store.dispatch("modals/openMobileNav");
 
 		onMounted(modalQuery);
 
@@ -257,9 +257,6 @@ export default {
 			isForgotVisible.value = false;
 		};
 
-		const openMobileNav = () => {
-			isMobileNavVisible.value = true;
-		};
 		const closeMobileNav = () => {
 			isMobileNavVisible.value = false;
 		};

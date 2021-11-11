@@ -29,12 +29,12 @@ export default {
 	closeMobileNav(state) {
 		state.isMobileNavVisible = false;
 	},
-	// setJoinModalPlans(state) {
-	// 	state.joinModalCurrentTab = "plans";
-	// },
-	// setJoinModalFaq(state) {
-	// 	state.joinModalCurrentTab = "faq";
-	// },
+	openSupport(state) {
+		state.isSupportVisible = true;
+	},
+	closeSupport(state) {
+		state.isSupportVisible = false;
+	},
 	setJoinModalCurrentTab(state, payload) {
 		state.joinModalCurrentTab = payload.tab;
 	},

@@ -1,5 +1,5 @@
 <template>
-	<base-modal inlineStyles="max-width: 600px;" :isVisible="isVisible" @close="closeModal">
+	<base-modal inlineStyles="max-width: 600px;" :isVisible="signupModalVisibility" @close="closeSignupModal">
 		<div class="flex flex-col justify-between h-full px-4">
 			<div class="flex-1 w-full md:px-10">
 				<div class="flex items-center h-full md:py-8">
@@ -97,26 +97,19 @@
 </template>
 
 <script>
+import { computed } from "vue";
+import { useStore } from "vuex";
 export default {
-	props: {
-		isVisible: {
-			type: Boolean,
-			required: true,
-			default: false,
-		},
-	},
-	emits: ["close", "join", "forgot"],
-	setup(_, { emit }) {
-		const closeModal = () => {
-			emit("close");
-		};
+	setup() {
+		const store = useStore();
 
-		const login = () => {
-			emit("login");
-		};
+		const signupModalVisibility = computed(() => store.getters["modals/signupModalVisibility"]);
+		const closeSignupModal = () => store.dispatch("modals/closeSignup");
+		const login = () => store.dispatch("modals/loginViaSignup");
 
 		return {
-			closeModal,
+			signupModalVisibility,
+			closeSignupModal,
 			login,
 		};
 	},

@@ -1,5 +1,5 @@
 <template>
-	<base-modal inlineStyles="max-width: 1200px; max-height: 95vh;" :isVisible="isVisible" @close="closeModal">
+	<base-modal inlineStyles="max-width: 1200px; max-height: 95vh;" :isVisible="supportModalVisibility" @close="closeSupportModal">
 		<div class="flex flex-col justify-between h-full px-4">
 			<div class="flex-1 w-full md:px-10">
 				<div class="flex items-center h-full md:py-8">
@@ -41,21 +41,19 @@
 </template>
 
 <script>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
 export default {
-	props: {
-		isVisible: {
-			type: Boolean,
-			required: true,
-			default: false,
-		},
-	},
-	setup(_, { emit }) {
-		const close = () => {
-			emit("close");
-		};
+	setup() {
+		const store = useStore();
+
+		const supportModalVisibility = computed(() => store.getters["modals/supportModalVisibility"]);
+		const closeSupportModal = () => store.dispatch("modals/closeSupport");
 
 		return {
-			close,
+			supportModalVisibility,
+			closeSupportModal,
 		};
 	},
 };

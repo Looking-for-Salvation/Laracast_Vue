@@ -105,10 +105,10 @@
 						<h5 class="mb-2 font-bold text-white lg:mb-6 lg:font-normal font-IranSans">آموزش</h5>
 						<ul class="w-3/4 mx-auto mb-8 leading-relaxed lg:mx-0 lg:mb-0 inline-bulleted-list">
 							<li>
-								<router-link to="/join" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100" @click="join">ثبت نام</router-link>
+								<a class="text-white transition-all opacity-50 cursor-pointer font-IranSans hover:opacity-100" @click="openJoinModal">ثبت نام</a>
 							</li>
 							<li>
-								<router-link to="/login" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">ورود</router-link>
+								<a class="text-white transition-all opacity-50 cursor-pointer font-IranSans hover:opacity-100" @click="openLoginModal">ورود</a>
 							</li>
 							<li>
 								<router-link to="/series" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">دوره ها</router-link>
@@ -143,7 +143,7 @@
 								<router-link to="/blog" class="text-white transition-all opacity-50 font-IranSans hover:opacity-100">بلاگ</router-link>
 							</li>
 							<li>
-								<a @click="openSupport" class="text-white transition-all opacity-50 cursor-pointer font-IranSans hover:opacity-100">پشتیبانی</a>
+								<a @click="openSupportModal" class="text-white transition-all opacity-50 cursor-pointer font-IranSans hover:opacity-100">پشتیبانی</a>
 							</li>
 						</ul>
 					</div>
@@ -183,11 +183,12 @@
 			</footer>
 		</section>
 	</div>
-	<support-modal :isVisible="isSupportVisible" @close="closeSupport"></support-modal>
+	<support-modal></support-modal>
 </template>
 
 <script>
-import { ref, defineAsyncComponent } from "vue";
+import { defineAsyncComponent } from "vue";
+import { useStore } from "vuex";
 
 const SupportModal = defineAsyncComponent(() => import("./modals/SupportModal.vue"));
 
@@ -196,24 +197,16 @@ export default {
 		SupportModal,
 	},
 	setup() {
-		const isSupportVisible = ref(false);
+		const store = useStore();
 
-		const openSupport = () => {
-			isSupportVisible.value = true;
-		};
-
-		const closeSupport = () => {
-			isSupportVisible.value = false;
-		};
-
-		const joinFooter = ref(true);
-		const join = () => (joinFooter.value = true);
+		const openJoinModal = () => store.dispatch("modals/openJoin");
+		const openLoginModal = () => store.dispatch("modals/openLogin");
+		const openSupportModal = () => store.dispatch("modals/openSupport");
 
 		return {
-			isSupportVisible,
-			openSupport,
-			closeSupport,
-			join,
+			openJoinModal,
+			openLoginModal,
+			openSupportModal,
 		};
 	},
 };

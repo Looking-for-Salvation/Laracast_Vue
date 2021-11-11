@@ -14,6 +14,9 @@ export default {
 	mobileNavModalVisibility(state) {
 		return state.isMobileNavVisible;
 	},
+	supportModalVisibility(state) {
+		return state.isSupportVisible;
+	},
 	joinModalCurrentTab(state) {
 		return state.joinModalCurrentTab;
 	},

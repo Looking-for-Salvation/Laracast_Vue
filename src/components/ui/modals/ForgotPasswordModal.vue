@@ -51,16 +51,9 @@ import { computed } from "vue";
 import { useStore } from "vuex";
 
 export default {
-	props: {
-		isVisible: {
-			type: Boolean,
-			required: true,
-			default: false,
-		},
-	},
-	emits: ["close", "login"],
 	setup() {
 		const store = useStore();
+
 		const forgotPasswordVisibility = computed(() => store.getters["modals/forgotPasswordVisibility"]);
 		const closeForgotPassword = () => store.dispatch("modals/closeForgotPassword");
 		const login = () => store.dispatch("modals/loginViaForgotPassword");

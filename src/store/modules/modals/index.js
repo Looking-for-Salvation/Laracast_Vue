@@ -12,6 +12,7 @@ export default {
 			isSignupVisible: false,
 			isForgotPasswordVisible: false,
 			isMobileNavVisible: false,
+			isSupportVisible: false,
 		};
 	},
 	mutations,
