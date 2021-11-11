@@ -96,7 +96,7 @@
 					</svg>
 				</button>
 				<div>
-					<a class="block leading-none" @click="openMobileNav">
+					<a class="block leading-none" @click="openMobileNavModal">
 						<div class="hamburger-nav">
 							<span></span>
 							<span></span>
@@ -123,7 +123,7 @@
 						</svg>
 					</button>
 					<a
-						@click="openLoginStore"
+						@click="openLoginModal"
 						class="px-8 py-1.5 mr-5 text-base text-white transition-all duration-300 border rounded-full cursor-pointer font-IranSans hover:bg-white hover:text-blue-400 border-opacity-50"
 						>ورود
 					</a>
@@ -139,7 +139,7 @@
 </template>
 
 <script>
-import { onMounted, ref } from "vue";
+import { onMounted } from "vue";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
 
@@ -173,131 +173,18 @@ export default {
 		const route = useRoute();
 		const store = useStore();
 
-		const modalQuery = () => {
-			if (route.query.modal === "join") isJoinVisible.value = true;
-			else if (route.query.modal === "signin") isLoginVisible.value = true;
-		};
+		const openLoginModal = () => store.dispatch("modals/openLogin");
+		const openMobileNavModal = () => store.dispatch("modals/openMobileNav");
 
-		const openLoginStore = () => store.dispatch("modals/openLogin");
-		const openMobileNav = () => store.dispatch("modals/openMobileNav");
+		const modalQuery = () => {
+			if (route.query.modal === "join") store.dispatch("modals/openJoin");
+		};
 
 		onMounted(modalQuery);
 
-		const isLoginVisible = ref(false);
-		const isJoinVisible = ref(false);
-		const isPlansVisible = ref(true);
-		const isFAQVisible = ref(false);
-		const isSignUpVisible = ref(false);
-		const isForgotVisible = ref(false);
-		const isMobileNavVisible = ref(false);
-
-		const openLogin = () => {
-			isLoginVisible.value = true;
-		};
-
-		const closeLogin = () => {
-			isLoginVisible.value = false;
-		};
-
-		const openJoin = () => {
-			isJoinVisible.value = true;
-		};
-
-		const closeJoin = () => {
-			isJoinVisible.value = false;
-		};
-
-		const joinViaLogin = () => {
-			isLoginVisible.value = false;
-			isJoinVisible.value = true;
-			isPlansVisible.value = true;
-			isFAQVisible.value = false;
-		};
-
-		const faqViaJoin = () => {
-			isPlansVisible.value = false;
-			isFAQVisible.value = true;
-		};
-
-		const plansViaFAQ = () => {
-			isFAQVisible.value = false;
-			isPlansVisible.value = true;
-		};
-
-		const loginViaJoin = () => {
-			isJoinVisible.value = false;
-			isLoginVisible.value = true;
-		};
-
-		const closeSignUp = () => {
-			isSignUpVisible.value = false;
-		};
-
-		const signUpViaJoin = () => {
-			isJoinVisible.value = false;
-			isSignUpVisible.value = true;
-		};
-
-		const loginViaSignUp = () => {
-			isSignUpVisible.value = false;
-			isLoginVisible.value = true;
-		};
-
-		const forgotViaLogin = () => {
-			isLoginVisible.value = false;
-			isForgotVisible.value = true;
-		};
-
-		const loginViaForgot = () => {
-			isForgotVisible.value = false;
-			isLoginVisible.value = true;
-		};
-
-		const closeForgot = () => {
-			isForgotVisible.value = false;
-		};
-
-		const closeMobileNav = () => {
-			isMobileNavVisible.value = false;
-		};
-
-		const loginViaMobileNav = () => {
-			isMobileNavVisible.value = false;
-			isLoginVisible.value = true;
-		};
-
-		const joinViaMobileNav = () => {
-			isMobileNavVisible.value = false;
-			isJoinVisible.value = true;
-		};
-
 		return {
-			isLoginVisible,
-			openLogin,
-			closeLogin,
-			isPlansVisible,
-			isJoinVisible,
-			openJoin,
-			closeJoin,
-			joinViaLogin,
-			isFAQVisible,
-			faqViaJoin,
-			plansViaFAQ,
-			loginViaJoin,
-			isSignUpVisible,
-			signUpViaJoin,
-			loginViaSignUp,
-			closeSignUp,
-			isForgotVisible,
-			closeForgot,
-			loginViaForgot,
-			forgotViaLogin,
-			isMobileNavVisible,
-			openMobileNav,
-			closeMobileNav,
-			loginViaMobileNav,
-			joinViaMobileNav,
-			openLoginStore,
+			openMobileNavModal,
+			openLoginModal,
 		};
 	},
 };
