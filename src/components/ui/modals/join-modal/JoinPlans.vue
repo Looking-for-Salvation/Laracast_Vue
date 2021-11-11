@@ -43,13 +43,8 @@ export default {
 	setup() {
 		const isPersonal = ref(true);
 
-		function setPlanPersonal() {
-			isPersonal.value = true;
-		}
-
-		function setPlanTeams() {
-			isPersonal.value = false;
-		}
+		const setPlanPersonal = () => (isPersonal.value = true);
+		const setPlanTeams = () => (isPersonal.value = false);
 
 		return {
 			isPersonal,

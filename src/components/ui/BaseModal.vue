@@ -50,9 +50,7 @@ export default {
 	},
 	emits: ["close"],
 	setup(_, { emit }) {
-		const close = () => {
-			emit("close");
-		};
+		const close = () => emit("close");
 
 		return {
 			close,
