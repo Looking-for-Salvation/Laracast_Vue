@@ -124,7 +124,7 @@
 					</button>
 					<a
 						href="#"
-						@click="openLogin"
+						@click="openLoginStore"
 						class="px-8 py-1.5 mr-5 text-base text-white transition-all duration-300 border rounded-full cursor-pointer font-IranSans hover:bg-white hover:text-blue-400 border-opacity-50"
 						>ورود
 					</a>
@@ -132,17 +132,8 @@
 			</div>
 		</div>
 	</nav>
-	<join-modal
-		:isVisible="isJoinVisible"
-		:isPlansVisible="isPlansVisible"
-		:isFAQVisible="isFAQVisible"
-		@plans="plansViaFAQ"
-		@faq="faqViaJoin"
-		@login="loginViaJoin"
-		@signup="signUpViaJoin"
-		@close="closeJoin"
-	></join-modal>
-	<login-modal :isVisible="isLoginVisible" @close="closeLogin" @join="joinViaLogin" @forgot="forgotViaLogin"></login-modal>
+	<join-modal></join-modal>
+	<login-modal></login-modal>
 	<sign-up-modal :isVisible="isSignUpVisible" @close="closeSignUp" @login="loginViaSignUp"></sign-up-modal>
 	<forgot-password-modal :isVisible="isForgotVisible" @close="closeForgot" @login="loginViaForgot"></forgot-password-modal>
 	<mobile-nav-modal :isVisible="isMobileNavVisible" @close="closeMobileNav" @login="loginViaMobileNav" @signup="joinViaMobileNav"></mobile-nav-modal>
@@ -151,6 +142,7 @@
 <script>
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
+import { useStore } from "vuex";
 
 import LoginModal from "./modals/LoginModal.vue";
 import JoinModal from "./modals/JoinModal.vue";
@@ -180,11 +172,14 @@ export default {
 	},
 	setup() {
 		const route = useRoute();
+		const store = useStore();
 
 		const modalQuery = () => {
 			if (route.query.modal === "join") isJoinVisible.value = true;
 			else if (route.query.modal === "signin") isLoginVisible.value = true;
 		};
+
+		const openLoginStore = () => store.dispatch("modals/openLogin");
 
 		onMounted(modalQuery);
 
@@ -305,6 +300,7 @@ export default {
 			closeMobileNav,
 			loginViaMobileNav,
 			joinViaMobileNav,
+			openLoginStore,
 		};
 	},
 };

@@ -187,7 +187,7 @@
 </template>
 
 <script>
-import { ref, provide, defineAsyncComponent } from "vue";
+import { ref, defineAsyncComponent } from "vue";
 
 const SupportModal = defineAsyncComponent(() => import("./modals/SupportModal.vue"));
 
@@ -208,8 +208,6 @@ export default {
 
 		const joinFooter = ref(true);
 		const join = () => (joinFooter.value = true);
-
-		provide("joinfooter", joinFooter.value);
 
 		return {
 			isSupportVisible,

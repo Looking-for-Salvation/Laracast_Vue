@@ -1,5 +1,11 @@
 import { createStore } from "vuex";
 
-const store = createStore({});
+import modalsModule from "./modules/modals/index.js";
+
+const store = createStore({
+	modules: {
+		modals: modalsModule,
+	},
+});
 
 export default store;

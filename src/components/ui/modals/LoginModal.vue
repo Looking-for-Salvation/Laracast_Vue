@@ -1,5 +1,5 @@
 <template>
-	<base-modal inlineStyles="height: 600px; max-width: 600px;" :isVisible="isVisible" @close="closeModal">
+	<base-modal inlineStyles="height: 600px; max-width: 600px;" :isVisible="loginModalVisibility" @close="closeLogin">
 		<div class="flex flex-col justify-between h-full px-4">
 			<div class="flex-1 w-full md:px-10">
 				<div class="flex items-center h-full md:py-8">
@@ -58,7 +58,7 @@
 									</div>
 									<div class="mt-10 text-center">
 										<button class="w-full text-base login-form-button font-IranSans" type="submit">ورود</button>
-										<button class="block mx-auto mt-2 text-sm text-gray-700 font-IranSans hover:underline" @click="forgot">
+										<button class="block mx-auto mt-2 text-sm text-gray-700 font-IranSans hover:underline" @click="forgotPassword">
 											رمز عبور خود را فراموش کرده اید؟
 										</button>
 										<button class="block mx-auto mt-8 text-base text-gray-700 font-IranSans hover:underline" @click="joinViaLogin">ثبت نام</button>
@@ -74,32 +74,23 @@
 </template>
 
 <script>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
 export default {
-	props: {
-		isVisible: {
-			type: Boolean,
-			required: true,
-			default: false,
-		},
-	},
-	emits: ["close", "join", "forgot"],
-	setup(_, { emit }) {
-		const closeModal = () => {
-			emit("close");
-		};
+	setup() {
+		const store = useStore();
 
-		const joinViaLogin = () => {
-			emit("join");
-		};
-
-		const forgot = () => {
-			emit("forgot");
-		};
+		const loginModalVisibility = computed(() => store.getters["modals/loginModalVisibility"]);
+		const closeLogin = () => store.dispatch("modals/closeLogin");
+		const joinViaLogin = () => store.dispatch("modals/joinViaLogin");
+		const forgotPassword = () => store.dispatch("modals/forgotPassword");
 
 		return {
-			closeModal,
+			loginModalVisibility,
+			closeLogin,
 			joinViaLogin,
-			forgot,
+			forgotPassword,
 		};
 	},
 };

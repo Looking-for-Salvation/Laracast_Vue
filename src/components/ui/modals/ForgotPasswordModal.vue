@@ -1,5 +1,5 @@
 <template>
-	<base-modal inlineStyles="height: 600px; max-width: 600px;" :isVisible="isVisible" @close="closeModal">
+	<base-modal inlineStyles="height: 600px; max-width: 600px;" :isVisible="forgotPasswordVisibility" @close="closeForgotPassword">
 		<div class="flex flex-col justify-between h-full px-4">
 			<div class="flex-1 w-full md:px-10">
 				<div class="flex items-center h-full md:py-8">
@@ -47,6 +47,9 @@
 </template>
 
 <script>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
 export default {
 	props: {
 		isVisible: {
@@ -56,17 +59,15 @@ export default {
 		},
 	},
 	emits: ["close", "login"],
-	setup(_, { emit }) {
-		const closeModal = () => {
-			emit("close");
-		};
-
-		const login = () => {
-			emit("login");
-		};
+	setup() {
+		const store = useStore();
+		const forgotPasswordVisibility = computed(() => store.getters["modals/forgotPasswordVisibility"]);
+		const closeForgotPassword = () => store.dispatch("modals/closeForgotPassword");
+		const login = () => store.dispatch("modals/loginViaForgotPassword");
 
 		return {
-			closeModal,
+			forgotPasswordVisibility,
+			closeForgotPassword,
 			login,
 		};
 	},
