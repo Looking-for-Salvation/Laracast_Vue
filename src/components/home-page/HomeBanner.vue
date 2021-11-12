@@ -316,6 +316,24 @@
 	-webkit-mask: url("../../assets/images/home/home-bg-mask.svg");
 }
 
+@-moz-document url-prefix() {
+	.home-banner {
+		background-image: radial-gradient(circle at 51% 111%, #1285f3, #003a99 86%);
+		mask: url("../../assets/images/home/home-bg-mask.svg");
+		-webkit-mask: url("../../assets/images/home/home-bg-mask.svg");
+		mask-repeat: repeat;
+		/* mask-position-x: 0%;
+		mask-position-y: 0%; */
+		mask-size: auto;
+		-webkit-mask-position: center;
+		mask-position: center;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-size: cover;
+		mask-size: cover;
+	}
+}
+
 .home-banner-inner {
 	overflow: hidden;
 }
