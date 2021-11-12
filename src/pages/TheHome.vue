@@ -1,14 +1,15 @@
 <template>
-	<div class="home">
-		<home-banner></home-banner>
-		<home-stats></home-stats>
-		<home-featured></home-featured>
-		<home-carousel></home-carousel>
-		<home-reviews></home-reviews>
-		<home-plans></home-plans>
-		<home-team></home-team>
+	<div>
+		<main>
+			<home-banner></home-banner>
+			<home-stats></home-stats>
+			<home-featured></home-featured>
+			<home-carousel></home-carousel>
+			<home-reviews></home-reviews>
+			<home-plans></home-plans>
+			<home-team></home-team>
+		</main>
 	</div>
-	<!-- <the-footer></the-footer> -->
 </template>
 
 <script>
