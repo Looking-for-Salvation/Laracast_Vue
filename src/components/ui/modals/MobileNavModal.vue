@@ -17,13 +17,13 @@
 								<div class="flex flex-col h-full nav-modal-wrap">
 									<ul class="flex flex-col justify-around my-auto overflow-auto font-IranSans">
 										<li class="mb-4">
-											<a class="text-white text-2lg" @click="login">ورود</a>
+											<a class="text-white cursor-pointer text-2lg" @click="login">ورود</a>
 										</li>
 										<li class="my-4">
 											<a class="text-white cursor-pointer text-2lg" @click="join">ثبت نام</a>
 										</li>
 										<li class="my-4">
-											<router-link to="/" class="text-white cursor-pointer text-2lg">صفحه اصلی</router-link>
+											<router-link to="/" class="text-white text-2lg">صفحه اصلی</router-link>
 										</li>
 										<li class="my-4">
 											<router-link to="/browse" class="text-white text-2lg">موضوعات</router-link>
