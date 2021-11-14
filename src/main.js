@@ -3,6 +3,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router.js";
 import store from "./store/index.js";
+import "@/assets/styles/basic.css";
 import "./assets/styles/tailwind.css";
 
 import TheHeader from "@/components/ui/TheHeader.vue";
