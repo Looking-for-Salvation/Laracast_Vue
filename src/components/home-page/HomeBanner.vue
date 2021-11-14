@@ -34,7 +34,7 @@
 								<p class="hidden max-w-md leading-loose text-white md:block lg:text-lg opacity-70 mb-9 md:mb-5">
 									ارتقای مهارت های برنامه نویسی، با رویکرد محتوای چندرسانه ای.
 									<br />
-									شروع یادگیری بهترین استک های برنامه نویسی شامل laravel، Vue و بسیاری موارد دیگر
+									شروع یادگیری بهترین استک های برنامه نویسی شامل Laravel, Vue و بسیاری موارد دیگر
 								</p>
 								<div class="flex space-x-6">
 									<router-link
