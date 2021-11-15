@@ -1,28 +1,28 @@
-import gmImg from "../../../assets/images/home/home-team/gm.jpg";
-import capsixerImg from "../../../assets/images/home/home-team/sixer.jpg";
-import shagerdImg from "../../../assets/images/home/home-team/shagerd.jpg";
+import ownerImg from "@/assets/images/home/home-team/Owner.jpg";
+import designerImg from "@/assets/images/home/home-team/Designer.jpg";
+import teacherImg from "@/assets/images/home/home-team/Teacher.jpg";
 
 export default [
 	{
-		name: "گرند مستر",
-		role: "مسترِ گرند",
-		img: gmImg,
+		name: "محمدرضا مهدویان",
+		role: "سازنده لاراکست",
+		img: ownerImg,
 		biography:
 			"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد",
 		twitter: "http://twitter.com",
 	},
 	{
-		name: "جناب اِی کِی زِد",
-		role: "استاد اعظم",
-		img: capsixerImg,
+		name: "پریسا نعمتی",
+		role: "طراح",
+		img: designerImg,
 		biography:
 			"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده",
 		twitter: "http://twitter.com",
 	},
 	{
-		name: "شاگرد",
-		role: "شاگردی",
-		img: shagerdImg,
+		name: "فرشاد جعفری",
+		role: "مدرس",
+		img: teacherImg,
 		biography:
 			"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد",
 		twitter: "http://twitter.com",
