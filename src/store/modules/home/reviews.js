@@ -1,7 +1,3 @@
-import mutations from "./mutations.js";
-import actions from "./actions.js";
-import getters from "./getters.js";
-
 export default {
 	namespaced: true,
 	state() {
@@ -808,12 +804,81 @@ export default {
 					selected: false,
 				},
 			],
-			selectedReviewId: "roo1",
+			selectedId: "r001",
+			selectedReviews: [
+				{
+					reviewId: "r001",
+					name: "علی عیزاده",
+					review:
+						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
+					imgSource: image1,
+					selected: false,
+				},
+				{
+					reviewId: "r002",
+					name: "علی عیزاده",
+					review:
+						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
+					imgSource: image2,
+					selected: false,
+				},
+				{
+					reviewId: "r003",
+					name: "علی عیزاده",
+					review:
+						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
+					imgSource: image3,
+					selected: false,
+				},
+				{
+					reviewId: "r004",
+					name: "علی عیزاده",
+					review:
+						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
+					imgSource: image4,
+					selected: false,
+				},
+				{
+					reviewId: "r005",
+					name: "علی عیزاده",
+					review:
+						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
+					imgSource: image5,
+					selected: false,
+				},
+			],
 		};
 	},
-	mutations,
-	getters,
-	actions,
+	// mutations: {
+	// 	setSelected(state, payload) {
+	// 		state.reviews.find((item) => {
+	// 			if (item.reviewId === payload.id) {
+	// 				item.selected = true;
+	// 				state.selectedId = payload.id;
+	// 			} else if (item.reviewId !== payload.id) item.selected = false;
+	// 		});
+	// 	},
+	// },
+	getters: {
+		reviews(state) {
+			const reviews = state.reviewsData;
+			const reviewsInRow = 20;
+			const finalReviews = new Array(Math.ceil(reviews.length / reviewsInRow)).fill().map(() => reviews.splice(0, reviewsInRow));
+			return finalReviews;
+		},
+		selectedReview(state) {
+			return state.reviewsData.find((item) => item.reviewId === "r001");
+		},
+		firstRow(_, getters) {
+			return getters.reviews[0];
+		},
+	},
+	// actions: {
+	// 	setSelected({ state, commit }, payload) {
+	// 		commit("setSelected", payload);
+	// 		console.log(state.reviews);
+	// 	},
+	// },
 };
 
 import image1 from "@/assets/images/home/home-reviews/chris-fidao.jpg";
