@@ -2,6 +2,31 @@
 	font-size: 15px;
 }
 
+html::-webkit-scrollbar {
+	width: 0.6em;
+}
+
+html::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+	background: #60a5fa;
+	border: 1px solid #fff;
+	border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+	background: #adb5bd;
+}
+
+@supports (scrollbar-color: white black) {
+	* {
+		scrollbar-color: #8c9197 #fff;
+		scrollbar-width: thin;
+	}
+}
+
 body.not-found {
 	background-color: #60a5fa;
 }

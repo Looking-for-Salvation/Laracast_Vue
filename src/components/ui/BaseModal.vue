@@ -1,7 +1,7 @@
 <template>
 	<teleport to="#app">
 		<transition name="modal">
-			<div class="fixed inset-0 modal" v-show="isVisible">
+			<div class="fixed inset-0 modal" id="modal" v-show="isVisible">
 				<transition name="modal-overlay">
 					<div class="absolute inset-0 w-full h-screen bg-black modal-overlay bg-opacity-70" v-if="isVisible" @click="close"></div>
 				</transition>
