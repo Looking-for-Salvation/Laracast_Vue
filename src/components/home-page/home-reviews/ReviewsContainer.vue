@@ -5,17 +5,23 @@
 				<reviews-item v-for="item in row" :key="item.id" :item="item"></reviews-item>
 			</div>
 		</div>
-		<!-- <div class="absolute inset-y-0 left-0 flex items-center justify-center w-2/5 max-w-[600px] p-10 text-center bg-white bg-opacity-97">
+		<div class="absolute inset-y-0 left-0 flex items-center justify-center w-2/5 max-w-[600px] p-10 text-center bg-white bg-opacity-97">
 			<div>
-				<img :src="hoveredReview[0].imgSource" :alt="hoveredReview[0].name" class="inline-block w-16 mb-2 rounded-full xl:w-24" width="90" height="90" />
+				<img :src="selectedReview.imgSource" :alt="selectedReview.name" class="inline-block w-16 mb-2 rounded-full xl:w-24" width="90" height="90" />
 				<p class="mb-6 text-sm text-black font-IranSans">
-					<a href="#" class="text-black hover:underline">{{ hoveredReview[0].name }}</a>
+					<a href="#" class="text-black hover:underline">{{ selectedReview.name }}</a>
 				</p>
-				<p class="max-w-xs mb-8 text-xs text-gray-700 fon font-IranSans lg:text-sm">{{ hoveredReview[0].review }}</p>
-				<a href="#" class="px-8 py-3 text-white transition-all duration-200 border rounded-full review-button font-IranSans">نمایش همه </a>
+				<p class="max-w-xs mb-8 text-xs text-gray-700 fon font-IranSans lg:text-sm">{{ selectedReview.review }}</p>
+				<a
+					class="px-8 py-3 text-white transition-all duration-200 border rounded-full cursor-pointer review-button font-IranSans"
+					@click="openReviewsModal"
+				>
+					نمایش همه
+				</a>
 			</div>
-		</div> -->
+		</div>
 	</div>
+	<reviews-modal></reviews-modal>
 </template>
 
 <script>
@@ -23,34 +29,23 @@ import { computed } from "vue";
 import { useStore } from "vuex";
 
 import ReviewsItem from "./ReviewsItem.vue";
+import ReviewsModal from "@/components/ui/modals/ReviewsModal.vue";
 
 export default {
 	components: {
 		ReviewsItem,
+		ReviewsModal,
 	},
 	setup() {
 		const store = useStore();
-		const reviews = computed(() => store.getters["home/sortedReviews"]);
-		const review = computed(() => store.getters["home/selectedReview"]);
-		const firstRow = computed(() => store.getters["home/allReviews"]);
-		console.log(firstRow);
-		console.log(review);
-		console.log(reviews);
-		// store.dispatch("home/setSelected");
-
-		// const hoveredId = ref("r01");
-
-		// const hoveredReview = computed(() => {
-		// 	return fullData.filter((review) => review.id === hoveredId.value);
-		// });
-
-		// function setData(id) {
-		// 	hoveredId.value = id;
-		// }
+		const reviews = computed(() => store.getters["home/reviews/sortedReviews"]);
+		const selectedReview = computed(() => store.getters["home/reviews/selectedReview"]);
+		const openReviewsModal = () => store.dispatch("home/reviews/openReviewsModal");
 
 		return {
 			reviews,
-			review,
+			selectedReview,
+			openReviewsModal,
 		};
 	},
 };

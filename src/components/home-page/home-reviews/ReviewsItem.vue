@@ -6,7 +6,7 @@
 				width="48"
 				height="48"
 				class="w-12 border-2 border-solid rounded-full"
-				:class="{ 'border-transparent': !isHovered, 'border-blue-400': isHovered }"
+				:class="{ 'border-transparent': !isHovered || !item.selected, 'border-blue-400': isHovered || item.selected }"
 			/>
 		</a>
 	</div>
@@ -14,6 +14,7 @@
 
 <script>
 import { ref } from "vue";
+import { useStore } from "vuex";
 
 export default {
 	props: {
@@ -22,18 +23,17 @@ export default {
 			required: true,
 		},
 	},
-	setup(props, context) {
+	setup(props) {
+		const store = useStore();
+
 		const isHovered = ref(false);
 
-		function mouseEntered() {
+		const mouseEntered = () => {
 			isHovered.value = true;
+			store.dispatch("home/reviews/setSelected", { id: props.item.reviewId });
+		};
 
-			context.emit("mouse-enter", props.id);
-		}
-
-		function mouseLeft() {
-			isHovered.value = false;
-		}
+		const mouseLeft = () => (isHovered.value = false);
 
 		return {
 			isHovered,

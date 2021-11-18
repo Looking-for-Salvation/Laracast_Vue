@@ -9,7 +9,7 @@ export default {
 					review:
 						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
 					imgSource: image1,
-					selected: false,
+					selected: true,
 				},
 				{
 					reviewId: "r002",
@@ -805,80 +805,57 @@ export default {
 				},
 			],
 			selectedId: "r001",
-			selectedReviews: [
-				{
-					reviewId: "r001",
-					name: "علی عیزاده",
-					review:
-						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
-					imgSource: image1,
-					selected: false,
-				},
-				{
-					reviewId: "r002",
-					name: "علی عیزاده",
-					review:
-						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
-					imgSource: image2,
-					selected: false,
-				},
-				{
-					reviewId: "r003",
-					name: "علی عیزاده",
-					review:
-						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
-					imgSource: image3,
-					selected: false,
-				},
-				{
-					reviewId: "r004",
-					name: "علی عیزاده",
-					review:
-						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
-					imgSource: image4,
-					selected: false,
-				},
-				{
-					reviewId: "r005",
-					name: "علی عیزاده",
-					review:
-						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
-					imgSource: image5,
-					selected: false,
-				},
-			],
+			isReviewsModalVisible: false,
 		};
 	},
-	// mutations: {
-	// 	setSelected(state, payload) {
-	// 		state.reviews.find((item) => {
-	// 			if (item.reviewId === payload.id) {
-	// 				item.selected = true;
-	// 				state.selectedId = payload.id;
-	// 			} else if (item.reviewId !== payload.id) item.selected = false;
-	// 		});
-	// 	},
-	// },
-	getters: {
-		reviews(state) {
-			const reviews = state.reviewsData;
-			const reviewsInRow = 20;
-			const finalReviews = new Array(Math.ceil(reviews.length / reviewsInRow)).fill().map(() => reviews.splice(0, reviewsInRow));
-			return finalReviews;
+	mutations: {
+		setSelected(state, payload) {
+			state.reviewsData.find((item) => {
+				if (item.reviewId === payload.id) {
+					item.selected = true;
+					state.selectedId = payload.id;
+				} else if (item.reviewId !== payload.id) item.selected = false;
+			});
 		},
-		selectedReview(state) {
-			return state.reviewsData.find((item) => item.reviewId === "r001");
+		openReviewsModal(state) {
+			state.isReviewsModalVisible = true;
 		},
-		firstRow(_, getters) {
-			return getters.reviews[0];
+		closeReviewsModal(state) {
+			state.isReviewsModalVisible = false;
 		},
 	},
-	// actions: {
-	// 	setSelected({ state, commit }, payload) {
-	// 		commit("setSelected", payload);
-	// 		console.log(state.reviews);
-	// 	},
-	// },
+	getters: {
+		reviewsData(state) {
+			return state.reviewsData;
+		},
+		sortedReviews(state) {
+			const reviews = state.reviewsData;
+			const chunkSize = 20;
+			const finalResult = [];
+			for (let i = 0; i < reviews.length; i += chunkSize) {
+				const chunk = reviews.slice(i, i + chunkSize);
+				finalResult.push(chunk);
+			}
+			return finalResult;
+		},
+		selectedReview(state) {
+			return state.reviewsData.find((item) => item.reviewId === state.selectedId);
+		},
+		reviewsModalVisibility(state) {
+			return state.isReviewsModalVisible;
+		},
+	},
+	actions: {
+		setSelected({ commit }, payload) {
+			commit("setSelected", payload);
+		},
+		openReviewsModal({ commit }) {
+			commit("openReviewsModal");
+		},
+		closeReviewsModal({ commit }) {
+			commit("closeReviewsModal");
+		},
+	},
 };
 
 import image1 from "@/assets/images/home/home-reviews/chris-fidao.jpg";
