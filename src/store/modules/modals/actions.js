@@ -78,4 +78,12 @@ export default {
 	closeSupport({ commit }) {
 		commit("closeSupport");
 	},
+
+	//* ReviewsModal related actions
+	openReviewsModal({ commit }) {
+		commit("openReviewsModal");
+	},
+	closeReviewsModal({ commit }) {
+		commit("closeReviewsModal");
+	},
 };

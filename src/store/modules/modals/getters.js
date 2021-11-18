@@ -31,4 +31,9 @@ export default {
 	supportModalVisibility(state) {
 		return state.isSupportVisible;
 	},
+
+	//* ReviewsModal related getters
+	reviewsModalVisibility(state) {
+		return state.isReviewsVisible;
+	},
 };

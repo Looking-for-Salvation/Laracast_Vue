@@ -805,7 +805,6 @@ export default {
 				},
 			],
 			selectedId: "r001",
-			isReviewsModalVisible: false,
 		};
 	},
 	mutations: {
@@ -816,12 +815,6 @@ export default {
 					state.selectedId = payload.id;
 				} else if (item.reviewId !== payload.id) item.selected = false;
 			});
-		},
-		openReviewsModal(state) {
-			state.isReviewsModalVisible = true;
-		},
-		closeReviewsModal(state) {
-			state.isReviewsModalVisible = false;
 		},
 	},
 	getters: {
@@ -841,19 +834,10 @@ export default {
 		selectedReview(state) {
 			return state.reviewsData.find((item) => item.reviewId === state.selectedId);
 		},
-		reviewsModalVisibility(state) {
-			return state.isReviewsModalVisible;
-		},
 	},
 	actions: {
 		setSelected({ commit }, payload) {
 			commit("setSelected", payload);
-		},
-		openReviewsModal({ commit }) {
-			commit("openReviewsModal");
-		},
-		closeReviewsModal({ commit }) {
-			commit("closeReviewsModal");
 		},
 	},
 };

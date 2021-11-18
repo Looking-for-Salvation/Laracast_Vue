@@ -40,7 +40,7 @@ export default {
 		const store = useStore();
 		const reviews = computed(() => store.getters["home/reviews/sortedReviews"]);
 		const selectedReview = computed(() => store.getters["home/reviews/selectedReview"]);
-		const openReviewsModal = () => store.dispatch("home/reviews/openReviewsModal");
+		const openReviewsModal = () => store.dispatch("modals/openReviewsModal");
 
 		return {
 			reviews,

@@ -49,4 +49,12 @@ export default {
 	closeSupport(state) {
 		state.isSupportVisible = false;
 	},
+
+	//* ReviewsModal related mutations
+	openReviewsModal(state) {
+		state.isReviewsVisible = true;
+	},
+	closeReviewsModal(state) {
+		state.isReviewsVisible = false;
+	},
 };

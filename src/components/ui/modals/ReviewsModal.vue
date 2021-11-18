@@ -33,8 +33,8 @@ export default {
 	setup() {
 		const store = useStore();
 		const reviews = computed(() => store.getters["home/reviews/reviewsData"]);
-		const reviewsModalVisibility = computed(() => store.getters["home/reviews/reviewsModalVisibility"]);
-		const closeReviewsModal = () => store.dispatch("home/reviews/closeReviewsModal");
+		const reviewsModalVisibility = computed(() => store.getters["modals/reviewsModalVisibility"]);
+		const closeReviewsModal = () => store.dispatch("modals/closeReviewsModal");
 
 		return {
 			reviews,
