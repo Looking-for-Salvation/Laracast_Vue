@@ -3,30 +3,30 @@
 		<div
 			class="relative z-10 flex w-auto h-full px-6 pt-5 pb-6 mx-auto mb-5 text-center plan card lg:mb-0 lg:mx-3 md:px-4"
 			style="max-width: 437px;"
-			:class="{ 'plan-primary': primary }"
+			:class="{ 'plan-primary': plan.primary }"
 		>
 			<div class="flex flex-col justify-around w-full h-full">
 				<div class="flex items-center mb-8">
 					<h5 class="ml-auto text-base text-black font-IranSans">
-						<router-link :to="route">{{ periodicityPersian }}</router-link>
+						<router-link :to="plan.url">{{ periodicityPersian }}</router-link>
 					</h5>
 					<div class="relative text-xl leading-none plan-price font-IranSans">
 						<div class="relative flex items-baseline text-blue-400 font-IranSans">
-							<span>{{ price }}</span>
+							<span>{{ plan.price }}</span>
 							<span>&#160;تومان</span>
 						</div>
 					</div>
 				</div>
-				<router-link :to="route" class="flex justify-center">
-					<img :src="img" alt="Monthly" class="relative -top-7" width="165" height="120" loading="lazy" />
+				<router-link :to="plan.url" class="flex justify-center">
+					<img :src="plan.img" alt="Monthly" class="relative -top-7" width="165" height="120" loading="lazy" />
 				</router-link>
 				<p class="mb-8 -mt-2 text-lg text-gray-700 font-IranSans md:text-sm lg:text-base">
-					{{ description }}
+					{{ plan.description }}
 				</p>
 				<router-link
-					:to="route"
+					:to="plan.url"
 					class="w-full px-8 py-3 leading-none text-center text-black transition-all duration-150 bg-gray-100 border border-transparent mobile:mx-auto hover:border-blue-400 hover:text-blue-400 font-IranSans rounded-2xl plan-start-learning-button"
-					:class="{ 'plan-primary-button': primary }"
+					:class="{ 'plan-primary-button': plan.primary }"
 					>شروع یادگیری
 				</router-link>
 			</div>
@@ -39,37 +39,18 @@ import { computed } from "vue";
 
 export default {
 	props: {
-		periodicity: {
-			type: String,
+		plan: {
+			type: Object,
 			required: true,
-		},
-		price: {
-			type: String,
-			required: true,
-		},
-		img: {
-			type: String,
-			required: true,
-		},
-		description: {
-			type: String,
-			required: true,
-		},
-		route: {
-			type: String,
-			required: true,
-		},
-		primary: {
-			type: Boolean,
-			required: false,
-			default: false,
 		},
 	},
 	setup(props) {
 		const periodicityPersian = computed(() => {
-			if (props.periodicity === "monthly") return "ماهانه";
-			else if (props.periodicity === "yearly") return "سالانه";
-			else return "مادام العمر";
+			let periodicityPersian = "";
+			if (props.periodicity === "monthly") periodicityPersian = "ماهانه";
+			if (props.periodicity === "yearly") periodicityPersian = "سالانه";
+			if (props.periodicity === "lifetime") periodicityPersian = "مادام العمر";
+			return periodicityPersian;
 		});
 
 		return {

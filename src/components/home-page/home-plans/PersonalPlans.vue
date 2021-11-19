@@ -1,32 +1,24 @@
 <template>
 	<div class="justify-center plans lg:flex lg:pb-6">
-		<simple-plan
-			v-for="plan in plans"
-			:key="plan.periodicity"
-			:periodicity="plan.periodicity"
-			:price="plan.price"
-			:img="plan.img"
-			:route="plan.route"
-			:description="plan.description"
-			:primary="plan.primary"
-		></simple-plan>
+		<simple-plan v-for="plan in personalPlans" :key="plan.periodicity" :plan="plan"></simple-plan>
 	</div>
 </template>
 
 <script>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
 import SimplePlan from "./SimplePlan.vue";
-
-import planData from "./data.js";
-
 export default {
 	components: {
 		SimplePlan,
 	},
 	setup() {
-		const plans = planData;
+		const store = useStore();
+		const personalPlans = computed(() => store.getters["home/plans/personalPlans"]);
 
 		return {
-			plans,
+			personalPlans,
 		};
 	},
 };

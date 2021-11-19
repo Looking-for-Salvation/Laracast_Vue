@@ -4,31 +4,31 @@
 			<div class="flex flex-col justify-around w-full h-full team-plan-left" style="flex: 2 1 0%;">
 				<div class="flex items-start mb-4">
 					<h5 class="ml-auto text-base text-black font-IranSans md:text-xs">
-						<router-link :to="planRoute">{{ planName }}</router-link>
+						<router-link :to="selectedTeamPlan.url">{{ planNamePersian }}</router-link>
 					</h5>
 					<div class="relative text-xl leading-none plan-price font-IranSans">
 						<div>
 							<div class="relative flex items-baseline text-blue-400 font-IranSans">
-								<span>{{ planPrice }}</span>
+								<span>{{ selectedTeamPlan.price }}</span>
 								<span>&#160;تومان</span>
 							</div>
 							<span class="text-sm text-black text-opacity-50 font-IranSans">/سالانه</span>
 						</div>
 					</div>
 				</div>
-				<router-link :to="planRoute" class="flex justify-center">
-					<img :src="planImg" :alt="planName" style="width: 165px; height: 120px;" />
+				<router-link :to="selectedTeamPlan.url" class="flex justify-center">
+					<img :src="selectedTeamPlan.img" :alt="selectedTeamPlan.name" style="width: 165px; height: 120px;" />
 				</router-link>
 				<p class="px-2 mb-8 text-black md:my-4 font-IranSans">
 					اکانت خود را لینک کنید تا
-					<strong>{{ planDevCount + " برنامه نویس" }}</strong>
+					<strong>{{ selectedTeamPlan.developerToLink + " برنامه نویس" }}</strong>
 					با طرح سالانه آمورش دهید
 				</p>
 				<router-link
-					:to="planRoute"
+					:to="selectedTeamPlan.url"
 					class="hidden max-w-full px-8 py-3 text-sm transition-all duration-150 md:w-5/6 md:mx-auto md:block font-IranSans rounded-2xl complex-plan-button"
 					style="letter-spacing: 0.23px;"
-					>{{ "آموزش " + planDevCount + " برنامه نویس" }}
+					>{{ "آموزش " + selectedTeamPlan.developerToLink + " برنامه نویس" }}
 				</router-link>
 			</div>
 			<div class="flex-1 h-full md:pr-6">
@@ -37,11 +37,11 @@
 						<div
 							class="bg-blue-400 thermometer-inner"
 							:class="{
-								'is-filled-20': filled20,
-								'is-filled-40': filled40,
-								'is-filled-60': filled60,
-								'is-filled-80': filled80,
-								'is-filled-100': filled100,
+								'is-filled-20': fillRate === '20percent',
+								'is-filled-40': fillRate === '40percent',
+								'is-filled-60': fillRate === '60percent',
+								'is-filled-80': fillRate === '80percent',
+								'is-filled-100': fillRate === '100percent',
 							}"
 						></div>
 					</div>
@@ -50,7 +50,7 @@
 							<router-link
 								to="/signup?plan=monthly-15"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
-								:class="{ 'is-active': filled20 }"
+								:class="{ 'is-active': fillRate === '20percent' }"
 								@mouseenter="setTwoDev"
 								>2 نفر</router-link
 							>
@@ -59,7 +59,7 @@
 							<router-link
 								to="/signup?plan=monthly-15"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
-								:class="{ 'is-active': filled40 }"
+								:class="{ 'is-active': fillRate === '40percent' }"
 								@mouseenter="setFiveDev"
 								>5 نفر</router-link
 							>
@@ -68,7 +68,7 @@
 							<router-link
 								to="/signup?plan=monthly-15"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
-								:class="{ 'is-active': filled60 }"
+								:class="{ 'is-active': fillRate === '60percent' }"
 								@mouseenter="setTenDev"
 								>10 نفر</router-link
 							>
@@ -77,7 +77,7 @@
 							<router-link
 								to="/signup?plan=monthly-15"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
-								:class="{ 'is-active': filled80 }"
+								:class="{ 'is-active': fillRate === '80percent' }"
 								@mouseenter="setTwentyDev"
 								>25 نفر</router-link
 							>
@@ -86,7 +86,7 @@
 							<router-link
 								to="/signup?plan=monthly-15"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
-								:class="{ 'is-active': filled100 }"
+								:class="{ 'is-active': fillRate === '100percent' }"
 								@mouseenter="setFiftyDev"
 								>50 نفر</router-link
 							>
@@ -94,10 +94,10 @@
 					</div>
 				</div>
 				<router-link
-					:to="planRoute"
+					:to="selectedTeamPlan.url"
 					class="block max-w-full px-8 py-3 mx-auto text-sm transition-all md:hidden font-IranSans rounded-2xl complex-plan-button"
 					style="letter-spacing: 0.23px;"
-					>{{ "آموزش " + planDevCount + " برنامه نویس" }}
+					>{{ "آموزش " + selectedTeamPlan.developerToLink + " برنامه نویس" }}
 				</router-link>
 			</div>
 		</div>
@@ -105,109 +105,47 @@
 </template>
 
 <script>
-import { ref } from "vue";
-
-import twoDevImg from "../../../assets/images/home/home-plans/team-2-developers-icon.svg";
-import fiveDevImg from "../../../assets/images/home/home-plans/team-5-developers-icon.svg";
-import tenDevImg from "../../../assets/images/home/home-plans/team-10-developers-icon.svg";
-import twentyDevImg from "../../../assets/images/home/home-plans/team-25-developers-icon.svg";
-import fiftyDevImg from "../../../assets/images/home/home-plans/team-50-developers-icon.svg";
+import { computed } from "vue";
+import { useStore } from "vuex";
 
 export default {
 	setup() {
-		const planName = ref("مدار پیچیده");
-		const planPrice = ref("950,000");
-		const planDevCount = ref(5);
-		const planRoute = ref("/signup?plan=business-5");
-		const planImg = ref(fiveDevImg);
+		const store = useStore();
+		const selectedTeamPlan = computed(() => store.getters["home/plans/selectedTeamPlan"]);
+		const planNamePersian = computed(() => {
+			let planName = "";
+			if (selectedTeamPlan.value.planId === "tp002") planName = "سیستم جفتی";
+			if (selectedTeamPlan.value.planId === "tp005") planName = "مدار پیچپیده";
+			if (selectedTeamPlan.value.planId === "tp010") planName = "پیش فرض کارخانه";
+			if (selectedTeamPlan.value.planId === "tp025") planName = "جریان باز";
+			if (selectedTeamPlan.value.planId === "tp050") planName = "مؤسسه سایبرنتیک";
+			return planName;
+		});
+		const fillRate = computed(() => {
+			let fillRate = "";
+			if (selectedTeamPlan.value.planId === "tp002") fillRate = "20percent";
+			if (selectedTeamPlan.value.planId === "tp005") fillRate = "40percent";
+			if (selectedTeamPlan.value.planId === "tp010") fillRate = "60percent";
+			if (selectedTeamPlan.value.planId === "tp025") fillRate = "80percent";
+			if (selectedTeamPlan.value.planId === "tp050") fillRate = "100percent";
+			return fillRate;
+		});
 
-		const filled20 = ref(false);
-		const filled40 = ref(true);
-		const filled60 = ref(false);
-		const filled80 = ref(false);
-		const filled100 = ref(false);
-
-		function setTwoDev() {
-			planName.value = "سیستم جفتی";
-			planPrice.value = "750,000";
-			planDevCount.value = 2;
-			planRoute.value = "/signup?plan=business-2";
-			planImg.value = twoDevImg;
-			filled20.value = true;
-			filled40.value = false;
-			filled60.value = false;
-			filled80.value = false;
-			filled100.value = false;
-		}
-
-		function setFiveDev() {
-			planName.value = "مدار پیچیده";
-			planPrice.value = "950,000";
-			planDevCount.value = 5;
-			planRoute.value = "/signup?plan=business-5";
-			planImg.value = fiveDevImg;
-			filled20.value = false;
-			filled40.value = true;
-			filled60.value = false;
-			filled80.value = false;
-			filled100.value = false;
-		}
-
-		function setTenDev() {
-			planName.value = "پیش فرض کارخانه";
-			planPrice.value = "1,250,000";
-			planDevCount.value = 10;
-			planRoute.value = "/signup?plan=business-10";
-			planImg.value = tenDevImg;
-			filled20.value = false;
-			filled40.value = false;
-			filled60.value = true;
-			filled80.value = false;
-			filled100.value = false;
-		}
-
-		function setTwentyDev() {
-			planName.value = "جریان باز";
-			planPrice.value = "1,750,000";
-			planDevCount.value = 25;
-			planRoute.value = "/signup?plan=business-25";
-			planImg.value = twentyDevImg;
-			filled20.value = false;
-			filled40.value = false;
-			filled60.value = false;
-			filled80.value = true;
-			filled100.value = false;
-		}
-
-		function setFiftyDev() {
-			planName.value = "موسسه سایبرنتیک";
-			planPrice.value = "2,500,000";
-			planDevCount.value = 50;
-			planRoute.value = "/signup?plan=business-50";
-			planImg.value = fiftyDevImg;
-			filled20.value = false;
-			filled40.value = false;
-			filled60.value = false;
-			filled80.value = false;
-			filled100.value = true;
-		}
+		const setTwoDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp002" });
+		const setFiveDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp005" });
+		const setTenDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp010" });
+		const setTwentyDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp025" });
+		const setFiftyDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp050" });
 
 		return {
-			planName,
-			planPrice,
-			planDevCount,
-			planRoute,
-			planImg,
+			selectedTeamPlan,
+			planNamePersian,
+			fillRate,
 			setTwoDev,
 			setFiveDev,
 			setTenDev,
 			setTwentyDev,
 			setFiftyDev,
-			filled20,
-			filled40,
-			filled60,
-			filled80,
-			filled100,
 		};
 	},
 };

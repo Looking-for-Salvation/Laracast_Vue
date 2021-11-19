@@ -1,21 +1,16 @@
 <template>
 	<div class="justify-center lg:flex lg:pb-6 plans">
-		<simple-plan
-			:periodicity="monthlyData.periodicity"
-			:price="monthlyData.price"
-			:img="monthlyData.img"
-			:description="monthlyData.description"
-			:route="monthlyData.route"
-		></simple-plan>
+		<simple-plan :plan="monthlyPlan"></simple-plan>
 		<complex-plan></complex-plan>
 	</div>
 </template>
 
 <script>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
 import SimplePlan from "./SimplePlan.vue";
 import ComplexPlan from "./ComplexPlan.vue";
-
-import planData from "./data.js";
 
 export default {
 	components: {
@@ -23,10 +18,11 @@ export default {
 		ComplexPlan,
 	},
 	setup() {
-		const monthlyData = planData[0];
+		const store = useStore();
+		const monthlyPlan = computed(() => store.getters["home/plans/monthlyPlan"]);
 
 		return {
-			monthlyData,
+			monthlyPlan,
 		};
 	},
 };
