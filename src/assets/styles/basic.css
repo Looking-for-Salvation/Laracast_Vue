@@ -17,7 +17,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 html::-webkit-scrollbar-thumb:hover {
-	background: #adb5bd;
+	background: #3b93ff;
 }
 
 @supports (scrollbar-color: white black) {
@@ -29,6 +29,93 @@ html::-webkit-scrollbar-thumb:hover {
 
 body.not-found {
 	background-color: #60a5fa;
+}
+
+abbr,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
+body,
+body div,
+caption,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+dl,
+dt,
+em,
+fieldset,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+samp,
+section,
+small,
+span,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+ul,
+var,
+video {
+	background: 0 0;
+	border: 0 solid;
+	font-size: 100%;
+	font-weight: 400;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figure,
+footer,
+header,
+nav,
+section,
+summary {
+	display: block;
 }
 
 .page {
@@ -180,4 +267,157 @@ pre code {
 pre {
 	word-wrap: normal;
 	white-space: pre;
+}
+
+.sr-only {
+	clip: rect(0, 0, 0, 0);
+	border-width: 0;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+	-webkit-appearance: button;
+}
+
+.button {
+	--text-opacity: 1;
+	border-color: currentColor;
+	border-radius: 20px;
+	border-style: solid;
+	border-width: 1px;
+	color: rgba(34, 41, 47, var(--text-opacity));
+	display: block;
+	font-size: 0.834rem;
+	font-weight: 600;
+	line-height: 1;
+	max-width: 30rem;
+	padding: 1.25rem 1rem;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	transition-duration: 0.15s;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button.is-active,
+.button:hover {
+	--text-opacity: 1;
+	border-color: currentColor;
+	color: rgba(50, 138, 241, var(--text-opacity));
+}
+
+.blue-button,
+.primary-button {
+	--border-opacity: 1;
+	--bg-opacity: 1;
+	--text-opacity: 1;
+	background-color: rgba(50, 138, 241, var(--bg-opacity));
+	border-color: rgba(50, 138, 241, var(--border-opacity));
+	color: rgba(255, 255, 255, var(--text-opacity));
+}
+
+.blue-button:not([disabled]):hover,
+.primary-button:not([disabled]):hover {
+	--border-opacity: 1;
+	--bg-opacity: 1;
+	--text-opacity: 1;
+	background-color: rgba(39, 121, 189, var(--bg-opacity));
+	border-color: rgba(50, 138, 241, var(--border-opacity));
+	box-shadow: 0 0 10px rgb(0 0 0 / 25%);
+	color: rgba(255, 255, 255, var(--text-opacity));
+}
+
+.gray-button {
+	--text-opacity: 1;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-color: transparent;
+	color: rgba(34, 41, 47, var(--text-opacity));
+}
+
+/* * Media queries */
+@media (min-width: 768px) {
+	.button {
+		display: inline-block;
+		padding-bottom: 0.75rem;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		padding-top: 0.75rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.button {
+		max-width: 100%;
+		padding-bottom: 0.83rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		padding-top: 0.83rem;
+		transition: background 0.3s, border-color 0.2s;
+	}
+}
+
+@media (min-width: 1200px) {
+}
+
+/* * Animations */
+@-webkit-keyframes wrap {
+	0% {
+		background-color: transparent;
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+@keyframes wrap {
+	0% {
+		background-color: transparent;
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+@-webkit-keyframes left {
+	0% {
+		width: 0;
+	}
+	to {
+		width: 6px;
+	}
+}
+@keyframes left {
+	0% {
+		width: 0;
+	}
+	to {
+		width: 6px;
+	}
+}
+@-webkit-keyframes right {
+	0% {
+		width: 0;
+	}
+	to {
+		width: 10px;
+	}
+}
+@keyframes right {
+	0% {
+		width: 0;
+	}
+	to {
+		width: 10px;
+	}
 }

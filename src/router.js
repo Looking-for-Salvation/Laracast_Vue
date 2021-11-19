@@ -19,6 +19,7 @@ import ThePodcast from "@/pages/ThePodcast.vue";
 import TheDiscuss from "@/pages/TheDiscuss.vue";
 import NotFound from "./pages/NotFound.vue";
 
+const TheSignup = defineAsyncComponent(() => import("@/pages/TheSignup.vue"));
 const TheFaq = defineAsyncComponent(() => import("@/pages/TheFaq.vue"));
 const TheTerms = defineAsyncComponent(() => import("@/pages/TheTerms.vue"));
 const ThePrivacy = defineAsyncComponent(() => import("@/pages/ThePrivacy.vue"));
@@ -45,6 +46,7 @@ const router = createRouter({
 		{ path: "/series", components: { default: TheSeries, footer: TheFooter } },
 		{ path: "/podcast", components: { default: ThePodcast, footer: TheFooter } },
 		{ path: "/discuss", components: { default: TheDiscuss, footer: TheFooter } },
+		{ path: "/signup", components: { default: TheSignup, footer: TheFooter } },
 		{ path: "/faq", components: { default: TheFaq, footer: TheFooter } },
 		{ path: "/terms", components: { default: TheTerms, footer: TheFooter } },
 		{ path: "/privacy", components: { default: ThePrivacy, footer: TheFooter } },

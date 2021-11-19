@@ -22,12 +22,17 @@ module.exports = {
 				"[150px]": "150px",
 			},
 			height: {
+				"[39px]": "39px",
 				"[122px]": "122px",
 			},
 			maxWidth: {
+				"[350px]": "350px",
+				"[415px]": "415px",
+				"[496px]": "496px",
 				"[500px]": "500px",
 				"[600px]": "600px",
 				"[650px]": "650px",
+				"[725px]": "725px",
 				"2xs": "12rem",
 				sm: "30rem",
 				md: "40rem",
@@ -35,14 +40,21 @@ module.exports = {
 				xl: "60rem",
 				"2/3": "75%",
 			},
+			minWidth: {
+				"[200px]": "200px",
+			},
 			maxHeight: {
 				none: "none",
+				"[790px]": "790px",
 				"90vh": "90vh",
 			},
 			minHeight: {
 				"[100px]": "100px",
+				"[650px]": "650px",
+				"[calc(100vh-60px]": "calc(100vh - 60px)",
 			},
 			padding: {
+				"[2px]": "2px",
 				"[20px]": "20px",
 				"[25px]": "25px",
 				"[35px]": "35px",
@@ -51,10 +63,17 @@ module.exports = {
 				"[-20px]": "-20px",
 				"[20px]": "20px",
 				"[35px]": "35px",
+				"[93px]": "93px",
+			},
+			inset: {
+				"[-146px]": "-146px",
+				"[-76px]": "-76px",
+				"[8px]": "8px",
 			},
 			borderRadius: {
 				xl: "0.9rem",
 				"2xl": "1.25rem",
+				"[42px]": "42px",
 			},
 			opacity: {
 				"3": "0.03",
@@ -74,6 +93,9 @@ module.exports = {
 				"4xl": "2.4rem",
 				"5xl": "2.6666rem",
 				"6xl": "3.333rem",
+				"[12px]": "12px",
+				"[14px]": "14px",
+				"[30px]": "30px",
 			},
 			fontFamily: {
 				Ubuntu: ["Ubuntu", "sans-serif"],
