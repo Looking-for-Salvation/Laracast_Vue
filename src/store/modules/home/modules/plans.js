@@ -109,6 +109,32 @@ export default {
 				},
 			],
 			selectedTeamPlan: "tp002",
+			questions: [
+				{
+					title: "آیا میتوان طرح را کنسل کرد؟",
+					question:
+						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است <strong>لورم ایپسوم متن</strong>. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است <strong>لورم ایپسوم متن ساختگی</strong>, لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ <strong>لورم ایپسوم متن</strong>. </p>",
+					img: brokenHeart,
+				},
+				{
+					title: "آیا میتوان طرح را کنسل کرد؟",
+					question:
+						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است <strong>لورم ایپسوم متن</strong>. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است <strong>لورم ایپسوم متن ساختگی</strong>, لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ <strong>لورم ایپسوم متن</strong>. </p>",
+					img: graduationHat,
+				},
+				{
+					title: "آیا میتوان طرح را کنسل کرد؟",
+					question:
+						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است <strong>لورم ایپسوم متن</strong>. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است <strong>لورم ایپسوم متن ساختگی</strong>, لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ <strong>لورم ایپسوم متن</strong>. </p>",
+					img: mind,
+				},
+				{
+					title: "آیا میتوان طرح را کنسل کرد؟",
+					question:
+						"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است <strong>لورم ایپسوم متن</strong>. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است <strong>لورم ایپسوم متن ساختگی</strong>, لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ <strong>لورم ایپسوم متن</strong>. </p>",
+					img: watch,
+				},
+			],
 		};
 	},
 	mutations: {
@@ -142,6 +168,10 @@ export default {
 		selectedTeamPlan(state) {
 			return state.plans.find((item) => item.planId === state.selectedTeamPlan);
 		},
+
+		questions(state) {
+			return state.questions;
+		},
 	},
 	actions: {
 		setSelectedTeamPlan({ commit }, payload) {
@@ -162,3 +192,8 @@ import complexCircuit from "@/assets/images/home/home-plans/team-5-developers-ic
 import factoryDefault from "@/assets/images/home/home-plans/team-10-developers-icon.svg";
 import openMainframe from "@/assets/images/home/home-plans/team-25-developers-icon.svg";
 import cyberneticEntity from "@/assets/images/home/home-plans/team-50-developers-icon.svg";
+
+import brokenHeart from "@/assets/images/signup/broken-heart-icon.svg";
+import graduationHat from "@/assets/images/signup/graduation-hat-icon.svg";
+import mind from "@/assets/images/signup/mind-icon.svg";
+import watch from "@/assets/images/signup/watch-icon.svg";

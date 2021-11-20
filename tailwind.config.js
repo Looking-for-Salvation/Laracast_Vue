@@ -17,6 +17,9 @@ module.exports = {
 			screens: {
 				ccs: "1300px",
 			},
+			colors: {
+				"[#73a3e4]": "#73a3e4",
+			},
 			width: {
 				"42": "11rem",
 				"[150px]": "150px",
