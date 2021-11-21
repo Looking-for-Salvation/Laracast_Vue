@@ -174,7 +174,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="py-4 border-t border-solid mobile:text-lg lg:mt-8 border-opacity-10">
+				<div class="py-4 border-t border-white border-solid mobile:text-lg lg:mt-8 border-opacity-10">
 					<div class="text-sm text-center font-IranSans">
 						<p class="tracking-normal text-white opacity-50 lg:mb-2">© تمامی شرایط محفوظ و متعلق به لاراکست می باشد.</p>
 						<p class="hidden tracking-normal md:block"></p>
