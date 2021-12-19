@@ -6,7 +6,7 @@
 					<h5 class="ml-auto text-base text-black font-IranSans md:text-xs">
 						<router-link :to="selectedTeamPlan.url">{{ planNamePersian }}</router-link>
 					</h5>
-					<div class="relative text-xl leading-none plan-price font-IranSans">
+					<div class="relative leading-none text-3lg plan-price font-IranSans">
 						<div>
 							<div class="relative flex items-baseline text-blue-400 font-IranSans">
 								<span>{{ selectedTeamPlan.price }}</span>
@@ -48,7 +48,7 @@
 					<div class="relative flex w-full md:flex-col-reverse md:justify-around md:mr-3 thermometer-legend" style="max-width: 99%;">
 						<div class="is-filled-20">
 							<router-link
-								to="/signup?plan=monthly-15"
+								to="/signup?plan=business-2"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': fillRate === '20percent' }"
 								@mouseenter="setTwoDev"
@@ -57,7 +57,7 @@
 						</div>
 						<div class="is-filled-40">
 							<router-link
-								to="/signup?plan=monthly-15"
+								to="/signup?plan=business-5"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': fillRate === '40percent' }"
 								@mouseenter="setFiveDev"
@@ -66,7 +66,7 @@
 						</div>
 						<div class="is-filled-60">
 							<router-link
-								to="/signup?plan=monthly-15"
+								to="/signup?plan=business-10"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': fillRate === '60percent' }"
 								@mouseenter="setTenDev"
@@ -75,7 +75,7 @@
 						</div>
 						<div class="is-filled-80">
 							<router-link
-								to="/signup?plan=monthly-15"
+								to="/signup?plan=business-25"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': fillRate === '80percent' }"
 								@mouseenter="setTwentyDev"
@@ -84,7 +84,7 @@
 						</div>
 						<div class="is-filled-100">
 							<router-link
-								to="/signup?plan=monthly-15"
+								to="/signup?plan=business-50"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': fillRate === '100percent' }"
 								@mouseenter="setFiftyDev"
@@ -114,28 +114,28 @@ export default {
 		const selectedTeamPlan = computed(() => store.getters["home/plans/selectedTeamPlan"]);
 		const planNamePersian = computed(() => {
 			let planName = "";
-			if (selectedTeamPlan.value.planId === "tp002") planName = "سیستم جفتی";
-			if (selectedTeamPlan.value.planId === "tp005") planName = "مدار پیچپیده";
-			if (selectedTeamPlan.value.planId === "tp010") planName = "پیش فرض کارخانه";
-			if (selectedTeamPlan.value.planId === "tp025") planName = "جریان باز";
-			if (selectedTeamPlan.value.planId === "tp050") planName = "مؤسسه سایبرنتیک";
+			if (selectedTeamPlan.value.planId === "tp001") planName = "سیستم جفتی";
+			if (selectedTeamPlan.value.planId === "tp002") planName = "مدار پیچپیده";
+			if (selectedTeamPlan.value.planId === "tp003") planName = "پیش فرض کارخانه";
+			if (selectedTeamPlan.value.planId === "tp004") planName = "جریان باز";
+			if (selectedTeamPlan.value.planId === "tp005") planName = "مؤسسه سایبرنتیک";
 			return planName;
 		});
 		const fillRate = computed(() => {
 			let fillRate = "";
-			if (selectedTeamPlan.value.planId === "tp002") fillRate = "20percent";
-			if (selectedTeamPlan.value.planId === "tp005") fillRate = "40percent";
-			if (selectedTeamPlan.value.planId === "tp010") fillRate = "60percent";
-			if (selectedTeamPlan.value.planId === "tp025") fillRate = "80percent";
-			if (selectedTeamPlan.value.planId === "tp050") fillRate = "100percent";
+			if (selectedTeamPlan.value.planId === "tp001") fillRate = "20percent";
+			if (selectedTeamPlan.value.planId === "tp002") fillRate = "40percent";
+			if (selectedTeamPlan.value.planId === "tp003") fillRate = "60percent";
+			if (selectedTeamPlan.value.planId === "tp004") fillRate = "80percent";
+			if (selectedTeamPlan.value.planId === "tp005") fillRate = "100percent";
 			return fillRate;
 		});
 
-		const setTwoDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp002" });
-		const setFiveDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp005" });
-		const setTenDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp010" });
-		const setTwentyDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp025" });
-		const setFiftyDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp050" });
+		const setTwoDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp001" });
+		const setFiveDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp002" });
+		const setTenDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp003" });
+		const setTwentyDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp004" });
+		const setFiftyDev = () => store.dispatch("home/plans/setSelectedTeamPlan", { planId: "tp005" });
 
 		return {
 			selectedTeamPlan,

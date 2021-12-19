@@ -42,6 +42,7 @@
 			</div>
 			<div class="flex justify-center mt-10 md:justify-start">
 				<button @click="setCurrentTab" type="button" class="button blue-button text-[14px] w-full md:w-auto font-IranSans">ادامه برای پرداخت</button>
+				<button type="button" @click="consoleLog">console</button>
 			</div>
 		</div>
 		<div></div>
@@ -49,6 +50,9 @@
 </template>
 
 <script>
+import { computed } from "vue";
+import { useRoute } from "vue-router";
+import { useStore } from "vuex";
 import PersonalPlans from "./signup-plans/PersonalPlans.vue";
 import TeamPlans from "./signup-plans/TeamPlans.vue";
 
@@ -60,6 +64,26 @@ export default {
 	emits: ["setCurrentTab"],
 	setup(_, { emit }) {
 		const setCurrentTab = () => emit("setCurrentTab");
+
+		const route = useRoute();
+		const store = useStore();
+
+		const selectedPlanId = computed(() => {
+			let planId = "";
+			if (route.query) {
+				if (route.query.plan === "monthly-50") planId = "p001";
+				if (route.query.plan === "yearly-500") planId = "p002";
+				if (route.query.plan === "forever") planId = "p003";
+				if (route.query.plan === "business-2") planId = "tp001";
+				if (route.query.plan === "business-5") planId = "tp002";
+				if (route.query.plan === "business-10") planId = "tp003";
+				if (route.query.plan === "business-25") planId = "tp004";
+				if (route.query.plan === "business-50") planId = "tp005";
+				return planId;
+			} else return null;
+		});
+		const currentPlanViaParam = () => store.dispatch("home/plans/setSelectedPlan", { planId: selectedPlanId.value });
+		currentPlanViaParam();
 
 		return { setCurrentTab };
 	},

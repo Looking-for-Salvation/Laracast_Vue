@@ -10,7 +10,7 @@
 					<h5 class="ml-auto text-base text-black font-IranSans">
 						<router-link :to="plan.url">{{ periodicityPersian }}</router-link>
 					</h5>
-					<div class="relative text-xl leading-none plan-price font-IranSans">
+					<div class="relative leading-none text-3lg plan-price font-IranSans">
 						<div class="relative flex items-baseline text-blue-400 font-IranSans">
 							<span>{{ plan.price }}</span>
 							<span>&#160;تومان</span>
