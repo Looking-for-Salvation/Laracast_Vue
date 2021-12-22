@@ -5,7 +5,7 @@
 				<join-plans v-if="joinModalCurrentTab === 'plans'"></join-plans>
 				<join-f-a-q v-else-if="joinModalCurrentTab === 'faq'"></join-f-a-q>
 			</transition>
-			<div class="relative text-center border-t border-solid border-opacity-10">
+			<div class="relative text-center">
 				<div class="mt-10 lg:grid lg:grid-cols-4 lg:gap-6">
 					<div class="mt-6 ml-auto lg:flex lg:justify-end lg:w-38 lg:mt-0">
 						<transition name="join-plans" mode="out-in">
