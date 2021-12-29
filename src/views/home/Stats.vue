@@ -38,17 +38,27 @@
 					<h3 class="mb-2 text-3xl font-light text-black font-IranSans">مختصرترین ویدیو های آموزشی برای برنامه نویسان وب</h3>
 				</header>
 			</div>
-			<skill-cards></skill-cards>
+			<div class="lg:flex xl:justify-around xl:mx-8">
+				<skill-card v-for="skill in skills" :key="skill.type" :skill="skill"></skill-card>
+			</div>
 		</div>
 	</section>
 </template>
 
 <script>
-import SkillCards from "./home-stats/SkillCards.vue";
+import { computed } from "vue";
+import { useStore } from "vuex";
+import SkillCard from "@/components/ui/SkillCard.vue";
 
 export default {
 	components: {
-		SkillCards,
+		SkillCard,
+	},
+	setup() {
+		const store = useStore();
+		const skills = computed(() => store.getters["home/skills/skills"]);
+
+		return { skills };
 	},
 };
 </script>

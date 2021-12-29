@@ -1,6 +1,6 @@
 <template>
 	<div class="justify-center plans lg:flex lg:pb-6">
-		<simple-plan v-for="plan in personalPlans" :key="plan.periodicity" :plan="plan"></simple-plan>
+		<basic-plan v-for="plan in personalPlans" :key="plan.periodicity" :plan="plan"></basic-plan>
 	</div>
 </template>
 
@@ -8,10 +8,10 @@
 import { computed } from "vue";
 import { useStore } from "vuex";
 
-import SimplePlan from "./SimplePlan.vue";
+import BasicPlan from "./BasicPlan.vue";
 export default {
 	components: {
-		SimplePlan,
+		BasicPlan,
 	},
 	setup() {
 		const store = useStore();

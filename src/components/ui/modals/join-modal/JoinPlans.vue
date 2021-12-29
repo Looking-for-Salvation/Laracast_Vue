@@ -22,7 +22,7 @@
 						</div>
 					</div>
 					<personal-plans class="mt-4" v-if="isPersonal"></personal-plans>
-					<teams-plans class="mt-4" v-else></teams-plans>
+					<team-plans class="mt-4" v-else></team-plans>
 				</div>
 			</div>
 		</div>
@@ -32,17 +32,16 @@
 <script>
 import { ref, defineAsyncComponent } from "vue";
 
-const PersonalPlans = defineAsyncComponent(() => import("../../../home-page/home-plans/PersonalPlans.vue"));
-const TeamsPlans = defineAsyncComponent(() => import("../../../home-page/home-plans/TeamsPlans.vue"));
+const PersonalPlans = defineAsyncComponent(() => import("@/components/ui/plans/PersonalPlans.vue"));
+const TeamPlans = defineAsyncComponent(() => import("@/components/ui/plans/TeamPlans.vue"));
 
 export default {
 	components: {
 		PersonalPlans,
-		TeamsPlans,
+		TeamPlans,
 	},
 	setup() {
 		const isPersonal = ref(true);
-
 		const setPlanPersonal = () => (isPersonal.value = true);
 		const setPlanTeams = () => (isPersonal.value = false);
 

@@ -2,15 +2,15 @@
 	<div class="mx-auto max-w-[500px]">
 		<div class="flex flex-col justify-between w-full h-full px-8 py-4 overflow-visible card">
 			<header class="flex flex-col items-center mb-4" style="margin-top: -40px;">
-				<img :src="img" :alt="name" height="130" width="130" class="mb-4 transform rounded-full" />
-				<h4 class="mb-px text-xl text-black font-IranSans">{{ name }}</h4>
-				<h5 class="text-black text-opacity-30 font-IranSans">{{ role }}</h5>
+				<img :src="member.img" :alt="member.name" height="130" width="130" class="mb-4 transform rounded-full" />
+				<h4 class="mb-px text-xl text-black font-IranSans">{{ member.name }}</h4>
+				<h5 class="text-black text-opacity-30 font-IranSans">{{ member.role }}</h5>
 			</header>
-			<div class="mb-8 text-base text-gray-700 font-IranSans" style="min-height: 120px;">{{ biography }}</div>
+			<div class="mb-8 text-base text-gray-700 font-IranSans" style="min-height: 120px;">{{ member.biography }}</div>
 			<footer class="flex items-center justify-between">
 				<p class="text-base text-black font-IranSans text-opacity-80">عرض ارادت در</p>
 				<div class="flex">
-					<a :href="twitter" aria-label="Twitter">
+					<a :href="member.twitter" aria-label="Twitter">
 						<svg width="32" height="32" viewBox="0 0 36 36" class="text-blue-400 transition-all hover:text-blue-500" role="img">
 							<path
 								class="fill-current"
@@ -28,24 +28,8 @@
 <script>
 export default {
 	props: {
-		name: {
-			type: String,
-			required: true,
-		},
-		role: {
-			type: String,
-			required: true,
-		},
-		img: {
-			type: String,
-			required: true,
-		},
-		biography: {
-			type: String,
-			required: true,
-		},
-		twitter: {
-			type: String,
+		member: {
+			type: Object,
 			required: true,
 		},
 	},

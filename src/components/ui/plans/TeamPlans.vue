@@ -1,6 +1,6 @@
 <template>
 	<div class="justify-center lg:flex lg:pb-6 plans">
-		<simple-plan :plan="monthlyPlan"></simple-plan>
+		<basic-plan :plan="monthlyPlan"></basic-plan>
 		<complex-plan></complex-plan>
 	</div>
 </template>
@@ -9,12 +9,12 @@
 import { computed } from "vue";
 import { useStore } from "vuex";
 
-import SimplePlan from "./SimplePlan.vue";
+import BasicPlan from "./BasicPlan.vue";
 import ComplexPlan from "./ComplexPlan.vue";
 
 export default {
 	components: {
-		SimplePlan,
+		BasicPlan,
 		ComplexPlan,
 	},
 	setup() {

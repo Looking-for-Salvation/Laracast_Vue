@@ -16,16 +16,16 @@
 			:class="{ 'justify-between': isExpanded, 'justify-center': isLarge }"
 		>
 			<router-link
-				:to="categoryRoute"
+				:to="categoryUrl"
 				class="w-full px-4 py-2 text-xs leading-none text-center text-white transition-all duration-200 bg-black rounded-full expanded-card_skill-button bg-opacity-10 hover:bg-white hover:text-gray-700 font-IranSans"
 				v-if="!isLarge"
-				>{{ categoryPersian }}
+				>{{ categoryName }}
 			</router-link>
-			<router-link :to="route" class="relative flex items-center my-4 md:my-0 card-thunbnail">
-				<img :src="imgSource" :alt="name" height="96" width="96" />
+			<router-link :to="item.url" class="relative flex items-center my-4 md:my-0 card-thunbnail">
+				<img :src="item.img" :alt="item.name" height="96" width="96" />
 			</router-link>
 			<div class="w-full text-center expanded-card_difficulty" v-if="!isLarge">
-				<div class="mb-2 text-white text-2xs font-IranSans">{{ "سطح " + difficultyLevel }}</div>
+				<div class="mb-2 text-white text-2xs font-IranSans">{{ "سطح " + item.difficulty }}</div>
 				<div
 					dir="ltr"
 					class="flex justify-center mx-4 space-x-1 difficulty-meter"
@@ -39,10 +39,10 @@
 		</div>
 		<div class="relative flex flex-col w-full py-5 expanded-card_left" :class="{ 'justify-around': isExpanded, 'justify-between': isLarge }">
 			<h3 class="inline-flex items-start mt-1 tracking-tight lg:items-center lg:h-12 text-3lg">
-				<router-link :to="route" :title="name" class="text-gray-700 clamp two-lines font-IranSans hover:underline">{{ name }}</router-link>
+				<router-link :to="item.url" :title="item.name" class="text-gray-700 clamp two-lines font-IranSans hover:underline">{{ item.name }}</router-link>
 			</h3>
 			<div class="mt-4 text-sm text-black text-opacity-50 md:text-xs lg:mb-auto expanded-card_description generic-content font-IranSans" v-if="!isLarge">
-				<p class="clamp five-lines">{{ description }}</p>
+				<p class="clamp five-lines">{{ item.description }}</p>
 			</div>
 			<div class="flex text-gray-700 text-2xs expanded-card_meta">
 				<div class="flex items-center ml-4 expanded-card_meta-lessons">
@@ -54,7 +54,7 @@
 							opacity=".5"
 						></path>
 					</svg>
-					<router-link :to="route" class="font-IranSans opacity-60 pt-0.5">{{ finalLessonsCount }}</router-link>
+					<router-link :to="item.url" class="font-IranSans opacity-60 pt-0.5">{{ finalLessonsCount }}</router-link>
 				</div>
 				<div class="flex items-center expanded-card_meta-time">
 					<svg width="13" height="13" viewBox="0 0 13 13" class="relative ml-2 opacity-60 inherits-color" style="top: 1px;">
@@ -69,7 +69,7 @@
 				</div>
 			</div>
 			<router-link
-				:to="route"
+				:to="item.url"
 				class="absolute hidden w-full py-2 mb-1 text-sm text-black bg-gray-100 border border-opacity-25 rounded-full lg:flex lg:items-center lg:justify-center card-play-button hover:border-blue-400 hover:text-blue-400 font-IranSans"
 				style="bottom: 11px"
 				>نمایش</router-link
@@ -83,159 +83,91 @@ import { computed } from "vue";
 
 export default {
 	props: {
-		category: {
-			type: String,
-			required: true,
-		},
-		name: {
-			type: String,
-			required: true,
-		},
-		description: {
-			type: String,
-			required: true,
-		},
-		level: {
-			type: String,
-			required: true,
-		},
-		imgSource: {
-			type: String,
-			required: true,
-		},
-		route: {
-			type: String,
-			required: true,
-		},
-		lessonsCount: {
-			type: Number,
-			required: true,
-		},
-		totalTime: {
+		item: {
 			type: Object,
-			required: true,
-		},
-		mode: {
-			type: String,
 			required: true,
 		},
 	},
 	setup(props) {
 		//* Category related properties & ...
-		const categoryPersian = computed(() => {
-			if (props.category === "Frameworks") {
-				return "فریمورک ها";
-			} else if (props.category === "Languages") {
-				return "زبان ها";
-			} else if (props.category === "Techniques") {
-				return "تکنیک ها";
-			} else if (props.category === "Testing") {
-				return "تست";
-			} else {
-				return "ابزار ها";
-			}
+		const categoryName = computed(() => {
+			let categoryName = "";
+			if (props.item.category === "Frameworks") categoryName = "فریمورک ها";
+			if (props.item.category === "Languages") categoryName = "زبان ها";
+			if (props.item.category === "Techniques") categoryName = "تکنیک ها";
+			if (props.item.category === "Testing") categoryName = "تست";
+			if (props.item.category === "Tooling") categoryName = "ابزار ها";
+			return categoryName;
 		});
 
-		const categoryRoute = computed(() => {
-			if (props.category === "Frameworks") {
-				return "/browse/frameworks";
-			} else if (props.category === "Languages") {
-				return "/browse/languages";
-			} else if (props.category === "Techniques") {
-				return "/browse/techniques";
-			} else if (props.category === "Testing") {
-				return "/browse/testing";
-			} else {
-				return "/browse/tooling";
-			}
+		const categoryUrl = computed(() => {
+			let url = {};
+			if (props.item.category === "Frameworks") url = { name: "Browse Frameworks" };
+			if (props.item.category === "Languages") url = { name: "Browse Languages" };
+			if (props.item.category === "Techniques") url = { name: "Browse Techniques" };
+			if (props.item.category === "Testing") url = { name: "Browse Testing" };
+			if (props.item.category === "Tooling") url = { name: "Browse Tooling" };
+			return url;
 		});
 
 		const isFrameworks = computed(() => {
-			if (props.category === "Frameworks") {
-				return true;
-			} else {
-				return false;
-			}
+			if (props.item.category === "Frameworks") return true;
+			else return false;
 		});
 
 		const isLanguages = computed(() => {
-			if (props.category === "Languages") {
-				return true;
-			} else {
-				return false;
-			}
+			if (props.item.category === "Languages") return true;
+			else return false;
 		});
 
 		const isTechniques = computed(() => {
-			if (props.category === "Techniques") {
-				return true;
-			} else {
-				return false;
-			}
+			if (props.item.category === "Techniques") return true;
+			else return false;
 		});
 
 		const isTesting = computed(() => {
-			if (props.category === "Testing") {
-				return true;
-			} else {
-				return false;
-			}
+			if (props.item.category === "Testing") return true;
+			else return false;
 		});
 
 		const isTooling = computed(() => {
-			if (props.category === "Tooling") {
-				return true;
-			} else {
-				return false;
-			}
+			if (props.item.category === "Tooling") return true;
+			else return false;
 		});
 
 		//* Difficulty level related properties & ...
-		const difficultyLevel = computed(() => {
-			if (props.level === "Beginner") {
-				return "آسان";
-			} else if (props.level === "Intermediate") {
-				return "متوسط";
-			} else {
-				return "پیشرفته";
-			}
+		const difficulty = computed(() => {
+			let difficulty = "";
+			if (props.item.level === "Beginner") difficulty = "آسان";
+			if (props.item.level === "Intermediate") difficulty = "متوسط";
+			if (props.item.level === "Advanced") difficulty = "پیشرفته";
+			return difficulty;
 		});
 
 		const isBeginner = computed(() => {
-			if (props.level === "Beginner") {
-				return true;
-			} else {
-				return false;
-			}
+			if (props.item.level === "Beginner") return true;
+			else return false;
 		});
 
 		const isIntermediate = computed(() => {
-			if (props.level === "Intermediate") {
-				return true;
-			} else {
-				return false;
-			}
+			if (props.item.level === "Intermediate") return true;
+			else return false;
 		});
 
 		const isAdvanced = computed(() => {
-			if (props.level === "Advanced") {
-				return true;
-			} else {
-				return false;
-			}
+			if (props.item.level === "Advanced") return true;
+			else return false;
 		});
 
 		//* Total time related properties & ...
 		const totalTimeHours = computed(() => {
-			if (props.totalTime.hours !== 0) {
-				return props.totalTime.hours + "h";
-			} else return "";
+			if (props.item.totalTime.hours !== 0) return props.item.totalTime.hours + "h";
+			else return "";
 		});
 
 		const totalTimeMinutes = computed(() => {
-			if (props.totalTime.minutes !== 0) {
-				return props.totalTime.minutes + "m";
-			} else return null;
+			if (props.item.totalTime.minutes !== 0) return props.item.totalTime.minutes + "m";
+			else return null;
 		});
 
 		const totalCalcTime = computed(() => {
@@ -244,29 +176,28 @@ export default {
 
 		//* Lessons count related properties & ...
 		const finalLessonsCount = computed(() => {
-			return props.lessonsCount + " درس";
+			return props.item.lessonsCount + " درس";
 		});
 
 		const isLarge = computed(() => {
-			if (props.mode === "large") {
-				return true;
-			} else return false;
+			if (props.item.mode === "large") return true;
+			else return false;
 		});
 
 		const isExpanded = computed(() => {
-			if (props.mode === "expanded") return true;
+			if (props.item.mode === "expanded") return true;
 			else return false;
 		});
 
 		return {
-			categoryPersian,
-			categoryRoute,
+			categoryName,
+			categoryUrl,
 			isFrameworks,
 			isLanguages,
 			isTechniques,
 			isTesting,
 			isTooling,
-			difficultyLevel,
+			difficulty,
 			isBeginner,
 			isIntermediate,
 			isAdvanced,

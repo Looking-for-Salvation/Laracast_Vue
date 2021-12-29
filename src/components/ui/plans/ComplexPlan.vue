@@ -48,7 +48,7 @@
 					<div class="relative flex w-full md:flex-col-reverse md:justify-around md:mr-3 thermometer-legend" style="max-width: 99%;">
 						<div class="is-filled-20">
 							<router-link
-								to="/signup?plan=business-2"
+								:to="{ name: 'Sign Up', query: { plan: 'business-2' } }"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': fillRate === '20percent' }"
 								@mouseenter="setTwoDev"
@@ -57,7 +57,7 @@
 						</div>
 						<div class="is-filled-40">
 							<router-link
-								to="/signup?plan=business-5"
+								:to="{ name: 'Sign Up', query: { plan: 'business-5' } }"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': fillRate === '40percent' }"
 								@mouseenter="setFiveDev"
@@ -66,7 +66,7 @@
 						</div>
 						<div class="is-filled-60">
 							<router-link
-								to="/signup?plan=business-10"
+								:to="{ name: 'Sign Up', query: { plan: 'business-10' } }"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': fillRate === '60percent' }"
 								@mouseenter="setTenDev"
@@ -75,7 +75,7 @@
 						</div>
 						<div class="is-filled-80">
 							<router-link
-								to="/signup?plan=business-25"
+								:to="{ name: 'Sign Up', query: { plan: 'business-25' } }"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': fillRate === '80percent' }"
 								@mouseenter="setTwentyDev"
@@ -84,7 +84,7 @@
 						</div>
 						<div class="is-filled-100">
 							<router-link
-								to="/signup?plan=business-50"
+								:to="{ name: 'Sign Up', query: { plan: 'business-50' } }"
 								class="relative z-10 inline-block w-full px-2 py-2 bg-gray-100 border border-transparent border-solid text-2xs md:text-xs md:px-0 md:py-2 md:w-32 font-IranSans rounded-2xl"
 								:class="{ 'is-active': fillRate === '100percent' }"
 								@mouseenter="setFiftyDev"

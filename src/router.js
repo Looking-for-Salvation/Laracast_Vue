@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { defineAsyncComponent } from "vue";
 
-import TheHome from "./pages/TheHome.vue";
+import TheHome from "@/views/TheHome.vue";
 import TheFooter from "@/components/ui/TheFooter.vue";
 //* Topics components
 import TheTopics from "@/pages/TheTopics.vue";
@@ -27,30 +27,30 @@ const ThePrivacy = defineAsyncComponent(() => import("@/pages/ThePrivacy.vue"));
 const router = createRouter({
 	history: createWebHistory(),
 	routes: [
-		{ path: "/", components: { default: TheHome, footer: TheFooter } },
-		{ path: "/join", redirect: "/?modal=join" },
-		{ path: "/signin", redirect: "/?modal=signin" },
+		{ name: "Home", path: "/", components: { default: TheHome, footer: TheFooter } },
+		{ name: "Join", path: "/join", redirect: { name: "Home", query: { modal: "join" } } },
 		{
+			name: "Browse",
 			path: "/browse",
 			components: { default: TheTopics, footer: TheFooter },
-			redirect: "/browse/all",
+			redirect: { name: "Browse All" },
 			children: [
-				{ path: "all", component: AllTopics },
-				{ path: "frameworks", component: FrameworksTopic },
-				{ path: "testing", component: TestingTopic },
-				{ path: "languages", component: LanguagesTopic },
-				{ path: "tooling", component: ToolingTopic },
-				{ path: "techniques", component: TechniquesTopic },
+				{ name: "Browse All", path: "all", component: AllTopics },
+				{ name: "Browse Frameworks", path: "frameworks", component: FrameworksTopic },
+				{ name: "Browse Testing", path: "testing", component: TestingTopic },
+				{ name: "Browse Languages", path: "languages", component: LanguagesTopic },
+				{ name: "Browse Tooling", path: "tooling", component: ToolingTopic },
+				{ name: "Browse Techniques", path: "techniques", component: TechniquesTopic },
 			],
 		},
-		{ path: "/series", components: { default: TheSeries, footer: TheFooter } },
-		{ path: "/podcast", components: { default: ThePodcast, footer: TheFooter } },
-		{ path: "/discuss", components: { default: TheDiscuss, footer: TheFooter } },
-		{ path: "/signup", components: { default: TheSignup, footer: TheFooter } },
-		{ path: "/faq", components: { default: TheFaq, footer: TheFooter } },
-		{ path: "/terms", components: { default: TheTerms, footer: TheFooter } },
-		{ path: "/privacy", components: { default: ThePrivacy, footer: TheFooter } },
-		{ path: "/:notFound(.*)", components: { rootroute: NotFound } },
+		{ name: "Series", path: "/series", components: { default: TheSeries, footer: TheFooter } },
+		{ name: "Podcast", path: "/podcast", components: { default: ThePodcast, footer: TheFooter } },
+		{ name: "Discuss", path: "/discuss", components: { default: TheDiscuss, footer: TheFooter } },
+		{ name: "Sign Up", path: "/signup", components: { default: TheSignup, footer: TheFooter } },
+		{ name: "FAQ", path: "/faq", components: { default: TheFaq, footer: TheFooter } },
+		{ name: "Terms", path: "/terms", components: { default: TheTerms, footer: TheFooter } },
+		{ name: "Privacy", path: "/privacy", components: { default: ThePrivacy, footer: TheFooter } },
+		{ name: "Not Found", path: "/:notFound(.*)", components: { rootroute: NotFound } },
 	],
 	linkActiveClass: "router-active",
 	linkExactActiveClass: "router-exact-active",

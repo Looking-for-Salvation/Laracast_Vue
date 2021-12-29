@@ -4,7 +4,7 @@
 			src="../../assets/images/footer-gang.svg"
 			alt="Laracasts robot mascots"
 			class="absolute top-0 hidden lg:inline-block footer-img"
-			style="left: -200px"
+			style="left: -200px; transform: scaleX(-1);"
 		/>
 		<section class="pt-0 lg:pb-0 footer-section top">
 			<div class="container">

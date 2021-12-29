@@ -27,7 +27,7 @@
 							</div>
 						</div>
 						<personal-plans v-if="isPersonal"></personal-plans>
-						<teams-plans v-else></teams-plans>
+						<team-plans v-else></team-plans>
 					</div>
 				</div>
 			</div>
@@ -38,24 +38,18 @@
 <script>
 import { ref } from "vue";
 
-import TeamsPlans from "./home-plans/TeamsPlans.vue";
-import PersonalPlans from "./home-plans/PersonalPlans.vue";
+import TeamPlans from "@/components/ui/plans/TeamPlans.vue";
+import PersonalPlans from "@/components/ui/plans/PersonalPlans.vue";
 
 export default {
 	components: {
-		TeamsPlans,
+		TeamPlans,
 		PersonalPlans,
 	},
 	setup() {
 		const isPersonal = ref(true);
-
-		function setPlanPersonal() {
-			isPersonal.value = true;
-		}
-
-		function setPlanTeams() {
-			isPersonal.value = false;
-		}
+		const setPlanPersonal = () => (isPersonal.value = true);
+		const setPlanTeams = () => (isPersonal.value = false);
 
 		return {
 			isPersonal,

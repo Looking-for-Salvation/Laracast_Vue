@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import CarouselSlider from "./home-carousel/CarouselSlider.vue";
+import CarouselSlider from "./carousel/Slider.vue";
 
 export default {
 	components: {

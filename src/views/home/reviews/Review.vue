@@ -2,7 +2,7 @@
 	<div class="mx-1 my-2 text-center lg:m-2" @mouseenter="mouseEntered" @mouseleave="mouseLeft">
 		<a href="#" class="block" target="_blank" rel="noreferrer">
 			<img
-				:src="item.imgSource"
+				:src="item.img"
 				width="48"
 				height="48"
 				class="w-12 border-2 border-solid rounded-full"

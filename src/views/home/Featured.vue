@@ -7,17 +7,17 @@
 					<p class="font-light text-2lg opacity-70">با استفاده از ویدیو های لاراکست تکنولوژی دلخواهتون رو به صورت کامل یاد بگیرید.</p>
 				</header>
 			</div>
-			<featured-series></featured-series>
+			<featured-container></featured-container>
 		</div>
 	</section>
 </template>
 
 <script>
-import FeaturedSeries from "./home-featured/FeaturedSeries.vue";
+import FeaturedContainer from "./featured/Container.vue";
 
 export default {
 	components: {
-		FeaturedSeries,
+		FeaturedContainer,
 	},
 };
 </script>

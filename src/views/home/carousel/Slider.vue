@@ -42,7 +42,7 @@
 		:grabCursor="true"
 	>
 		<swiper-slide v-for="slide in slidesData" :key="slide[0].name">
-			<carousel-item v-for="item in slide" :key="item.name" :item="item"></carousel-item>
+			<carousel-slides v-for="item in slide" :key="item.name" :item="item"></carousel-slides>
 		</swiper-slide>
 	</swiper>
 </template>
@@ -51,7 +51,7 @@
 import { computed } from "vue";
 import { useStore } from "vuex";
 
-import CarouselItem from "./CarouselItem.vue";
+import CarouselSlides from "./Slides.vue";
 
 //* Swiper inclusion
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -65,7 +65,7 @@ export default {
 	components: {
 		Swiper,
 		SwiperSlide,
-		CarouselItem,
+		CarouselSlides,
 	},
 	setup() {
 		const store = useStore();

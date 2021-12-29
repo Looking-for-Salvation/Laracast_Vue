@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import ReviewsContainer from "./home-reviews/ReviewsContainer.vue";
+import ReviewsContainer from "./reviews/Container.vue";
 
 export default {
 	components: {

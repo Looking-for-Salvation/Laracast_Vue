@@ -1,1 +1,5 @@
-export default {};
+export default {
+	TeamMembers(state) {
+		return state.TeamMembers;
+	},
+};

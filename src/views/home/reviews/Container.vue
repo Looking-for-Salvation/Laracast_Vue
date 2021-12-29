@@ -2,12 +2,12 @@
 	<div class="relative flex">
 		<div class="flex flex-wrap items-center justify-start p-8 bg-white">
 			<div class="flex justify-between w-full" v-for="row in reviews" :key="row[0].id">
-				<reviews-item v-for="item in row" :key="item.id" :item="item"></reviews-item>
+				<review-item v-for="item in row" :key="item.id" :item="item"></review-item>
 			</div>
 		</div>
 		<div class="absolute inset-y-0 left-0 flex items-center justify-center w-2/5 max-w-[600px] p-10 text-center bg-white bg-opacity-97">
 			<div>
-				<img :src="selectedReview.imgSource" :alt="selectedReview.name" class="inline-block w-16 mb-2 rounded-full xl:w-24" width="90" height="90" />
+				<img :src="selectedReview.img" :alt="selectedReview.name" class="inline-block w-16 mb-2 rounded-full xl:w-24" width="90" height="90" />
 				<p class="mb-6 text-sm text-black font-IranSans">
 					<a href="#" class="text-black hover:underline">{{ selectedReview.name }}</a>
 				</p>
@@ -28,12 +28,12 @@
 import { computed } from "vue";
 import { useStore } from "vuex";
 
-import ReviewsItem from "./ReviewsItem.vue";
+import ReviewItem from "./Review.vue";
 import ReviewsModal from "@/components/ui/modals/ReviewsModal.vue";
 
 export default {
 	components: {
-		ReviewsItem,
+		ReviewItem,
 		ReviewsModal,
 	},
 	setup() {

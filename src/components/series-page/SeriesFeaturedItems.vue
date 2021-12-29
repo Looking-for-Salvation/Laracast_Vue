@@ -1,25 +1,13 @@
 <template>
 	<div class="container mt-8" style="max-width: 1166px;">
 		<div class="grid gap-y-6 featured-items gap-x-10">
-			<featured-item
-				v-for="item in items"
-				:key="item.name"
-				:category="item.category"
-				:name="item.name"
-				:description="item.description"
-				:level="item.level"
-				:lessonsCount="item.lessonsCount"
-				:totalTime="item.totalTime"
-				:route="item.route"
-				:imgSource="item.imgSource"
-				:mode="item.mode"
-			></featured-item>
+			<featured-item v-for="item in items" :key="item.name" :item="item"></featured-item>
 		</div>
 	</div>
 </template>
 
 <script>
-import FeaturedItem from "@/components/home-page/home-featured/FeaturedItem.vue";
+import FeaturedItem from "@/components/ui/FeaturedItem.vue";
 
 export default {
 	components: {

@@ -5,34 +5,26 @@
 				<h3 class="text-3xl md:font-light font-IranSans">با تیم لاراکست آشنا شید</h3>
 			</header>
 			<div class="grid gap-6 lg:grid-cols-3 md:mb-10 pt-7">
-				<team-member
-					v-for="member in members"
-					:key="member.name"
-					:name="member.name"
-					:role="member.role"
-					:img="member.img"
-					:twitter="member.twitter"
-					:biography="member.biography"
-				></team-member>
+				<team-card v-for="member in members" :key="member.name" :member="member"></team-card>
 			</div>
 		</div>
 	</section>
 </template>
 
 <script>
-import TeamMember from "./home-team/TeamMember.vue";
-import membersData from "./home-team/data.js";
+import { useStore } from "vuex";
+import { computed } from "vue";
+import TeamCard from "@/components/ui/TeamCard.vue";
 
 export default {
 	components: {
-		TeamMember,
+		TeamCard,
 	},
 	setup() {
-		const members = membersData;
+		const store = useStore();
+		const members = computed(() => store.getters["home/TeamMembers"]);
 
-		return {
-			members,
-		};
+		return { members };
 	},
 };
 </script>
