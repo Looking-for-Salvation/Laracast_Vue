@@ -344,6 +344,10 @@ button {
 	color: rgba(34, 41, 47, var(--text-opacity));
 }
 
+.fliped {
+	transform: scaleX(-1);
+}
+
 /* * Media queries */
 @media (min-width: 768px) {
 	.button {

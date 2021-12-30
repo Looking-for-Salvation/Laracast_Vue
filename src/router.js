@@ -12,7 +12,7 @@ import LanguagesTopic from "@/components/topics-page/LanguagesTopic.vue";
 import ToolingTopic from "@/components/topics-page/ToolingTopic.vue";
 import TechniquesTopic from "@/components/topics-page/TechniquesTopic.vue";
 //* Series component
-import TheSeries from "@/pages/TheSeries.vue";
+import TheSeries from "@/views/TheSeries.vue";
 //* Podcast components
 import ThePodcast from "@/pages/ThePodcast.vue";
 //* Discuss components

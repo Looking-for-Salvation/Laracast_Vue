@@ -1,27 +1,27 @@
 <template>
 	<div class="mx-auto md:space-x-5 md:flex" style="max-width: 1500px;">
 		<div class="flex-1 mb-4 space-y-4 md:mb-0" id="first">
-			<featured-item v-for="item in col1" :key="item.name" :item="item"></featured-item>
+			<featured-item-basic v-for="item in col1" :key="item.name" :item="item"></featured-item-basic>
 		</div>
 		<div class="flex-1 space-y-4">
-			<featured-item v-for="item in col2" :key="item.name" :item="item"></featured-item>
+			<featured-item-basic v-for="item in col2" :key="item.name" :item="item"></featured-item-basic>
 		</div>
 		<div class="flex-1 hidden space-y-4 xl:block">
-			<featured-item v-for="item in col3" :key="item.name" :item="item"></featured-item>
+			<featured-item-basic v-for="item in col3" :key="item.name" :item="item"></featured-item-basic>
 		</div>
 		<div class="flex-1 hidden space-y-4 widescreen:block" id="last">
-			<featured-item v-for="item in col4" :key="item.name" :item="item"></featured-item>
+			<featured-item-basic v-for="item in col4" :key="item.name" :item="item"></featured-item-basic>
 		</div>
 	</div>
 </template>
 
 <script>
-import { col1Data, col2Data, col3Data, col4Data } from "./data.js";
-import FeaturedItem from "@/components/ui/FeaturedItem.vue";
+import { col1Data, col2Data, col3Data, col4Data } from "@/assets/temp-data/home-page/featured/data.js";
+import FeaturedItemBasic from "@/components/ui/featured-item/FeaturedItemBasic.vue";
 
 export default {
 	components: {
-		FeaturedItem,
+		FeaturedItemBasic,
 	},
 	setup() {
 		const col1 = col1Data;
