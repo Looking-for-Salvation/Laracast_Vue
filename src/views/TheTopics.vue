@@ -66,18 +66,34 @@
 							</div>
 						</section>
 					</div>
-					<router-view></router-view>
+					<router-view v-slot="{ Component }">
+						<transition name="fade" mode="out-in">
+							<component :is="Component" />
+						</transition>
+					</router-view>
 				</div>
 			</section>
 		</main>
 	</div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.2s ease-in-out;
+}
+
+.fade-leave-to,
+.fade-enter-from {
+	opacity: 0;
+}
+
+.taxonomy-nav-link.router-exact-active::after,
+.taxonomy-nav-link.router-exact-active,
+.taxonomy-nav-link:hover::after {
+	opacity: 1;
+}
+
 @media (min-width: 768px) {
 	.banner.is-topic:before {
 		background: url("../assets/images/topics/banner-bg-left.svg") no-repeat 0 100%, url("../assets/images/topics/banner-bg-right.svg") no-repeat 100% 100%;
@@ -105,12 +121,6 @@ export default {};
 		position: absolute;
 		transition: opacity 0.3s;
 		width: 120%;
-	}
-
-	.taxonomy-nav-link.router-exact-active::after,
-	.taxonomy-nav-link.router-exact-active,
-	.taxonomy-nav-link:hover::after {
-		opacity: 1;
 	}
 }
 </style>
