@@ -16,8 +16,7 @@
 <script>
 import { computed } from "vue";
 import { useStore } from "vuex";
-
-import PersonalPlan from "./PersoanlPlan.vue";
+import PersonalPlan from "@/views/signup/registration/plans/PersonalPlan.vue";
 
 export default {
 	components: {

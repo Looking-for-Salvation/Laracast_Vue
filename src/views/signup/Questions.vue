@@ -14,8 +14,7 @@
 <script>
 import { computed } from "vue";
 import { useStore } from "vuex";
-
-import SignupQuestion from "./SignupQuestion.vue";
+import SignupQuestion from "@/views/signup/questions/Question.vue";
 
 export default {
 	components: {

@@ -23,7 +23,7 @@ import ThePodcast from "@/pages/ThePodcast.vue";
 import TheDiscuss from "@/pages/TheDiscuss.vue";
 import NotFound from "./pages/NotFound.vue";
 
-const TheSignup = defineAsyncComponent(() => import("@/pages/TheSignup.vue"));
+const TheSignup = defineAsyncComponent(() => import("@/views/TheSignup.vue"));
 const TheFaq = defineAsyncComponent(() => import("@/pages/TheFaq.vue"));
 const TheTerms = defineAsyncComponent(() => import("@/pages/TheTerms.vue"));
 const ThePrivacy = defineAsyncComponent(() => import("@/pages/ThePrivacy.vue"));

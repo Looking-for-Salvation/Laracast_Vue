@@ -56,9 +56,8 @@
 
 <script>
 import { ref, computed } from "vue";
-
-import SignupPlans from "@/components/signup-page/SignupPlans.vue";
-import SignupPayment from "@/components/signup-page/SignupPayment.vue";
+import SignupPlans from "@/views/signup/registration/Plans.vue";
+import SignupPayment from "@/views/signup/registration/Payment.vue";
 
 export default {
 	components: {

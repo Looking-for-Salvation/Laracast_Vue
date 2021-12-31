@@ -19,8 +19,7 @@
 <script>
 import { computed } from "vue";
 import { useStore } from "vuex";
-
-import TeamPlan from "./TeamPlan.vue";
+import TeamPlan from "@/views/signup/registration/plans/TeamPlan.vue";
 
 export default {
 	components: {

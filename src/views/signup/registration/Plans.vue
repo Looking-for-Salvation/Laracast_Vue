@@ -42,7 +42,6 @@
 			</div>
 			<div class="flex justify-center mt-10 md:justify-start">
 				<button @click="setCurrentTab" type="button" class="button blue-button text-[14px] w-full md:w-auto font-IranSans">ادامه برای پرداخت</button>
-				<button type="button" @click="consoleLog">console</button>
 			</div>
 		</div>
 		<div></div>
@@ -53,8 +52,8 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
-import PersonalPlans from "./signup-plans/PersonalPlans.vue";
-import TeamPlans from "./signup-plans/TeamPlans.vue";
+import PersonalPlans from "@/views/signup/registration/plans/PersonalContainer.vue";
+import TeamPlans from "@/views/signup/registration/plans/TeamContainer.vue";
 
 export default {
 	components: {
