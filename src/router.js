@@ -3,18 +3,22 @@ import { defineAsyncComponent } from "vue";
 
 import TheHome from "@/views/TheHome.vue";
 import TheFooter from "@/components/ui/TheFooter.vue";
+
 //* Topics components
-import TheTopics from "@/pages/TheTopics.vue";
-import AllTopics from "@/components/topics-page/AllTopics.vue";
-import FrameworksTopic from "@/components/topics-page/FrameworksTopic.vue";
-import TestingTopic from "@/components/topics-page/TestingTopic.vue";
-import LanguagesTopic from "@/components/topics-page/LanguagesTopic.vue";
-import ToolingTopic from "@/components/topics-page/ToolingTopic.vue";
-import TechniquesTopic from "@/components/topics-page/TechniquesTopic.vue";
+import TheTopics from "@/views/TheTopics.vue";
+import AllTopics from "@/views/topics/Topics.vue";
+import FrameworksTopic from "@/views/topics/Frameworks.vue";
+import LanguagesTopic from "@/views/topics/Languages.vue";
+import TechniquesTopic from "@/views/topics/Techniques.vue";
+import TestingTopic from "@/views/topics/Testing.vue";
+import ToolingTopic from "@/views/topics/Tooling.vue";
+
 //* Series component
 import TheSeries from "@/views/TheSeries.vue";
+
 //* Podcast components
 import ThePodcast from "@/pages/ThePodcast.vue";
+
 //* Discuss components
 import TheDiscuss from "@/pages/TheDiscuss.vue";
 import NotFound from "./pages/NotFound.vue";
@@ -55,9 +59,7 @@ const router = createRouter({
 	linkActiveClass: "router-active",
 	linkExactActiveClass: "router-exact-active",
 	scrollBehavior(_, _2, savedPosition) {
-		if (savedPosition) {
-			return savedPosition;
-		}
+		if (savedPosition) return savedPosition;
 		return { left: 0, top: 0 };
 	},
 });
