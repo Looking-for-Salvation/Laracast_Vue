@@ -17,16 +17,17 @@ import ToolingTopic from "@/views/topics/Tooling.vue";
 import TheSeries from "@/views/TheSeries.vue";
 
 //* Podcast components
-import ThePodcast from "@/pages/ThePodcast.vue";
+import ThePodcast from "@/views/ThePodcast.vue";
 
 //* Discuss components
-import TheDiscuss from "@/pages/TheDiscuss.vue";
-import NotFound from "./pages/NotFound.vue";
+import TheDiscuss from "@/views/TheDiscuss.vue";
+
+import NotFound from "./views/NotFound.vue";
 
 const TheSignup = defineAsyncComponent(() => import("@/views/TheSignup.vue"));
-const TheFaq = defineAsyncComponent(() => import("@/pages/TheFaq.vue"));
-const TheTerms = defineAsyncComponent(() => import("@/pages/TheTerms.vue"));
-const ThePrivacy = defineAsyncComponent(() => import("@/pages/ThePrivacy.vue"));
+const TheFaq = defineAsyncComponent(() => import("@/views/TheFaq.vue"));
+const TheTerms = defineAsyncComponent(() => import("@/views/TheTerms.vue"));
+const ThePrivacy = defineAsyncComponent(() => import("@/views/ThePrivacy.vue"));
 
 const router = createRouter({
 	history: createWebHistory(),
