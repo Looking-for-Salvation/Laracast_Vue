@@ -22,7 +22,7 @@ import ThePodcast from "@/views/ThePodcast.vue";
 //* Discuss components
 import TheDiscuss from "@/views/TheDiscuss.vue";
 
-import NotFound from "./views/NotFound.vue";
+import NotFound from "@/views/NotFound.vue";
 
 const TheSignup = defineAsyncComponent(() => import("@/views/TheSignup.vue"));
 const TheFaq = defineAsyncComponent(() => import("@/views/TheFaq.vue"));
